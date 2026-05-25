@@ -228,11 +228,11 @@ Run it — you'll see the haiku appear word-by-word. **This UX is non-negotiable
 
 ## ✅ Exit criteria
 
-- [ ] `code/hello_gemini.py` exists and is committed
-- [ ] Running it prints a Gemini response + usage metadata
-- [ ] I tried temperature 0.0 vs 1.5 and observed the difference
-- [ ] I tried the streaming variant
-- [ ] I understand `response.text` vs `response.candidates[0].content.parts[0].text`
+- [x] `code/hello_gemini.py` exists and is committed
+- [x] Running it prints a Gemini response + usage metadata
+- [x] I tried temperature 0.0 vs 1.5 and observed the difference
+- [x] I tried the streaming variant
+- [x] I understand `response.text` vs `response.candidates[0].content.parts[0].text`
 
 **Next:** [`06-anthropic-sdk-and-key.md`](06-anthropic-sdk-and-key.md) — do the equivalent with Claude.
 

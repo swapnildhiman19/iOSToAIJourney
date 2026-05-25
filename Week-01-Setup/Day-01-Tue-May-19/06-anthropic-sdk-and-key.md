@@ -228,10 +228,10 @@ print()
 
 ## ✅ Exit criteria
 
-- [ ] Anthropic key created, $5 funded, $20 spend cap set
-- [ ] `ANTHROPIC_API_KEY` in `.env`, loads via `check_env.py`
-- [ ] `code/hello_anthropic.py` exists and prints a response + usage
-- [ ] I can name the differences in `messages` vs `contents` mental models
+- [x] Anthropic key created, $5 funded, $20 spend cap set
+- [x] `ANTHROPIC_API_KEY` in `.env`, loads via `check_env.py`
+- [x] `code/hello_anthropic.py` exists and prints a response + usage
+- [x] I can name the differences in `messages` vs `contents` mental models
 - [ ] I tried the streaming variant
 
 **Next:** [`07-end-of-day-checklist.md`](07-end-of-day-checklist.md) — commit, push, sleep.
