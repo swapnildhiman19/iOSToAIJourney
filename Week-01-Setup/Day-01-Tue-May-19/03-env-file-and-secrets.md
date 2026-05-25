@@ -199,4 +199,3 @@ ai-engineer-portfolio/
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

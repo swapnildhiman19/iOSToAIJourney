@@ -144,4 +144,3 @@ Rule of thumb: **if you create something in AWS, leave a sticky note (or a Notio
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

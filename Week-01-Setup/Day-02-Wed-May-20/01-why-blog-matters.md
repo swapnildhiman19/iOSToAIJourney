@@ -91,12 +91,11 @@ The kickoff post you write this week is the **scene-setter** — call it Post #0
 
 ## ✅ Exit criteria
 
-- [ ] I believe the blog is a hiring tool, not vanity
-- [ ] I understand why Hashnode over Medium
-- [ ] I can name the 5 things FDE managers screen for in a blog
+- [x] I believe the blog is a hiring tool, not vanity
+- [x] I understand why Hashnode over Medium
+- [x] I can name the 5 things FDE managers screen for in a blog
 
 **Next:** [`02-hashnode-setup.md`](02-hashnode-setup.md)
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

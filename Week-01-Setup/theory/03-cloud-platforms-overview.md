@@ -147,4 +147,3 @@ You don't need to deeply know AWS until then. **Don't pre-learn AWS — it's a t
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

@@ -122,13 +122,12 @@ graph TD
 
 ## ✅ Exit criteria
 
-- [ ] I have the 5-section template memorized
-- [ ] I can name 3 hook styles
-- [ ] I know which Mermaid + table + code-block patterns to use
-- [ ] I know what NOT to do (anti-patterns list)
+- [x] I have the 5-section template memorized
+- [x] I can name 3 hook styles
+- [x] I know which Mermaid + table + code-block patterns to use
+- [x] I know what NOT to do (anti-patterns list)
 
 **Next:** [`04-kickoff-post-draft.md`](04-kickoff-post-draft.md) — actually write the post.
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

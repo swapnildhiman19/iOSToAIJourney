@@ -147,4 +147,3 @@ output "bucket_url" {
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

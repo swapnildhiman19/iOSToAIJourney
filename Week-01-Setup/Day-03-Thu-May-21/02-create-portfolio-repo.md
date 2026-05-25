@@ -223,4 +223,3 @@ Eventually you may split each flagship into its own dedicated repo (cleaner pinn
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

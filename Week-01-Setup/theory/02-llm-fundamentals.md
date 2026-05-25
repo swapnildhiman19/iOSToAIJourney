@@ -200,4 +200,3 @@ Every penny you save in production AI comes from making one of these arrows chea
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

@@ -190,4 +190,3 @@ alias gcp-region='gcloud config set compute/region us-central1'
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

@@ -91,7 +91,6 @@ git commit -m "Phase 0 / Week 1 complete: setup + verify-ai 5/5 green
 - AWS account + CLI + Boto3
 - scripts/week1_verify.py — all 5 checks green
 
-🌀 Magic applied with Wibey VSCode Extension 🪄"
 git push
 ```
 
@@ -121,4 +120,3 @@ git push
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

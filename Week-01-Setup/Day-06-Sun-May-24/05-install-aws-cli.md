@@ -165,4 +165,3 @@ The file `~/.aws/credentials` is the only secret on disk. Treat it like an SSH p
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

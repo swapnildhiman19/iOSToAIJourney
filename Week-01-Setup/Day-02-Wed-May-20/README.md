@@ -50,4 +50,3 @@ Saturday morning you'll polish + add screenshots + hit publish.
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

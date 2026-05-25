@@ -165,4 +165,3 @@ flowchart TD
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

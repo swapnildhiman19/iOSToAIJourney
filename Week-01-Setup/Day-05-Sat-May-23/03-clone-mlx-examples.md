@@ -88,4 +88,3 @@ When you write `a @ b`, MLX compiles a Metal kernel that runs the matmul on your
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

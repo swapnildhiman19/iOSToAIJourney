@@ -119,4 +119,3 @@ For Week 1 (today + tomorrow + Sun), you'll spend **under $1**. The $50 limit is
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

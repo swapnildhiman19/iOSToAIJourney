@@ -238,4 +238,3 @@ Run it — you'll see the haiku appear word-by-word. **This UX is non-negotiable
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

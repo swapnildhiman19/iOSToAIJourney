@@ -6,12 +6,12 @@
 
 ## ✅ Verification
 
-- [ ] Open `<your-handle>.hashnode.dev` in a browser — loads correctly
-- [ ] Hashnode profile has headshot + bio + GitHub link
-- [ ] `posts/00-kickoff.md` exists in `ai-engineer-portfolio/`
-- [ ] Draft is **complete (5 sections written)** — rough is OK
-- [ ] Word count between 1,800–2,500 (`wc -w posts/00-kickoff.md`)
-- [ ] Read aloud once — caught any obvious typos
+- [x] Open `<your-handle>.hashnode.dev` in a browser — loads correctly
+- [x] Hashnode profile has headshot + bio + GitHub link
+- [x] `posts/00-kickoff.md` exists in `ai-engineer-portfolio/`
+- [x] Draft is **complete (5 sections written)** — rough is OK
+- [x] Word count between 1,800–2,500 (`wc -w posts/00-kickoff.md`)
+- [x] Read aloud once — caught any obvious typos
 
 ---
 
@@ -41,22 +41,21 @@ Three questions:
 
 Tomorrow is **GitHub portfolio repo + Docker Desktop**. Prep:
 
-- [ ] Confirm you can log into GitHub (with the same email as your Hashnode account ideally)
-- [ ] Bookmark https://docker.com/products/docker-desktop
-- [ ] Verify ~10 GB free disk space (Docker Desktop + images need it)
+- [x] Confirm you can log into GitHub (with the same email as your Hashnode account ideally)
+- [x] Bookmark https://docker.com/products/docker-desktop
+- [x] Verify ~10 GB free disk space (Docker Desktop + images need it)
 
 ---
 
 ## ✅ Day 2 exit criteria (overall)
 
-- [ ] Hashnode blog live at `<your-handle>.hashnode.dev`
-- [ ] Kickoff post drafted in `posts/00-kickoff.md` (5 sections, ~2K words)
-- [ ] Profile set up (photo, bio, links)
-- [ ] Draft committed to local git
-- [ ] Journal entry written
+- [x] Hashnode blog live at `<your-handle>.hashnode.dev`
+- [x] Kickoff post drafted in `posts/00-kickoff.md` (5 sections, ~2K words)
+- [x] Profile set up (photo, bio, links)
+- [x] Draft committed to local git
+- [x] Journal entry written
 
 ✅ Tomorrow: [`../Day-03-Thu-May-21/README.md`](../Day-03-Thu-May-21/README.md)
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

@@ -136,4 +136,3 @@ By Phase 6 you'll have a 15-check "is my AI stack alive" script. **That single s
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

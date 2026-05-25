@@ -209,4 +209,3 @@ client = get_gemini_client()
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

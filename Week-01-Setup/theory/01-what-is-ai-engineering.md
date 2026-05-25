@@ -110,4 +110,3 @@ This is the entire loop. Every job description for "AI Engineer" / "FDE" can be 
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

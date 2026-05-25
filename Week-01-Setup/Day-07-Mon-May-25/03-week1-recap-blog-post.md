@@ -174,4 +174,3 @@ What it DOES do:
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

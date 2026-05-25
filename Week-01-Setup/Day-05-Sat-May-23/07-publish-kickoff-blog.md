@@ -139,4 +139,3 @@ Posts that wait until "the project is polished" never ship. Ship the kickoff pos
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

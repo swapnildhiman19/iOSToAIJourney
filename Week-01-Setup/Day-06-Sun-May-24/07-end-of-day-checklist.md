@@ -57,4 +57,3 @@ This is exactly the mindset FDEs need when juggling customer environments.
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

@@ -188,4 +188,3 @@ This trade-off matrix is **exactly** what an FDE has to articulate to a customer
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

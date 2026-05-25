@@ -213,14 +213,13 @@ Don't edit while writing. Get a draft to "complete but rough" before going back.
 
 ## ✅ Exit criteria
 
-- [ ] `posts/00-kickoff.md` exists with all 5 sections (hook → next)
-- [ ] In my voice, not template language
-- [ ] Working title chosen
-- [ ] Linked to GitHub portfolio repo URL (Thursday will create it)
-- [ ] Saved to git: `git add posts/ && git commit -m "draft: kickoff post"`
+- [x] `posts/00-kickoff.md` exists with all 5 sections (hook → next)
+- [x] In my voice, not template language
+- [x] Working title chosen
+- [x] Linked to GitHub portfolio repo URL (Thursday will create it)
+- [x] Saved to git: `git add posts/ && git commit -m "draft: kickoff post"`
 
 **Next:** [`05-end-of-day-checklist.md`](05-end-of-day-checklist.md)
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

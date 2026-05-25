@@ -2,7 +2,6 @@
 
 > **Goal:** Career switch from iOS engineer (Walmart) → Forward-Deployed AI Engineer in ~8 months.
 > **Window:** May 19, 2026 → mid-January 2027
-> **Plan source:** `~/.wibey/plans/ai_engineer_roadmap_721a4d24.plan.md`
 
 This folder is the **knowledge base** — all the theory, tutorials, code, diagrams, and references — that supports the roadmap. It will grow week-by-week.
 
@@ -109,4 +108,3 @@ See `Week-01-Setup/README.md` for the full Week 1 syllabus.
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

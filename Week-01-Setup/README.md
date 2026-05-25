@@ -103,4 +103,3 @@ Add your answers to `Day-07-Mon-May-25/01-buffer-day.md`.
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

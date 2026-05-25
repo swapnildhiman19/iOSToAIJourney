@@ -134,12 +134,11 @@ gantt
 
 ## ✅ Exit criteria
 
-- [ ] I understand the difference between a "junk drawer" portfolio and an FDE-style portfolio
-- [ ] I know what each flagship repo will look like (folder structure)
-- [ ] I know what the profile-README pattern is
+- [x] I understand the difference between a "junk drawer" portfolio and an FDE-style portfolio
+- [x] I know what each flagship repo will look like (folder structure)
+- [x] I know what the profile-README pattern is
 
 **Next:** [`02-create-portfolio-repo.md`](02-create-portfolio-repo.md)
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

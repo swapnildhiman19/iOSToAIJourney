@@ -108,4 +108,3 @@ Brew also works and is fully supported. Astral publishes a Homebrew tap.
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

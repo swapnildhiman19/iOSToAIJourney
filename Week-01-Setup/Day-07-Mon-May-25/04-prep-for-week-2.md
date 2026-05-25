@@ -47,7 +47,6 @@ These are 5-minute tasks, not lessons:
 
 ```bash
 # Open the plan file and skim Week 2-5 sections
-open ~/.wibey/plans/ai_engineer_roadmap_721a4d24.plan.md
 ```
 
 Just skim — don't try to absorb. You're priming diffuse-mode.
@@ -118,7 +117,6 @@ If you must work, work on **non-roadmap** stuff: clear your inbox, do laundry, p
 ## 📚 References
 
 - **Anders Ericsson on deliberate practice** — original 1993 paper or his book *Peak*
-- **The roadmap plan file** — `~/.wibey/plans/ai_engineer_roadmap_721a4d24.plan.md`
 
 ---
 
@@ -133,4 +131,3 @@ If you must work, work on **non-roadmap** stuff: clear your inbox, do laundry, p
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

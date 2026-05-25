@@ -81,4 +81,3 @@ The system has 3 grains:
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

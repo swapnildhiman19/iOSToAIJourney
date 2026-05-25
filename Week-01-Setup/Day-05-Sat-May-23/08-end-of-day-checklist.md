@@ -59,4 +59,3 @@ Tomorrow (Sunday) is lighter — Notion/Linear tracker setup, free AWS account, 
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

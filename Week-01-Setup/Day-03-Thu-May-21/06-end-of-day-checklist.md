@@ -69,4 +69,3 @@ Tomorrow is **GCP + Vertex AI + `gcloud` CLI**. Prep:
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

@@ -56,4 +56,3 @@ The brilliant part: **the same Python code works on both**. Flip one config flag
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

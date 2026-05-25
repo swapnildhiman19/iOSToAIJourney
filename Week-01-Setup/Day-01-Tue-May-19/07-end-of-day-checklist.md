@@ -111,18 +111,17 @@ flowchart TD
 
 ## ✅ Final Day 1 exit criteria (the whole day)
 
-- [ ] `uv` installed, Python 3.12 managed by uv
-- [ ] Project `ai-engineer-portfolio` initialized with `pyproject.toml`
-- [ ] `google-genai`, `anthropic`, `python-dotenv` installed
-- [ ] `.env` with `GOOGLE_API_KEY` and `ANTHROPIC_API_KEY` filled
-- [ ] `.env.example` committed, `.env` gitignored
-- [ ] `hello_gemini.py` runs and prints a response
-- [ ] `hello_anthropic.py` runs and prints a response
-- [ ] All work committed locally with a clean message
-- [ ] Journal entry written
+- [x] `uv` installed, Python 3.12 managed by uv
+- [x] Project `ai-engineer-portfolio` initialized with `pyproject.toml`
+- [x] `google-genai`, `anthropic`, `python-dotenv` installed
+- [x] `.env` with `GOOGLE_API_KEY` and `ANTHROPIC_API_KEY` filled
+- [x] `.env.example` committed, `.env` gitignored
+- [x] `hello_gemini.py` runs and prints a response
+- [x] `hello_anthropic.py` runs and prints a response
+- [x] All work committed locally with a clean message
+- [x] Journal entry written
 
 ✅ Tomorrow: [`../Day-02-Wed-May-20/README.md`](../Day-02-Wed-May-20/README.md)
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

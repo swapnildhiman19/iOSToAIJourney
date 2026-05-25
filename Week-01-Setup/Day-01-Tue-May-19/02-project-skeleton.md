@@ -197,4 +197,3 @@ graph LR
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

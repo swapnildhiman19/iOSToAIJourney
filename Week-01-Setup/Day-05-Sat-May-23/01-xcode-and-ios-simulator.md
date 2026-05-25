@@ -105,4 +105,3 @@ You won't write iOS code until Phase 1 Week 2 (SwiftUI ramp-up). Today is just *
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

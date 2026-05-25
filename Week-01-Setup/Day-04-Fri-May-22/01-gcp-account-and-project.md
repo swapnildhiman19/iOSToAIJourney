@@ -123,4 +123,3 @@ This week you'll spend pennies. But two future traps:
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

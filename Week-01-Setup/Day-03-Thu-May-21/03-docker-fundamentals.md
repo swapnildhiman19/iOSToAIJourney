@@ -194,4 +194,3 @@ If you can riff on these five for 60s each, you have interview-acceptable Docker
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

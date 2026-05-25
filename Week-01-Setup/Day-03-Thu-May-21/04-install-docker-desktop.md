@@ -144,4 +144,3 @@ docker system prune -a
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

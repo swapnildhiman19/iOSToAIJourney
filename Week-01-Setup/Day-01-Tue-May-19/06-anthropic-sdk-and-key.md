@@ -238,4 +238,3 @@ print()
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

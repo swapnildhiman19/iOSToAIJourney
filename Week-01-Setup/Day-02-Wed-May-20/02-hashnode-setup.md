@@ -88,15 +88,14 @@ I'll set up a `posts/` folder in your portfolio repo on Thursday for exactly thi
 
 ## ✅ Exit criteria
 
-- [ ] Hashnode account created
-- [ ] Blog created at `<your-handle>.hashnode.dev`
-- [ ] Headshot, bio, GitHub link, LinkedIn link all set
-- [ ] Newsletter feature enabled
-- [ ] Subdomain loads successfully
-- [ ] Screenshot saved
+- [x] Hashnode account created
+- [x] Blog created at `<your-handle>.hashnode.dev`
+- [x] Headshot, bio, GitHub link, LinkedIn link all set
+- [x] Newsletter feature enabled
+- [x] Subdomain loads successfully
+- [x] Screenshot saved
 
 **Next:** [`03-blog-structure-for-engineers.md`](03-blog-structure-for-engineers.md)
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

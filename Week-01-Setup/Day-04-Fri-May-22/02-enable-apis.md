@@ -113,4 +113,3 @@ Don't enable any of these today. **Only what you need, when you need it.**
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

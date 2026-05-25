@@ -155,7 +155,6 @@ The Reckoning is **the bridge** between this week's reality and next week's plan
 
 - **Toyota's 5 Whys** for root-cause discipline — https://en.wikipedia.org/wiki/Five_whys
 - **DHH's "We hire writers"** — https://signalvnoise.com/posts/3408-the-2-reasons-companies-fail-and-how-to-avoid-them — on writing clearly
-- **The plan file itself** — `/Users/s0d0bla/.wibey/plans/ai_engineer_roadmap_721a4d24.plan.md`
 
 ---
 
@@ -169,4 +168,3 @@ The Reckoning is **the bridge** between this week's reality and next week's plan
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

@@ -62,4 +62,3 @@ If you see this, **you are done for Day 1**. Close laptop, take a walk, eat dinn
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

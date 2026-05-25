@@ -38,4 +38,3 @@ flowchart LR
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

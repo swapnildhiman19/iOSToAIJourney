@@ -169,4 +169,3 @@ If all three pass, ADC is wired correctly. You're ready for the Vertex hello-wor
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

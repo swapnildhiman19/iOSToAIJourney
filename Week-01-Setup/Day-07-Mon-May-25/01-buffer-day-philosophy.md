@@ -79,4 +79,3 @@ Tuesday → Sunday: build. Monday: reflect, publish, rest.
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

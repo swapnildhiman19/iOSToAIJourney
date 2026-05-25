@@ -124,7 +124,6 @@ You already use it. Add these extensions before Day 1:
 | Even Better TOML                 | `pyproject.toml` syntax highlighting                        |
 | HashiCorp Terraform              | When you install Terraform Sat                              |
 | Mermaid Preview                  | Render the flow diagrams in these markdown files            |
-| **Wibey** (you're already using) | The Walmart-internal AI assistant; that's me                |
 
 ---
 
@@ -198,4 +197,3 @@ This loop is what "shipping like a senior engineer" looks like. By end of Week 1
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*

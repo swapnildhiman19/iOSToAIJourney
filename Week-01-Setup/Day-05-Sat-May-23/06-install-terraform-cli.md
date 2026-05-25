@@ -147,4 +147,3 @@ The smoke folder served its purpose. Phase 3 will introduce the real Terraform l
 
 ---
 
-🌀 *Magic applied with Wibey VS Code Extension 🪄*
