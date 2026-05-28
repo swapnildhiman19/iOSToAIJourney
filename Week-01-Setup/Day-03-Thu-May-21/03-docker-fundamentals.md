@@ -184,13 +184,15 @@ If you can riff on these five for 60s each, you have interview-acceptable Docker
 
 ## ✅ Exit criteria
 
-- [ ] I can explain "image vs container" in one sentence each
-- [ ] I understand why we copy `pyproject.toml` before code (layer caching)
-- [ ] I know what a multi-stage build is and why we use it
-- [ ] I can list 3 places a container can run after `docker push`
-- [ ] I'm ready to install Docker Desktop
+- [x] I can explain "image vs container" in one sentence each
+- [x] I understand why we copy `pyproject.toml` before code (layer caching)
+- [x] I know what a multi-stage build is and why we use it
+- [x] I can list 3 places a container can run after `docker push`
+- [x] I'm ready to install Docker Desktop
 
 **Next:** [`04-install-docker-desktop.md`](04-install-docker-desktop.md)
 
 ---
 
+
+ 

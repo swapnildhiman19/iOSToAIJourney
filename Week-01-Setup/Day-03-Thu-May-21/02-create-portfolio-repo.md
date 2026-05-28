@@ -213,11 +213,11 @@ Eventually you may split each flagship into its own dedicated repo (cleaner pinn
 
 ## ✅ Exit criteria
 
-- [ ] `https://github.com/<your-handle>/ai-engineer-portfolio` exists and is public
-- [ ] Code from Days 1+2 is pushed
-- [ ] `.env` is NOT in the repo (verify in browser!)
-- [ ] Three `projects/*/README.md` placeholders exist
-- [ ] Top-level `README.md` lists the three flagships in a table
+- [x] `https://github.com/<your-handle>/ai-engineer-portfolio` exists and is public
+- [x] Code from Days 1+2 is pushed
+- [x] `.env` is NOT in the repo (verify in browser!)
+- [x] Three `projects/*/README.md` placeholders exist
+- [x] Top-level `README.md` lists the three flagships in a table
 
 **Next:** [`03-docker-fundamentals.md`](03-docker-fundamentals.md)
 

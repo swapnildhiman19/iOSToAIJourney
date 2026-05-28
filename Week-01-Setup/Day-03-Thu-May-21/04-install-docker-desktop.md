@@ -134,11 +134,11 @@ docker system prune -a
 
 ## ✅ Exit criteria
 
-- [ ] `docker --version` works
-- [ ] `docker info` runs without error
-- [ ] `docker run hello-world` prints the ASCII greeting
-- [ ] I understand the personal-use license (free for me on personal Mac)
-- [ ] I've configured CPUs/Memory in Settings
+- [x] `docker --version` works
+- [x] `docker info` runs without error
+- [x] `docker run hello-world` prints the ASCII greeting
+- [x] I understand the personal-use license (free for me on personal Mac)
+- [x] I've configured CPUs/Memory in Settings
 
 **Next:** [`05-first-dockerfile.md`](05-first-dockerfile.md)
 

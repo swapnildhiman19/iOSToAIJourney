@@ -198,11 +198,11 @@ docker system prune -a   # ⚠ removes ALL unused images
 
 ## ✅ Exit criteria
 
-- [ ] `Dockerfile` exists in repo root
-- [ ] `.dockerignore` exists
-- [ ] `docker build -t hello-gemini:demo .` completes
-- [ ] `docker run --rm --env-file .env hello-gemini:demo` prints a Gemini response
-- [ ] I observed the caching effect on rebuild
+- [x] `Dockerfile` exists in repo root
+- [x] `.dockerignore` exists
+- [x] `docker build -t hello-gemini:demo .` completes
+- [x] `docker run --rm --env-file .env hello-gemini:demo` prints a Gemini response
+- [x] I observed the caching effect on rebuild
 
 **Next:** [`06-end-of-day-checklist.md`](06-end-of-day-checklist.md)
 
