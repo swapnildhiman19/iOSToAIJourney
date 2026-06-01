@@ -180,11 +180,11 @@ alias gcp-region='gcloud config set compute/region us-central1'
 
 ## ✅ Exit criteria
 
-- [ ] `gcloud --version` works
-- [ ] `gcloud auth list` shows my personal email as ACTIVE
-- [ ] `gcloud auth application-default login` ran successfully
-- [ ] `gcloud config get-value project` returns my project ID
-- [ ] `gcloud services list --enabled` shows Vertex AI + Generative Language
+- [x] `gcloud --version` works
+- [x] `gcloud auth list` shows my personal email as ACTIVE
+- [x] `gcloud auth application-default login` ran successfully
+- [x] `gcloud config get-value project` returns my project ID
+- [x] `gcloud services list --enabled` shows Vertex AI + Generative Language
 
 **Next:** [`05-adc-explained.md`](05-adc-explained.md)
 

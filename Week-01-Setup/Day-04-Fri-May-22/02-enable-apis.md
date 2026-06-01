@@ -105,11 +105,18 @@ Don't enable any of these today. **Only what you need, when you need it.**
 
 ## ✅ Exit criteria
 
-- [ ] Vertex AI API enabled in my project
-- [ ] Generative Language API enabled in my project
-- [ ] Both show "Enabled" in API Dashboard
+- [x] Vertex AI API enabled in my project
+- [x] Generative Language API enabled in my project
+- [x] Both show "Enabled" in API Dashboard
 
 **Next:** [`03-billing-alert.md`](03-billing-alert.md)
 
 ---
 
+
+
+Note the change:
+
+now Vertex AI API renamed to : Agent Platform API
+
+Generative Language API renamed to : Gemini API

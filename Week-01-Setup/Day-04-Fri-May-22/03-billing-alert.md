@@ -109,11 +109,11 @@ For Week 1 (today + tomorrow + Sun), you'll spend **under $1**. The $50 limit is
 
 ## ✅ Exit criteria
 
-- [ ] Budget `Personal AI Engineer Portfolio` exists
-- [ ] Target: $50/month
-- [ ] Alerts: 50%, 90%, 100% (actual) + 120% (forecast)
-- [ ] Confirmation email arrived in inbox
-- [ ] I understand alerts notify but don't auto-stop
+- [x] Budget `Personal AI Engineer Portfolio` exists
+- [x] Target: $50/month
+- [x] Alerts: 50%, 90%, 100% (actual) + 120% (forecast)
+- [x] Confirmation email arrived in inbox
+- [x] I understand alerts notify but don't auto-stop
 
 **Next:** [`04-install-gcloud-cli.md`](04-install-gcloud-cli.md)
 

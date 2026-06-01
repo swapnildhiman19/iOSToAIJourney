@@ -113,11 +113,11 @@ This week you'll spend pennies. But two future traps:
 
 ## ✅ Exit criteria
 
-- [ ] GCP account active under my personal email
-- [ ] Project `ai-engineer-portfolio` (or similar) created
-- [ ] I know my **Project ID** + **Project Number**
-- [ ] Billing account attached
-- [ ] (Optional) `GCP_PROJECT_ID` env var pinned in `~/.zshrc`
+- [x] GCP account active under my personal email
+- [x] Project `ai-engineer-portfolio` (or similar) created
+- [x] I know my **Project ID** + **Project Number**
+- [x] Billing account attached
+- [x] (Optional) `GCP_PROJECT_ID` env var pinned in `~/.zshrc`
 
 **Next:** [`02-enable-apis.md`](02-enable-apis.md)
 

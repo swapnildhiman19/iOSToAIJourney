@@ -159,11 +159,11 @@ If all three pass, ADC is wired correctly. You're ready for the Vertex hello-wor
 
 ## ✅ Exit criteria
 
-- [ ] I can explain ADC to a 5-year-old (the "building knows you" metaphor)
-- [ ] I can explain the 3 production patterns (attached SA, WIF, user credentials)
-- [ ] I know why service-account JSON keys are an anti-pattern
-- [ ] `gcloud auth application-default print-access-token` returns a token
-- [ ] The Python `google.auth.default()` test returned the right project
+- [x] I can explain ADC to a 5-year-old (the "building knows you" metaphor)
+- [x] I can explain the 3 production patterns (attached SA, WIF, user credentials)
+- [x] I know why service-account JSON keys are an anti-pattern
+- [x] `gcloud auth application-default print-access-token` returns a token
+- [x] The Python `google.auth.default()` test returned the right project
 
 **Next:** [`06-vertex-gemini-hello-world.md`](06-vertex-gemini-hello-world.md)
 

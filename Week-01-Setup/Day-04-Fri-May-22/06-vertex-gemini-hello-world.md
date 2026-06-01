@@ -199,11 +199,11 @@ client = get_gemini_client()
 
 ## ✅ Exit criteria
 
-- [ ] `code/hello_vertex.py` exists and runs
-- [ ] Output contains a real Gemini response
-- [ ] No API key was used in the script
-- [ ] I understand the difference between Day 1's AI Studio path and today's Vertex path
-- [ ] I can name the two `genai.Client(...)` styles
+- [x] `code/hello_vertex.py` exists and runs
+- [x] Output contains a real Gemini response
+- [x] No API key was used in the script
+- [x] I understand the difference between Day 1's AI Studio path and today's Vertex path
+- [x] I can name the two `genai.Client(...)` styles
 
 **Next:** [`07-end-of-day-checklist.md`](07-end-of-day-checklist.md)
 

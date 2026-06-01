@@ -419,3 +419,1328 @@ Terraform यहाँ अलग काम करता है। Docker app प
 फिर हमने multi-stage builds समझे। इसमें पहला “builder” stage भारी काम करता है — जैसे OpenCV install करना या code compile करना। दूसरा “runtime” stage सिर्फ final जरूरी files रखता है। इससे final image छोटी, तेज़, और production-ready बनती है, क्योंकि build tools अंदर नहीं जाते।
 
 अंत में AI evals भी समझे — जैसे golden Q&A (fixed test questions), RAG (model answer देने से पहले information retrieve करता है), और LLM-as-judge (एक AI दूसरे AI के जवाब को score करता है)। ये सब AI systems की quality check करने के तरीके हैं।
+
+01 June 2026
+
+Difference between gcloud auth application-default login (ADC) and gcloud auth login (CLI)
+
+Let’s strip away all the technical terms. Let’s pretend your MacBook is a company office building [2].
+Inside this building, there are two completely different entities who want to talk to Google Cloud [2]:
+
+   1. You (the human typing commands into the terminal) [2].
+   2. Your Python Script (the automated program you wrote) [2].
+
+Google Cloud is incredibly strict. It treats You and Your Script as two completely separate entities [2]. It does not care that the script lives on your computer. It demands that both identify themselves individually [2].
+------------------------------
+## 1. gcloud auth login (The Human Pass)
+When you type this, you are saying: "Hey Google, it's me, the human user sitting at the keyboard. Log my terminal in." [2]
+
+* What happens: Google gives your terminal window a security pass [2].
+* Result: You can now type terminal commands like gcloud compute instances list and they work [2].
+* The Catch: This pass belongs only to the terminal [2]. Your Python script is not allowed to touch it or use it [2].
+
+------------------------------
+## 2. gcloud auth application-default login (The Code Pass)
+If you try to run your Python script now, it will crash. Why? Because the script says: "The terminal has a pass, but I don't have a pass! Google won't talk to me." [2]
+So, you run the second command. You are saying: "Hey Google, create a special security pass and drop it into a secret folder that any code running on this Mac can find." [2]
+
+* What happens: Google creates a file called application_default_credentials.json on your Mac [2].
+* Result: Now, when you run your Python script, the Google SDK inside your code automatically hunts for that specific file, reads it, and says, "Ah! Here is my pass. Now I can talk to Gemini!" [2]
+
+------------------------------
+## Why do you need both?
+
+* If you only do Step 1: You can use the terminal, but your code will crash [2].
+* If you only do Step 2: Your code will work, but your terminal commands will crash [2].
+
+They are just two different keys for two different doors on your Mac [2].
+------------------------------
+Does looking at them as The Human's Key vs. The Code's Key make it click a bit better? [2]
+
+
+------------------------------
+
+# ADC & `gcloud auth login` Notes (with Analogies)
+
+---
+
+# 🏢 Big Picture Analogy
+
+Imagine Google Cloud is a corporate office building.
+
+There are **2 different people entering the building**:
+
+### 1. You (Human)
+
+```text
+Swapnil
+```
+
+You want to use:
+
+```bash
+gcloud projects list
+gcloud run deploy
+gcloud storage ls
+```
+
+This is **CLI authentication**.
+
+---
+
+### 2. Your Application
+
+```text
+Python App
+iOS Backend
+Cloud Run Service
+```
+
+It wants to call:
+
+```text
+Vertex AI
+Cloud Storage
+BigQuery
+```
+
+This is **ADC authentication**.
+
+---
+
+# Part 1: `gcloud auth login`
+
+## What is it?
+
+Authenticates **YOU** to the gcloud CLI.
+
+```bash
+gcloud auth login
+```
+
+Browser opens:
+
+```text
+Login as Swapnil
+```
+
+Google remembers:
+
+```text
+Swapnil is authenticated
+```
+
+---
+
+## What is it used for?
+
+Commands like:
+
+```bash
+gcloud projects list
+
+gcloud run deploy
+
+gcloud config set project
+```
+
+---
+
+## Analogy
+
+You're entering the office building.
+
+Security asks:
+
+> "Who are you?"
+
+You show:
+
+```text
+Swapnil Employee Badge
+```
+
+Now YOU can access company systems.
+
+---
+
+## Important
+
+This authentication is for:
+
+```text
+Human → GCloud CLI
+```
+
+NOT
+
+```text
+Application → Vertex AI
+```
+
+---
+
+# Part 2: ADC
+
+## What is it?
+
+ADC = Application Default Credentials
+
+Authenticates your APPLICATION.
+
+---
+
+## Analogy
+
+Your app is a robot employee.
+
+```text
+🤖 Robot App
+```
+
+Robot needs access to:
+
+```text
+Vertex AI
+Cloud Storage
+BigQuery
+```
+
+Robot can't manually login.
+
+ADC helps the robot prove its identity.
+
+---
+
+# LOCAL MACHINE
+
+---
+
+## Step 1
+
+Run:
+
+```bash
+gcloud auth application-default login
+```
+
+Browser opens.
+
+You login.
+
+---
+
+## Step 2
+
+Google stores:
+
+```text
+application_default_credentials.json
+```
+
+Typically:
+
+```text
+~/.config/gcloud/application_default_credentials.json
+```
+
+---
+
+## What's inside?
+
+NOT:
+
+```text
+API Key
+```
+
+NOT:
+
+```text
+Service Account Key
+```
+
+Contains:
+
+```text
+Refresh Token
+```
+
+---
+
+## Analogy
+
+Think:
+
+```text
+Refresh Token
+=
+Permanent gym membership card
+```
+
+---
+
+## What happens when code runs?
+
+```python
+client = genai.Client(...)
+```
+
+ADC says:
+
+> "Who am I?"
+
+It checks:
+
+```text
+application_default_credentials.json
+```
+
+Finds:
+
+```text
+Refresh Token
+```
+
+---
+
+## Then?
+
+Refresh token asks Google:
+
+> "Give me a temporary access pass."
+
+Google returns:
+
+```text
+Access Token
+```
+
+Valid roughly:
+
+```text
+~1 hour
+```
+
+---
+
+## Flow
+
+```text
+Python App
+     │
+     ▼
+ADC
+     │
+     ▼
+Refresh Token
+     │
+     ▼
+Google OAuth Server
+     │
+     ▼
+Access Token
+     │
+     ▼
+Vertex AI
+```
+
+---
+
+# Cloud Run / GKE / Compute Engine
+
+Now things change.
+
+---
+
+## Is there an ADC file?
+
+No.
+
+```text
+No application_default_credentials.json
+```
+
+---
+
+## Is there a refresh token?
+
+No.
+
+---
+
+## Then how does it work?
+
+We attach:
+
+```text
+Service Account
+```
+
+Example:
+
+```text
+image-processor-sa@project.iam.gserviceaccount.com
+```
+
+---
+
+# What is a Service Account?
+
+App's identity.
+
+Just like:
+
+```text
+Swapnil = Human Identity
+
+image-processor-sa = App Identity
+```
+
+---
+
+# Important
+
+Service Account is NOT a token.
+
+It is NOT a key.
+
+It is NOT a password.
+
+It is:
+
+```text
+Identity + Permissions
+```
+
+---
+
+## Example Permissions
+
+```text
+Can call Vertex AI ✅
+
+Can read Storage Bucket ✅
+
+Can access BigQuery ❌
+```
+
+---
+
+# Metadata Server
+
+Every Cloud Run instance gets access to:
+
+```text
+Metadata Server
+```
+
+Think of it as:
+
+```text
+Cloud Security Office
+```
+
+---
+
+# What happens when app starts?
+
+App asks:
+
+> "Who am I?"
+
+ADC asks Metadata Server:
+
+```text
+Hello,
+which identity is attached to me?
+```
+
+Metadata Server replies:
+
+```text
+You are:
+
+image-processor-sa
+```
+
+---
+
+## Then?
+
+ADC says:
+
+> "Give me a temporary access token."
+
+Metadata Server creates:
+
+```text
+Short-lived Access Token
+```
+
+Typically valid:
+
+```text
+~1 hour
+```
+
+---
+
+## Flow
+
+```text
+Cloud Run App
+      │
+      ▼
+ADC
+      │
+      ▼
+Metadata Server
+      │
+      ▼
+Access Token
+      │
+      ▼
+Vertex AI
+```
+
+---
+
+# Why is Metadata Server needed?
+
+Because Service Account is only:
+
+```text
+Identity
+```
+
+Example:
+
+```text
+Swapnil
+```
+
+is a person.
+
+But person ≠ access card.
+
+Similarly:
+
+```text
+Service Account
+```
+
+is identity.
+
+Need token to actually access services.
+
+---
+
+## Analogy
+
+Service Account:
+
+```text
+Employee Badge
+```
+
+Metadata Server:
+
+```text
+Security Office
+```
+
+Access Token:
+
+```text
+Temporary Access Card
+```
+
+---
+
+# How Permissions Work
+
+Suppose:
+
+```text
+analyzer-sa
+```
+
+has permission:
+
+```text
+Vertex AI ✅
+
+Storage Bucket ✅
+
+BigQuery ❌
+```
+
+Metadata Server issues token.
+
+When app tries:
+
+```text
+Vertex AI
+```
+
+Google checks:
+
+```text
+Allowed?
+```
+
+Yes.
+
+Works.
+
+---
+
+When app tries:
+
+```text
+BigQuery
+```
+
+Google checks:
+
+```text
+Allowed?
+```
+
+No.
+
+Fails.
+
+---
+
+# Why ADC is Better than API Keys
+
+Old Way:
+
+```text
+service-account-key.json
+```
+
+Problems:
+
+```text
+Copied
+Leaked
+Committed to GitHub
+Shared on Slack
+```
+
+Huge security risk.
+
+---
+
+Modern Way:
+
+```text
+ADC
++
+Service Accounts
++
+Metadata Server
+```
+
+Benefits:
+
+```text
+No key files
+No secrets
+Auto token rotation
+Safer
+```
+
+---
+
+# Interview Summary (Memorize)
+
+| Environment    | Identity Source                     | Token Source                 |
+| -------------- | ----------------------------------- | ---------------------------- |
+| Local Laptop   | Your Google User Account            | Refresh Token → Access Token |
+| Cloud Run      | Service Account                     | Metadata Server              |
+| GKE            | Workload Identity / Service Account | Metadata Server              |
+| Compute Engine | Attached Service Account            | Metadata Server              |
+
+---
+
+# One-Line Answers
+
+### What does `gcloud auth login` do?
+
+> Authenticates me (the human) to use the gcloud CLI.
+
+### What does `gcloud auth application-default login` do?
+
+> Creates local ADC credentials so my application can authenticate to Google Cloud APIs.
+
+### What is ADC?
+
+> A mechanism that automatically finds the correct credentials for an application depending on where it is running.
+
+### What is a Service Account?
+
+> The identity of an application along with its permissions.
+
+### What is the Metadata Server?
+
+> A Google-managed service that provides short-lived access tokens for the attached service account.
+
+### Why no JSON key files?
+
+> ADC and Metadata Server provide short-lived tokens automatically, making long-lived keys unnecessary and much safer.
+
+Perfect. Let's connect **ADC, User Credentials, Service Accounts (SA), Metadata Server, OIDC, WIF, and the JSON Key anti-pattern** into one story.
+
+---
+
+# The Problem We're Trying to Solve
+
+Your code wants to call:
+
+```text
+Vertex AI
+Cloud Storage
+BigQuery
+```
+
+Google asks:
+
+> "Who are you?"
+
+Before Google gives access, it needs an identity.
+
+There are **3 modern ways** to provide that identity.
+
+---
+
+# First Understand ADC
+
+**ADC = Application Default Credentials**
+
+Think of ADC as a smart receptionist.
+
+Your code says:
+
+```python
+client = genai.Client(...)
+```
+
+ADC's job is:
+
+> "Let me figure out who this application is."
+
+ADC doesn't authenticate itself.
+
+It simply finds credentials from the appropriate source.
+
+---
+
+# Pattern 1: User Credentials (Local Development)
+
+This is what you're using today.
+
+---
+
+## Setup
+
+You run:
+
+```bash
+gcloud auth application-default login
+```
+
+Google opens a browser.
+
+You login as:
+
+```text
+Swapnil
+```
+
+Google stores:
+
+```text
+~/.config/gcloud/application_default_credentials.json
+```
+
+containing a **Refresh Token**.
+
+---
+
+## Analogy
+
+Imagine you're entering an office building.
+
+Security asks:
+
+> Who are you?
+
+You show:
+
+```text
+Swapnil Employee Badge
+```
+
+Google recognizes you.
+
+---
+
+## What happens when code runs?
+
+```python
+client = genai.Client(...)
+```
+
+ADC finds:
+
+```text
+application_default_credentials.json
+```
+
+Inside:
+
+```text
+Refresh Token
+```
+
+ADC sends it to Google.
+
+Google replies:
+
+```text
+Short-lived Access Token
+```
+
+Your code uses that token to call Vertex AI.
+
+---
+
+## Flow
+
+```text
+Python Script
+      │
+      ▼
+ADC
+      │
+      ▼
+Refresh Token
+      │
+      ▼
+Google OAuth Server
+      │
+      ▼
+Access Token
+      │
+      ▼
+Vertex AI
+```
+
+---
+
+## Identity
+
+```text
+Swapnil
+```
+
+The application is acting as YOU.
+
+---
+
+# Pattern 2: Attached Service Account (Cloud Run, GKE, Compute Engine)
+
+This is the most common production pattern.
+
+---
+
+## Problem
+
+There is no human sitting inside Cloud Run.
+
+So who is the application?
+
+---
+
+## Answer
+
+Give the application its own identity.
+
+That identity is called a:
+
+```text
+Service Account
+```
+
+Example:
+
+```text
+doc-talk-runner@project.iam.gserviceaccount.com
+```
+
+---
+
+## What is a Service Account?
+
+Think of it as:
+
+```text
+Employee Badge for an Application
+```
+
+Humans have:
+
+```text
+Swapnil
+```
+
+Applications have:
+
+```text
+doc-talk-runner
+```
+
+---
+
+## Permissions
+
+A service account can have permissions like:
+
+```text
+Vertex AI      ✅
+Cloud Storage  ✅
+BigQuery       ❌
+```
+
+---
+
+## Metadata Server
+
+When Cloud Run starts:
+
+```text
+Cloud Run App
+```
+
+Google automatically provides:
+
+```text
+Metadata Server
+```
+
+Think:
+
+```text
+Cloud Security Office
+```
+
+---
+
+## What happens?
+
+Application asks:
+
+> Who am I?
+
+ADC asks Metadata Server:
+
+```text
+Who is attached to me?
+```
+
+Metadata Server replies:
+
+```text
+doc-talk-runner
+```
+
+ADC asks:
+
+```text
+Can I get a token?
+```
+
+Metadata Server issues:
+
+```text
+Short-lived Access Token
+```
+
+---
+
+## Flow
+
+```text
+Cloud Run App
+      │
+      ▼
+ADC
+      │
+      ▼
+Metadata Server
+      │
+      ▼
+Access Token
+      │
+      ▼
+Vertex AI
+```
+
+---
+
+## Identity
+
+```text
+Service Account
+```
+
+The application acts as itself.
+
+---
+
+# Pattern 3: Workload Identity Federation (WIF)
+
+This is where most people get confused.
+
+Let's simplify.
+
+---
+
+## Problem
+
+Suppose GitHub Actions wants to deploy your app.
+
+GitHub is NOT running inside Google Cloud.
+
+Therefore:
+
+```text
+No Metadata Server
+No Service Account attached
+```
+
+So how can GitHub prove its identity?
+
+---
+
+## Old Solution
+
+Store:
+
+```text
+service-account-key.json
+```
+
+inside GitHub Secrets.
+
+Dangerous.
+
+---
+
+## New Solution
+
+Use:
+
+```text
+Workload Identity Federation
+```
+
+---
+
+# First Understand OIDC
+
+OIDC = OpenID Connect
+
+Think of OIDC as:
+
+```text
+Digital Identity Card
+```
+
+---
+
+## Example
+
+GitHub says:
+
+> I promise this workflow belongs to:
+>
+> swapnildh/my-repo
+
+GitHub creates an OIDC token.
+
+Think:
+
+```text
+Signed Visitor Badge
+```
+
+---
+
+## What does OIDC Token contain?
+
+Something like:
+
+```text
+Repository = swapnildh/my-repo
+
+Branch = main
+
+Workflow = deploy.yml
+
+Issuer = GitHub
+```
+
+Digitally signed.
+
+Cannot be forged easily.
+
+---
+
+## Then What Happens?
+
+GitHub sends:
+
+```text
+OIDC Token
+```
+
+to Google.
+
+Google checks:
+
+```text
+Is this really from GitHub?
+
+Is this really Swapnil's repo?
+
+Does policy allow it?
+```
+
+If yes:
+
+Google creates:
+
+```text
+Short-lived GCP Token
+```
+
+---
+
+# This Exchange Process Is WIF
+
+Workload Identity Federation means:
+
+```text
+External Identity
+        │
+        ▼
+OIDC Token
+        │
+        ▼
+Google Trusts It
+        │
+        ▼
+Temporary GCP Token
+```
+
+---
+
+## Flow
+
+```text
+GitHub Actions
+        │
+        ▼
+OIDC Token
+        │
+        ▼
+Workload Identity Pool
+        │
+        ▼
+Short-lived GCP Token
+        │
+        ▼
+Vertex AI
+```
+
+---
+
+## Identity
+
+Not:
+
+```text
+Swapnil
+```
+
+Not:
+
+```text
+Service Account Key
+```
+
+Instead:
+
+```text
+Trusted GitHub Workflow
+```
+
+---
+
+# Why WIF Exists
+
+Without WIF:
+
+```text
+GitHub
+    │
+    ▼
+Permanent Secret
+```
+
+With WIF:
+
+```text
+GitHub
+    │
+    ▼
+OIDC Proof
+    │
+    ▼
+Temporary Token
+```
+
+Much safer.
+
+---
+
+# The Anti-Pattern: Service Account JSON Keys
+
+Years ago people did this:
+
+```text
+Create Service Account
+      │
+      ▼
+Generate JSON Key
+      │
+      ▼
+Download File
+      │
+      ▼
+Store Everywhere
+```
+
+File:
+
+```text
+service-account-key.json
+```
+
+contained a private key.
+
+---
+
+## Why Is It Dangerous?
+
+If someone gets:
+
+```text
+service-account-key.json
+```
+
+they become your application.
+
+Immediately.
+
+No additional verification.
+
+---
+
+## Example Disaster
+
+Developer accidentally commits:
+
+```text
+service-account-key.json
+```
+
+to GitHub.
+
+Bots scan GitHub constantly.
+
+Within minutes:
+
+```text
+Attacker finds key
+```
+
+Then:
+
+```text
+Creates VMs
+Runs crypto mining
+Consumes resources
+```
+
+Result:
+
+```text
+Huge Cloud Bill
+```
+
+---
+
+# Modern Recommendation
+
+Use:
+
+### Local
+
+```text
+ADC + User Credentials
+```
+
+### Cloud Run/GKE/VM
+
+```text
+ADC + Service Account + Metadata Server
+```
+
+### GitHub Actions/AWS/Azure
+
+```text
+ADC + WIF + OIDC
+```
+
+Avoid:
+
+```text
+service-account-key.json
+```
+
+unless you absolutely cannot avoid it.
+
+---
+
+# Final Interview Cheat Sheet
+
+| Scenario       | Identity                            | Token Source                 |
+| -------------- | ----------------------------------- | ---------------------------- |
+| Local Laptop   | User Credentials (You)              | Refresh Token → Access Token |
+| Cloud Run      | Service Account                     | Metadata Server              |
+| GKE            | Service Account / Workload Identity | Metadata Server              |
+| Compute Engine | Service Account                     | Metadata Server              |
+| GitHub Actions | OIDC Identity                       | WIF Exchange                 |
+| AWS Workload   | OIDC Identity                       | WIF Exchange                 |
+
+### One-liner to memorize
+
+> ADC is the mechanism that finds credentials automatically. Locally it uses user credentials, on Google Cloud it uses attached service accounts via the metadata server, and for external systems like GitHub Actions it uses Workload Identity Federation with OIDC tokens. Service-account JSON keys are considered an anti-pattern because they are long-lived secrets that can leak.
+
+AI studio needs to have the API KEY since it is totally decoupled from Google cloud, unlike how for VERTEX AI we can have ADC based usage, hiding the API key completely. Now we are having unified SDK i.e. google-genai
