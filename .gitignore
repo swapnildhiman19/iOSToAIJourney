@@ -1,0 +1,76 @@
+# === Secrets and credentials ===
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+*.whl
+.venv/
+venv/
+.uv/
+
+# === Model artifacts ===
+*.onnx
+*.mlmodel
+*.mlpackage
+*.mlmodelc/
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.h5
+
+# === Databases ===
+*.db
+*.sqlite
+*.sqlite3
+pgdata/
+
+# === macOS ===
+.DS_Store
+._*
+
+# === Xcode user data ===
+xcuserdata/
+*.xcuserdatad/
+*.xcworkspace/xcuserdata/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# === IDE ===
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# === Coverage and test artifacts ===
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# === Misc ===
+*.log
+tmp/
