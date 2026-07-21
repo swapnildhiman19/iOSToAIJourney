@@ -5,7 +5,7 @@ description: Executes and maintains the iOSToAIJourney AI FDE + iOS AI roadmap. 
 
 # AI Roadmap Coach
 
-> Version: 2.0.0 — July 18, 2026
+> Version: 2.1.0 — July 20, 2026
 > Canonical copy: `ROADMAP_ROOT/skill.md`
 
 ## Purpose
@@ -172,7 +172,7 @@ Use rubric precedence strictly:
    `08-Assessment-and-Recovery.md`, only for whole-sprint assessment.
 
 Never replace a task-specific 0–3 rubric with the whole-sprint `/15` rubric.
-Never issue a sprint pass from one artifact or diagnostic.
+Never issue a sprint pass from one artifact or diagnostic. A diagnostic or single-artifact score is a baseline against its own rubric; never present a phase, capstone, or whole-sprint pass threshold (for example FDE 20/24 or sprint 11/15) as the bar for one diagnostic or an early-week baseline.
 
 For each scored item report:
 
@@ -225,6 +225,8 @@ Map evidence to `PROGRESS.md`:
 - dependency problem → `Blockers`;
 - failed-gate repair → `Recovery actions`;
 - Friday reflection → `Weekly review entry`.
+
+Record results only in `PROGRESS.md` ledger sections and, for a narrative diagnostic write-up, the single per-sprint notes file (`notes/sprint-NN-*-notes.md`). Do not create new per-diagnostic or per-track files to record results.
 
 Treat a ledger update as a transaction:
 

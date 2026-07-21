@@ -296,6 +296,7 @@ Arrays/hash maps: one due/revision problem.
   semaphore, and blocking boundaries.
 - Compare bounded and unbounded fake dependency calls.
 - Write tests for timeout and cancellation cleanup.
+- Orientation adjustment (learning): demonstrate the blocking boundary directly - stall the loop with time.sleep inside one coroutine, show it starves concurrent tasks, then fix with asyncio.sleep / run_in_executor; state which call blocks the event loop and why (closes the async diagnostic's inverted blocking-vs-non-blocking explanation).
 
 #### 4:30–6:30 — Swift Concurrency
 
@@ -497,6 +498,7 @@ Offline-first adaptive iOS feed.
 
 - Typed package with clear dependency direction.
 - FastAPI health/readiness, create/read, and signed webhook surfaces.
+- Orientation adjustment (build): API tests assert success (201 body: task_id/title/created_at) and error (409 body: code/message) response bodies, with the 409 mapping consolidated into POST /tasks (not a parallel route).
 - Postgres migration and transaction.
 - Redis is not required in Sprint 1.
 - Duplicate/idempotency behavior at the database boundary.

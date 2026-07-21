@@ -17,7 +17,7 @@ All links are relative so the directory can move safely.
 
 Routine questions such as "What should I study today?", "Where do I record
 this?", "What is my score?", or "Create the next detailed sprint" are handled
-by `ai-roadmap-coach` **v2.0.0**.
+by `ai-roadmap-coach` **v2.1.0**.
 
 The canonical copy is [`skill.md`](./skill.md). These global installations are
 distribution copies:

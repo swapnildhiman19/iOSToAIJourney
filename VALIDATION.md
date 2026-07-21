@@ -9,7 +9,7 @@ preview APIs will remain unchanged.
 
 ## Roadmap coach skill
 
-- [x] [`skill.md`](./skill.md) is the canonical `ai-roadmap-coach` v2.0.0 copy.
+- [x] [`skill.md`](./skill.md) is the canonical `ai-roadmap-coach` v2.1.0 copy.
 - [x] Kiro, Cursor, Claude, and Gemini installation paths are documented in
       `00-FRESH-SYSTEM-CONTEXT.md` and carry identical skill content.
 - [x] Multi-intent requests have a deterministic verify → score → record order.
