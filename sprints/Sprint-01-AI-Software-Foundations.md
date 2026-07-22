@@ -327,12 +327,20 @@ Move the remaining DSA 30 minutes to Sunday.
 
 ### Thursday, July 23
 
-#### 2:15–4:15 — API contracts and tests
+#### 2:15–4:15 — FastAPI flow + minimum API-contract evidence (recovery)
 
-- Domain errors versus transport errors.
-- Sync and async API tests.
-- Validation, boundary, duplicate, timeout, and cancellation cases.
-- Refactor global demo dependencies into explicit providers.
+- Implement request/response validation, health, readiness placeholder, create,
+  and read routes.
+- Use explicit dependency providers and translate the duplicate domain error at
+  the HTTP edge.
+- Assert 201 and 409 response bodies plus one 422 validation body.
+- Generate and inspect OpenAPI.
+- Defer lifespan failure depth to July 30 and remove middleware-only polish if
+  the block expires.
+
+This substitutes for the missed July 22 FastAPI block. The remaining
+exit-critical parts of the original API-contract block are distributed by the
+recovery override below; they are not a new catch-up block.
 
 #### 4:30–6:00 — SwiftUI state
 
@@ -363,9 +371,90 @@ Reliable webhook ingestion. Use the full design template.
 
 #### Two-hour Apple block
 
-- Add Swift Testing for actor/service behavior.
-- Add one cancellation test.
-- Complete the moved 30-minute DSA review inside this block.
+- First 90 minutes: rebuild the actor/service example in a Swift package, mark
+  the `MainActor` UI boundary, and add one cancellation-focused Swift Testing
+  test.
+- Final 30 minutes: complete the moved two-pointer pattern recall/review and
+  record the pattern card; do not begin another solve.
+
+## Recovery override — recorded Wednesday, July 22
+
+This is the authoritative execution override for July 23–August 2 wherever it
+conflicts with the original dated blocks above. It preserves the August 2 exit
+gate and uses replacement capacity rather than adding hours.
+
+### Status carried into the override
+
+- Monday's domain implementation and automated checks are verified. Swapnil's
+  independent Postgres-adapter defense was reviewed on July 22 at 3/4 and
+  accepted for this local checkpoint with two corrections: add a new Postgres
+  adapter and switch the composition/provider rather than rewriting the memory
+  adapter; translate the specific database uniqueness violation inside that
+  adapter to `DuplicateTaskTitle` before the HTTP edge maps it to 409.
+- Monday's repository block is partial: the layout, lockfile, and local checks
+  exist; the architecture decision and minimal CI workflow are missing.
+- Monday's due problem is selected as **Repeating and Missing Number**, targeting
+  O(n) time and O(1) extra space without modifying the array. It remains
+  unsolved/unverified, and the requested prior-mistake note is missing. Tuesday's
+  unseen arrays/hash problem is also incomplete; the submitted LIS file
+  satisfies neither requirement.
+- Tuesday's safe-async and Swift-concurrency blocks remain displaced to the
+  weekend.
+- Wednesday's FastAPI and DSA blocks are treated as missed for recovery
+  planning. Wednesday IIT attendance is unreported and remains separate from
+  roadmap hours.
+
+### Dated recovery distribution
+
+| Date and time | Work | Backlog handled | Required evidence and stop rule |
+|---|---|---|---|
+| Thu Jul 23, 2:15–4:15 | FastAPI flow plus minimum API-contract evidence | Replaces Wed FastAPI; absorbs only the exit-critical part of Thu API contracts | Health, readiness placeholder, create/read, explicit dependency provider, domain-to-HTTP mapping, inspected OpenAPI, and tests asserting 201, 409, and one 422 body. Move lifespan failure depth to Jul 30; remove middleware-only polish if time expires. |
+| Thu Jul 23, 4:30–6:00 | SwiftUI state | Original Thu Apple block, unchanged | Loading, empty, content, error, and cancellation states. Stop at 6:00 for IIT. |
+| Thu Jul 23, 6:00–8:00 | IIT KGP | Separate fixed commitment | Track outside roadmap hours. Do not use it for catch-up. |
+| Fri Jul 24, 2:15–7:30 | SQL/Postgres, B1, then review | Original Friday, unchanged | At review, record actual hours, verify the Thu substitution, confirm weekend replacements, and cut non-gate breadth rather than creating another block. |
+| Sat Jul 25, 2:15–4:15 | Safe async | First and only replacement for Tue safe async | Bounded versus unbounded calls, direct blocking-boundary demonstration, timeout test, and cancellation-cleanup test. Stop after these proofs. |
+| Sat Jul 25, 4:30–6:00 | Architecture decision and minimal CI | Completes the unfinished part of Mon repository/CI | Decision: domain code cannot import model, web, or database SDKs; workflow runs the same locked format/lint/type/test checks used locally; align README commands. This is the second and final Week-1 optional replacement block. |
+| Sun Jul 26, two-hour Apple block | 90 minutes integrated Swift concurrency; 30 minutes two-pointer recall/review | Replaces Tue Swift concurrency and supplies Wed's already-moved DSA review | Swift package actor/service, cancellation, `MainActor` boundary, and one Swift Testing test; then a two-pointer pattern card. Do not start another solve. |
+| Mon Jul 27, 2:15–6:30 | Async Postgres adapter and persisted vertical slice | Original Week-2 platform work, unchanged | Adapter satisfies the existing protocol; migration, compose, readiness, and clean-database integration evidence. |
+| Mon Jul 27, 9:30–10:30 | Repeating and Missing Number revision | Replaces the missed Mon Jul 20 DSA problem | Immutable input; target O(n) time/O(1) extra space; record prior/current mistake tags, runnable/accepted result, complexity proof, and next repetition date. The planned two-pointer repetition is absorbed by Jul 26, Jul 28, and Jul 29. |
+| Tue Jul 28, 2:15–6:30 | Transactions/idempotency and Apple architecture | Original Week-2 work, unchanged | Preserve the original evidence and stop points. |
+| Tue Jul 28, 9:30–10:30 | Timed two-pointer problem | Recovers Wed's timed solve and matches the original Tue slot | Independent timed result, alternatives, complexity, mistake tag, and next repetition. |
+| Wed Jul 29, 2:15–4:15 | Signed webhooks/background work | Original Week-2 platform work, unchanged | Preserve the original webhook evidence. |
+| Wed Jul 29, 4:30–6:00 | 30-minute two-pointer repetition, then 60-minute mixed timed set | Finishes Wed DSA recovery and absorbs Tue Jul 21's unseen arrays/hash problem | Record both pattern outcomes without adding another DSA block; stop at 6:00 for IIT. |
+| Wed Jul 29, 6:00–8:00 | IIT KGP | Separate fixed commitment | Track outside roadmap hours. |
+| Thu Jul 30, 2:15–4:15 | Contract, lifecycle, failure, and concurrency test completion | Finishes the exit-critical portion of the displaced Thu Jul 23 API-contract block | Close only still-missing 201/409/422, outage, concurrent duplicate, timeout/cancellation, liveness/readiness, and resource-release evidence. These tests should be added beside the Jul 23–28 implementation, not all started here. |
+| Thu Jul 30, 4:30–8:00 | SwiftUI adaptive states and IIT | Original schedule, unchanged | Preserve the 6:00 IIT boundary. |
+| Fri Jul 31, 2:15–7:30 | Docker/CI completion, I1, and gate rehearsal | Original schedule, unchanged | Extend the minimal CI to Postgres; attempt failures before polish; assign only gate repairs. |
+| Sun Aug 2, two-hour sprint close | Exact exit gate and ledger close | Original sprint close, unchanged | Run the clean setup and all ten exit-test items; score only from evidence and update `PROGRESS.md`. |
+
+### How the displaced API-test block is covered
+
+- Jul 23 owns request/response contracts, explicit providers, domain/transport
+  mapping, and 201/409/422 body assertions.
+- Jul 25 owns timeout and cancellation-cleanup behavior at the async boundary.
+- Jul 27 owns create/read integration against a clean database.
+- Jul 28 owns unique-conflict translation, idempotency, and rollback.
+- Jul 30 owns lifecycle, outage, concurrent-duplicate, liveness/readiness, and
+  resource-release completion.
+- Jul 31 proves the same checks in CI.
+
+The standalone Thursday API-contract block is therefore replaced once, not
+stacked into a future slot. Duplicate test-framework variants, middleware-only
+polish, and other non-gate breadth are removed if the mapped evidence already
+exists.
+
+### Recovery guardrails
+
+- Week 1 uses exactly two optional replacement blocks, both on Saturday.
+- IIT is not Sprint-1 backlog and is never counted as roadmap time. If the July
+  22 class was missed, follow the IIT program's own catch-up mechanism and
+  record it separately.
+- A replacement missed again is marked missed at the next review; it is not
+  stacked onto another deep block.
+- Actual hours remain unknown until reported. The July 24 review must cut scope
+  if the projected roadmap total would exceed 25 hours.
+- The August 2 gate, exit criteria, Thursday/Friday fixed work, and Week-2
+  platform sequence do not move.
 
 ## Week 2 — Postgres, webhooks, lifecycle, and reliability
 
@@ -384,9 +473,15 @@ Reliable webhook ingestion. Use the full design template.
 - Add readiness check that verifies the required dependency.
 - Run integration tests against a clean database.
 
-#### 9:30–10:30 — DSA
+#### 9:30–10:30 — DSA recovery: Repeating and Missing Number
 
-Two-pointer repetition.
+Solve the selected immutable-input problem: values are in 1...n, one value A is
+duplicated, and one value B is missing; return `[A, B]`. Target O(n) time and
+O(1) extra space without modifying the input. Record runnable/accepted evidence,
+a complexity proof, the prior and current mistake tags, and the next repetition
+date. Do not count the target complexity as achieved before the implementation
+is reviewed. The original two-pointer repetition is covered by July 26, 28, and
+29.
 
 ### Tuesday, July 28
 
@@ -403,9 +498,11 @@ Two-pointer repetition.
 - Separate SwiftUI view, feature state, service protocol, and adapter.
 - Test the service without rendering a view.
 
-#### 9:30–10:30 — DSA
+#### 9:30–10:30 — DSA recovery: timed two pointers
 
-Unseen two-pointer problem.
+Complete the missed July 22 timed two-pointer problem. This also satisfies the
+original unseen two-pointer outcome for this slot. Record independent time,
+alternatives, complexity, mistake tag, and next repetition.
 
 ### Wednesday, July 29
 
@@ -441,21 +538,27 @@ Then:
 
 Do not log the secret or full sensitive payload.
 
-#### 4:30–6:00 — DSA
+#### 4:30–6:00 — DSA recovery and mixed set
 
-Mixed arrays/hash/two-pointer timed set.
+- 4:30–5:00: repeat/review the July 28 two-pointer result.
+- 5:00–6:00: mixed timed work including the unseen arrays/hash outcome displaced
+  from July 21.
+- Record both outcomes and stop at 6:00 for IIT.
 
 #### 6:00–8:00 — IIT KGP
 
 ### Thursday, July 30
 
-#### 2:15–4:15 — lifecycle, failure, and concurrency tests
+#### 2:15–4:15 — contract, lifecycle, failure, and concurrency tests
 
+- Close any still-missing 201, 409, and 422 response-contract evidence.
 - FastAPI lifespan owns pools/resources.
 - Test dependency outage at startup and during request.
 - Test ten concurrent creates with duplicate collisions.
 - Test cancellation and resource release.
 - Distinguish liveness from readiness.
+- Treat this as completion of tests added beside the July 23–28 implementation,
+  not as the first time all cases are written.
 
 #### 4:30–6:00 — SwiftUI adaptive states
 

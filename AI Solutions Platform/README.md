@@ -5,7 +5,13 @@
 
 ## Status
 
-**Sprint 0 — Orientation skeleton.** No production code yet.
+**Sprint 1 — AI Software Foundations (active July 20–August 2, 2026).**
+
+The typed domain/application boundary and in-memory repository are implemented
+and independently verified. FastAPI, Postgres, the architecture decision, and
+CI are still in progress; do not infer the Sprint 1 gate from the domain tests.
+The dated recovery plan is in
+[`Sprint-01-AI-Software-Foundations.md`](../sprints/Sprint-01-AI-Software-Foundations.md).
 
 ## Architecture
 
@@ -23,7 +29,9 @@ AI Solutions Platform/
 ├── src/
 │   └── ai_solutions_platform/
 │       ├── __init__.py
-│       ├── domain/           # Provider-neutral types
+│       ├── domain/           # Provider-neutral domain records and errors
+│       ├── application/      # Use cases and required repository protocols
+│       ├── persistence/      # In-memory now; Postgres adapter later
 │       ├── model_gateway/    # Gemini + Anthropic adapters
 │       ├── context/          # Retrieval strategies
 │       ├── memory/           # Working, episodic, semantic, procedural
@@ -41,23 +49,25 @@ AI Solutions Platform/
 ├── diagnostics/              # Orientation and sprint diagnostic scripts
 ├── .env.example
 ├── pyproject.toml
+├── uv.lock
 └── README.md
 ```
 
 ## Quick start
 
 ```bash
-# Create virtual environment and install dependencies
-uv venv
-source .venv/bin/activate
-uv pip install -e ".[dev]"
+# Install the locked project and development dependencies
+uv sync --locked --extra dev
 
-# Copy and configure secrets
+# Copy and configure secrets when a task needs them
 cp .env.example .env
 # Edit .env with your API keys — never commit .env
 
-# Run tests
-pytest
+# Run the current local quality gates
+uv run --locked --extra dev ruff format --check src tests
+uv run --locked --extra dev ruff check src tests
+uv run --locked --extra dev mypy src tests
+uv run --locked --extra dev pytest -q
 ```
 
 ## Security

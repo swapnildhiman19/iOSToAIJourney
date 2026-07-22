@@ -1,6 +1,6 @@
 # Progress Ledger
 
-> Last roadmap update: July 20, 2026
+> Last roadmap update: July 22, 2026
 > Current block: Sprint 1 (Orientation passed Jul 20) — active  
 > Target: March 31, 2027
 
@@ -16,7 +16,7 @@ result.
 - Current blocker: none - all Sprint 1 prerequisites confirmed Jul 20 (Python 3.14.6, uv 0.9.28, Git 2.50.1, Docker 29.6.1 / Postgres 16, Swift 6.2.4, DSA language selected).
 - Orientation: passed Jul 20 - every diagnostic scored and evidenced; DSA language = Swift; Sprint 1 adjusted within the 20% limit with its exit gate preserved.
 - Carry-forward from orientation (fold into Sprint 1, no scope growth): (1) FastAPI - consolidate the 409 mapping into POST /tasks and assert response bodies; (2) SQL - demonstrate ROLLBACK + a Python parameterized query live; (3) Model API - forced-failure branch + latency/usage capture (Sprint 2, where the model lands); (4) replace the real email in test_insert.sql with a synthetic identity.
-- Schedule (as of Tue Jul 21): Monday Jul 20 slipped; the Monday blocks (domain-boundary service + repo/CI skeleton + arrays/hash DSA) run today (Tue Jul 21). Tuesday safe-async -> Sat Jul 25 buffer; Tuesday Swift concurrency -> Sun Jul 26 Apple block. Wed-Fri and Week 2 unchanged; Aug 2 exit gate preserved. See Recovery actions.
+- Schedule (authoritative recovery override recorded Wed Jul 22): the domain implementation and independent adapter-swap defense are reviewed; the defense passed this checkpoint at 3/4 with two corrections recorded (add a Postgres adapter and switch composition rather than rewrite the memory adapter; translate the exact database uniqueness violation inside that adapter to `DuplicateTaskTitle`). The due DSA problem is selected as **Repeating and Missing Number**, targeting O(n) time and O(1) extra space without modifying input; it remains unsolved, and its prior-mistake note is still missing. Wed FastAPI/DSA are treated as missed. Thu Jul 23 substitutes FastAPI plus minimum contract evidence; Sat Jul 25 contains the only two optional replacements (safe async, then ADR/minimal CI); Sun Jul 26 integrates Swift concurrency plus 30-minute DSA review; Mon Jul 27 recovers the selected arrays/hash revision; Tue/Wed Jul 28–29 recover the two-pointer and unseen arrays/hash outcomes inside existing DSA slots. IIT remains separate, Thu/Fri and Week-2 core work remain fixed, and the Aug 2 gate does not move. See the active sprint's Recovery override and Recovery actions below.
 
 ## Orientation diagnostics
 
@@ -117,14 +117,15 @@ Target roadmap hours: 20-25. IIT is tracked separately.
 | Week of | AI/platform | Apple | DSA | Design | Review/FDE | Roadmap total | IIT | Note |
 |---|---:|---:|---:|---:|---:|---:|---:|---|
 | Jul 13 | - | - | - | - | - | - | - | Orientation |
-| Jul 20 | plan | plan | plan | plan | plan | plan 24-25 | - | Sprint 1 Wk1; Mon Jul 20 slipped -> Monday work done Tue Jul 21; safe-async -> Sat Jul 25; Swift -> Sun Jul 26 (see Recovery actions); actuals at the Jul 24 review |
-| Jul 27 | plan | plan | plan | plan | plan | plan 24-25 | - | Sprint 1 Wk2 - fill actuals at the Aug 2 close |
+| Jul 20 | plan | plan | plan | plan | plan | plan 24-25 | unreported | Sprint 1 Wk1 recovery: Thu substitutes FastAPI; Sat uses exactly two optional replacements (safe async and ADR/minimal CI); Sun integrates Swift concurrency plus DSA review. Actual roadmap hours and Jul 22 IIT attendance remain unreported; record them at the Jul 24 review. |
+| Jul 27 | plan | plan | plan | plan | plan | plan 24-25 | - | Sprint 1 Wk2 core sequence unchanged; existing DSA slots recover due arrays/hash on Jul 27, timed two pointers on Jul 28, and the displaced unseen arrays/hash plus repetition on Jul 29; fill actuals at the Aug 2 close. |
 
 Two consecutive roadmap weeks above 25 hours require a scope cut.
 
 ## AI Solutions Platform milestones
 
-- [/] Repository and CI foundation. Skeleton created at `AI Solutions Platform/` with 11 module packages, pyproject.toml, .env.example, and root .gitignore. CI not yet configured.
+- [/] Repository and CI foundation. Skeleton exists at `AI Solutions Platform/`; `src/`, `uv.lock`, `.python-version`, pyproject configuration, formatting, lint, strict type-check, and test commands were verified Jul 22. The required architecture decision and `.github/workflows/ci.yml` are absent; their single replacement is Sat Jul 25, 4:30–6:00, so this milestone remains partial.
+- [x] Sprint 1 domain-boundary exercise checkpoint. Frozen domain record, domain duplicate exception, repository `Protocol`, injected application service, in-memory adapter, and create/duplicate tests were verified Jul 22. Targeted and full pytest each passed 2 tests; Ruff format/lint and strict mypy passed; the domain/application forbidden-SDK scan returned zero matches. Swapnil's independent adapter-swap defense was reviewed Jul 22 at 3/4 and accepted with corrections: add `PostgresTaskRepository` rather than rewrite the memory adapter, switch the composition/provider, and translate the exact unique-constraint failure inside the Postgres adapter to `DuplicateTaskTitle`. This closes the local exercise checkpoint, not the Aug 2 sprint gate.
 - [ ] FastAPI/Postgres vertical slice.
 - [ ] Two-provider model contract.
 - [ ] Streaming, structured output, tools, approval, and cancellation.
@@ -194,9 +195,11 @@ Next scheduled case: B1 — Reliable webhook ingestion (Sprint 1, Week 1).
 - Repetitions completed: 0.
 - Current clean medium solve rate: not yet measured (Sprint 1 starts timed array/hash + two-pointer mediums).
 - Median independent medium time: not measured (the orientation solve was untimed).
-- Most frequent mistake tag: none recorded yet.
+- Most frequent mistake tag: pattern-selection mismatch - the Jul 21 LIS submission did not match the required arrays/hash-map revision; no timed-solve mistake tag is recorded yet.
 - Most recent mock score: not measured.
 - Next due repetition: Maximum Product Subarray ~Aug 3 (clean-solve 14-day interval), or replace with a harder DP variant.
+- Jul 21 Sprint 1 submission review (verified Jul 22): `../iOS-Apps/DSA/sprint-01-AI-Software-Foundations.swift` is an untracked Longest Increasing Subsequence solution, not an arrays/hash-map revision. It type-checks with one trailing-closure warning; the active `firstIndex` search makes it O(n^2) time and O(n) space. No accepted run, timing, due-item provenance, mistake reflection, or next repetition date was supplied, so it is not counted above.
+- Recovery queue: selected **Repeating and Missing Number** (values 1...n, one duplicate A and one missing B, input immutable) for Mon Jul 27, 9:30–10:30. The intended target is O(n) time and O(1) extra space; no algorithm, runnable/accepted result, or complexity proof has been reviewed yet, and the requested prior-mistake note is still missing. Use Tue Jul 28 for the missed timed two-pointer solve and Jul 29's existing mixed set for the displaced unseen arrays/hash problem plus two-pointer repetition.
 
 Problem-level records may live in the selected coding platform/export, but this
 summary and mock evidence stay current here.
@@ -268,9 +271,12 @@ Current FDE rubric: baseline 15/24 (orientation diagnostic; the 20/24 pass bar a
 
 ## Recovery actions
 
+Detailed dated execution is authoritative in `sprints/Sprint-01-AI-Software-Foundations.md` under **Recovery override — recorded Wednesday, July 22**.
+
 | Opened | Failed gate | Root cause | Smallest repair | Due | Result/evidence |
 |---|---|---|---|---|---|
-| Jul 21 | None - in-sprint day slip, not a gate | Sprint 1 Monday Jul 20 blocks not completed | Do Monday work today (Tue Jul 21): domain-boundary service + repo/CI skeleton + arrays/hash DSA. Reslot Tuesday safe-async -> Sat Jul 25 (recovery buffer); Tuesday Swift concurrency -> Sun Jul 26 Apple block (same actor/Swift-Testing theme). Wed-Fri and Week 2 unchanged | Sat Jul 25 / Sun Jul 26 | Pending; Sprint 1 exit gate (Aug 2) preserved |
+| Jul 21 | None - in-sprint day slip, not a gate | Sprint 1 Monday Jul 20 blocks not completed | Preserve verified domain code. Use Sat Jul 25, 4:30–6:00 for the missing ADR/minimal CI and Mon Jul 27, 9:30–10:30 for the selected Repeating and Missing Number revision. The displaced Tue safe-async and Swift work use Sat Jul 25 and Sun Jul 26; Tue's unseen arrays/hash is absorbed by Jul 29's mixed set. | Review Jul 24; execution Jul 25–29 | **Partial, verified/reviewed Jul 22:** implementation and local checks pass; the independent adapter-swap defense passed the local checkpoint at 3/4 with corrections recorded. Repeating and Missing Number is selected but unsolved, and its prior-mistake note is missing. ADR/CI and qualifying DSA execution evidence remain incomplete. |
+| Jul 22 | None - in-sprint day slip, not a gate | Wednesday FastAPI and DSA blocks were not completed before their windows elapsed | Thu Jul 23 FastAPI replaces the missed flow and absorbs minimum contract evidence. Distribute remaining exit-critical tests beside safe-async, Postgres, transaction, and lifecycle blocks. Recover DSA through Sun Jul 26 review, Tue Jul 28 timed solve, and Jul 29 repetition/mixed set. Remove duplicate test-framework breadth rather than add a third optional block. | Jul 23–30 | Planned; no completion claimed. IIT attendance is unreported and, if missed, is handled separately from Sprint 1. Thu/Fri fixed work, Week-2 platform sequence, and Aug 2 gate remain unchanged. |
 
 ## Application readiness
 
