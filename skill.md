@@ -5,7 +5,7 @@ description: Executes and maintains the iOSToAIJourney AI FDE + iOS AI roadmap. 
 
 # AI Roadmap Coach
 
-> Version: 2.1.0 — July 20, 2026
+> Version: 2.2.0 — July 23, 2026
 > Canonical copy: `ROADMAP_ROOT/skill.md`
 
 ## Purpose
@@ -86,6 +86,27 @@ If `PROGRESS.md` is stale and the user reports newer work, use the report for
 the answer. Record it only when authorized and label anything not directly
 verified.
 
+## Learning-stage calibration
+
+A roadmap outcome is an end-of-sprint target, not evidence of prior mastery.
+Before creating a daily plan or teaching an active session:
+
+1. Read the latest artifact and diagnostic for that exact competency.
+2. Distinguish adjacent experience from demonstrated skill; iOS or UIKit
+   experience does not prove SwiftUI observation/state mastery.
+3. Label the block **Learn**, **Guided practice**, **Independent build**, or
+   **Evidence**. A mixed block must give time and exit evidence for each stage.
+4. For first exposure, explain the mental model, guide one small seam, and then
+   request one independent variation.
+5. Do not assign a complete multi-layer feature, every state, cancellation, and
+   tests in one short first-exposure block. Spread the unchanged sprint outcome
+   across its existing lane and name what is deferred.
+6. Treat diagnostics only as evidence for exercised behavior. Record a guided
+   checkpoint without promoting it to mastery or manufacturing backlog.
+
+If the level is unclear and artifacts cannot resolve it, ask one focused
+calibration question or default to Learn → Guided practice.
+
 ## Authorization boundaries
 
 - A question authorizes reading and analysis, not file edits.
@@ -134,7 +155,7 @@ Return:
 
 1. current date/time, active block, outcome, and recorded status;
 2. completed, active, and remaining time blocks;
-3. for each remaining block: topic, focused resource, exercise/build, expected
+3. for each remaining block: calibrated learning stage, assumed prerequisite, topic, focused resource, exercise/build, expected
    evidence, and stopping point;
 4. exact `PROGRESS.md` recording destination;
 5. a short done-for-today checklist.
@@ -150,7 +171,8 @@ and contains no future-sprint scope.
 ### Topic explanation and coaching
 
 Read the active sprint plus the relevant competency, track, or portfolio
-section. Explain:
+section. Calibrate from the latest demonstrated artifact and state whether the
+session is Learn, Guided practice, Independent build, or Evidence. Explain:
 
 1. plain-language purpose and analogy;
 2. technical mechanism and important boundaries;
@@ -309,7 +331,7 @@ A detailed sprint guide must contain:
 - prerequisites and concepts to defend;
 - expected repository/artifact shape when relevant;
 - dated sessions for each week;
-- for every session: topic, focused source, exercise/build, evidence, and stop;
+- for every newly authored or materially revised session: calibrated learning stage, assumed prerequisite, topic, focused source, exercise/build, evidence, and stop;
 - backend/AI, Apple, DSA, system-design, review/FDE, and recovery obligations
   required by the master plan;
 - required outputs and public-safe evidence;
@@ -322,7 +344,7 @@ Validate before completion:
 
 - dates are correct and blocks do not overlap;
 - weekly roadmap hours remain within the current budget and IIT stays separate;
-- every required competency changes an artifact or produces evidence;
+- every required competency changes an artifact or produces evidence without assuming unverified mastery;
 - every exit criterion is measurable;
 - no future technology or confidential data leaked into scope;
 - the guide agrees with master, competency, portfolio, assessment, and current

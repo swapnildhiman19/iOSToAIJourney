@@ -63,6 +63,9 @@ uv sync --locked --extra dev
 cp .env.example .env
 # Edit .env with your API keys — never commit .env
 
+# Run the local API
+uv run --locked uvicorn ai_solutions_platform.api.app:app
+
 # Run the current local quality gates
 uv run --locked --extra dev ruff format --check src tests
 uv run --locked --extra dev ruff check src tests

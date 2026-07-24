@@ -12,6 +12,25 @@
 This calendar is competency-gated. Dates determine when to attempt a skill; an
 exit gate determines whether it is complete.
 
+## How to execute a competency-gated roadmap
+
+A sprint outcome is the capability expected by the end of the sprint, not an
+assumption that the learner can independently build every listed component on
+first exposure. Each competency moves through four explicit stages:
+
+1. **Learn** — build the mental model and vocabulary with a focused example.
+2. **Guided practice** — complete one small seam with prompts or a scaffold.
+3. **Independent build** — reproduce or extend the behavior without a tutorial.
+4. **Evidence** — run tests, explain boundaries, and record what remains open.
+
+The active sprint guide must identify the stage for each session and size the
+exercise from current evidence. A diagnostic proves only the behavior it
+directly exercised; it does not prove mastery of an adjacent framework. In
+particular, experienced iOS/UIKit work does not automatically imply independent
+SwiftUI observation, state architecture, or Swift Testing proficiency. When the
+baseline is unknown or still guided, teach first and reduce the artifact breadth
+rather than turning the block into an implementation deadline.
+
 ## Calendar
 
 | Block | Dates | Primary outcome |

@@ -3133,3 +3133,189 @@ This is a foundational checkpoint pass, not a Sprint 1 gate score. The implement
 - Current evidence: problem and target selected only.
 - Still required: the prior mistake (if genuinely remembered), independently derived implementation, runnable/accepted cases, complexity proof, current mistake tag, and next repetition date.
 - Guardrail: do not reveal or copy a solution before the independent attempt; do not count the target complexity as achieved until the code and reasoning are reviewed.
+
+## July 23, 2026 — verified FastAPI recovery lesson and review
+
+### Scope and result
+
+The July 23 FastAPI block is complete at its calibrated Learn → Guided practice
+→ Independent build → Evidence scope. The existing domain/application separation
+and the new read
+use case were directionally correct. The review repaired HTTP composition and
+contract evidence without introducing Postgres, lifespan management, or real
+dependency readiness ahead of their scheduled blocks.
+
+The submitted duplicate/missing mapping was an independent attempt, but the
+review found lifetime and OpenAPI-contract gaps. The repaired artifact is
+complete for this recovery block; independent FastAPI mastery is not claimed.
+
+### Missing concepts learned
+
+1. **Composition and lifetime are separate from dependency injection.**
+   `Depends` explains how FastAPI supplies an object to a route. It does not
+   decide whether that object is global, per app, or per request. The repository
+   is now created by `create_app()` and stored on that app, so requests within
+   one app share state while independently created apps do not leak state.
+2. **The transport boundary owns HTTP meaning.** The repository raises
+   `DuplicateTaskTitle`, and the application service remains unaware of HTTP.
+   The route translates that domain outcome to a stable 409 body. A missing
+   record remains `None` through the core and becomes a stable 404 body only at
+   the route.
+3. **Transport models protect the public contract.** `CreateTaskRequest`,
+   `TaskResponse`, and `ErrorResponse` are API schemas; `TaskRecord` remains an
+   internal domain record. Explicit mapping prevents an internal model change
+   from silently changing the HTTP API.
+4. **Framework validation is also a documented contract.** FastAPI owns the
+   request-validation 422 response. Removing a custom empty 422 declaration
+   restores the generated `HTTPValidationError` schema in OpenAPI. Business
+   errors such as 404 and 409 use the project-owned `ErrorResponse` schema.
+5. **Service tests and HTTP contract tests prove different boundaries.** Unit
+   tests prove application behavior. `AsyncClient` with `ASGITransport` proves
+   routing, serialization, dependency resolution, status codes, exact bodies,
+   and generated OpenAPI without starting a network server.
+
+The exercised flow is:
+
+```text
+HTTP JSON → Pydantic request → FastAPI dependency provider
+          → TaskService → TaskRepository protocol → in-memory adapter
+          → TaskResponse or stable ErrorResponse → HTTP JSON
+```
+
+### Verified contract evidence
+
+- `GET /health` returns `200 {"status": "ok"}`.
+- `GET /ready` returns the documented placeholder
+  `200 {"status": "ready"}`.
+- `POST /tasks` returns 201 with `task_id`, `title`, and `created_at`.
+- Create then `GET /tasks/{task_id}` returns the same task with 200.
+- An unknown UUID returns the exact 404 `task_not_found` contract.
+- A duplicate title returns the exact 409 `duplicate_task_title` contract.
+- An empty title returns FastAPI validation status 422 with field detail.
+- `/openapi.json` documents `TaskResponse`, `ErrorResponse`, and the generated
+  `HTTPValidationError` response.
+- A test-owned repository is exercised through the HTTP route, and two app
+  factories can independently create the same title, proving state isolation.
+
+Verified from `AI Solutions Platform/`:
+
+```text
+uv run --locked --extra dev ruff format --check src tests
+→ 26 files already formatted
+
+uv run --locked --extra dev ruff check src tests
+→ All checks passed!
+
+uv run --locked --extra dev mypy src tests
+→ Success: no issues found in 26 source files
+
+uv run --locked --extra dev pytest -q
+→ 9 passed in 0.23s
+```
+
+### SwiftUI calibration finding
+
+The external artifact at
+`../iOS-Apps/iOSToAIJourney/Sprint-01-AI-Software-Foundations/TaskListFeature.swift`
+had a prior check run from its directory:
+
+```text
+xcrun swiftc -typecheck TaskListFeature.swift
+→ exit 0 with no diagnostics
+```
+
+The final reviewer found the sibling file in `AM` state: its staged blob was
+empty and the implementation remained unstaged in that repository. The command
+above is therefore historical working-tree-only/non-durable evidence; it cannot
+be reproduced from this roadmap repository or the sibling repository's staged
+state. This recovery did not rerun the command, edit the artifact, or stage
+anything in the sibling repository.
+
+The working copy demonstrates a domain item, feature-state enum, service
+scenarios, service protocol, and controllable fake. It does not yet contain an
+observable feature model, SwiftUI view, UI-owned task and cancellation
+transition, actor integration, or Swift tests. It is recorded only as the July
+23 guided foundation; the full Apple milestone remains incomplete and continues
+in the existing July 26, 28, and 30 blocks.
+
+### Deliberately deferred and unreported
+
+Real Postgres composition, dependency-aware readiness, lifespan cleanup, and
+outage/concurrency depth remain scheduled for July 27–30. Actual roadmap hours
+and IIT attendance were not reported, so neither is inferred here.
+
+## July 23, 2026 — bounded final consistency review
+
+### Repair made
+
+One bounded pass compared the current target-repository diff with Tasks 1–2 and
+the recovered review findings. The only remaining substantive inconsistency was
+the July 23 FastAPI stage name: the session used `Independent attempt` and
+`Evidence recovery` even though the governing labels are Learn, Guided practice,
+Independent build, and Evidence. The sprint guide and this note now use those
+four canonical labels while retaining the truthful qualification that the
+independent attempt required repair and does not prove mastery.
+
+No backend behavior, dates, hours, prerequisites, exit gates, untouched
+sessions, Postgres scope, or lifecycle depth changed in this pass.
+
+### Executed checks
+
+From `AI Solutions Platform/`:
+
+```text
+uv run --locked --extra dev ruff format --check src tests
+→ 26 files already formatted
+
+uv run --locked --extra dev ruff check src tests
+→ All checks passed!
+
+uv run --locked --extra dev mypy src tests
+→ Success: no issues found in 26 source files
+
+uv run --locked --extra dev pytest -q
+→ 9 passed in 0.17s
+```
+
+From the roadmap root:
+
+```text
+shasum -a 256 skill.md \
+  "$HOME/.gemini/config/skills/ai-roadmap-coach/SKILL.md" \
+  "$HOME/.cursor/skills-cursor/ai-roadmap-coach/SKILL.md" \
+  "$HOME/.claude/skills/ai-roadmap-coach/SKILL.md" \
+  "$HOME/.kiro/skills/ai-roadmap-coach/SKILL.md"
+→ all five files: f346a404dc782f45ad8a45a4f7931265e5b965baeeab2afb1d995db80c5347f3
+
+focused awk assertions over sprints/Sprint-01-AI-Software-Foundations.md
+→ Apple Observation links=1; SwiftUI links=1; FastAPI additional-response links=1
+→ focused-source blocks=5; misplaced resource bullets=0; noncanonical stage labels=0
+→ all four revised-session headings found exactly once
+
+focused awk assertions over PROGRESS.md, VALIDATION.md, and this notes file
+→ working-tree-only labels present in 3/3 files; non-durable labels present in 3/3 files
+
+git diff --check
+git diff --cached --check
+git diff HEAD --check
+→ no whitespace errors
+```
+
+The first auxiliary copy/search pipeline was not executed because the local
+allowlist blocked `cmp`; a separate prose pipeline also found `rg` unavailable.
+The successful `shasum` and `awk` checks above replaced those tools without
+weakening the equality, placement, stage, or evidence assertions.
+
+### Remaining unverified and authorization boundaries
+
+- The external Swift implementation remains `AM` in the sibling repository:
+  working blob `8bd804a5e6b1a657d9b8bdab17eba3d566bce224`, empty staged blob
+  `e69de29bb2d1d6434b8b29ae775ad8c2e48c5391`. This pass did not rerun Swift,
+  edit the artifact, stage it, or otherwise mutate `/Users/swapnildhiman/Desktop/AI/iOS-Apps`.
+- The prior Swift type-check remains historical working-tree-only/non-durable
+  evidence of the guided foundation, not reproducible durable evidence or a
+  complete screen/mastery claim.
+- Postgres persistence, dependency-aware readiness, lifespan/resource cleanup,
+  outage/concurrency depth, and untouched Sprint 1 sessions were deliberately
+  not inspected or expanded in this bounded pass.
+- Actual roadmap hours and IIT attendance remain unreported and were not inferred.

@@ -14,6 +14,25 @@ events are safe, and tests can catch failures.
 
 The sprint intentionally contains no real agent framework.
 
+## Sprint 1 learning contract
+
+Sprint 1 is the first production-AI backend sprint. Its listed outputs are
+end-of-sprint competencies, not prerequisites the learner is assumed to have.
+Each generated daily plan, and each dated session newly authored or materially
+revised after evidence, must identify Learn, Guided practice, Independent build,
+or Evidence and must start from the latest demonstrated artifact. This recovery
+does not claim untouched Sprint 1 sessions already carry that metadata; they
+retain their existing format until intentionally revised.
+
+- Python/FastAPI starts with transport boundaries, validation, dependency
+  injection, and HTTP contracts before production lifecycle depth.
+- The Apple lane assumes general iOS/Swift experience but does not assume
+  independent SwiftUI observation/state architecture. It progresses from state
+  model and fake service to observable feature, view, actor integration, and
+  tests across separate Apple blocks.
+- A guided checkpoint can be complete while the sprint outcome remains partial.
+  Record the demonstrated stage; never turn unproven mastery into same-day backlog.
+
 ## Prerequisites
 
 - Orientation results recorded.
@@ -327,25 +346,49 @@ Move the remaining DSA 30 minutes to Sunday.
 
 ### Thursday, July 23
 
-#### 2:15–4:15 — FastAPI flow + minimum API-contract evidence (recovery)
+#### 2:15–4:15 — FastAPI flow + API-contract evidence (Learn → Guided practice → Independent build → Evidence)
 
-- Implement request/response validation, health, readiness placeholder, create,
-  and read routes.
-- Use explicit dependency providers and translate the duplicate domain error at
-  the HTTP edge.
-- Assert 201 and 409 response bodies plus one 422 validation body.
-- Generate and inspect OpenAPI.
-- Defer lifespan failure depth to July 30 and remove middleware-only polish if
-  the block expires.
+- **Assumed prerequisite:** the verified domain service/repository checkpoint; no
+  prior FastAPI dependency-lifetime or OpenAPI-contract mastery is assumed.
 
-This substitutes for the missed July 22 FastAPI block. The remaining
-exit-critical parts of the original API-contract block are distributed by the
-recovery override below; they are not a new catch-up block.
+- **Focused sources:** the existing domain/application files, FastAPI Dependencies,
+  Additional Responses in OpenAPI, Async Tests, and Pydantic Models from the
+  official resources below.
+- **Learn (20 minutes):** distinguish ASGI server, FastAPI app, route, Pydantic
+  transport schema, application service, repository protocol, and persistence
+  adapter. Exit by explaining the request path without framework jargon.
+- **Guided practice (55 minutes):** implement request/response validation, per-app
+  dependency composition, health, readiness placeholder, create, and read routes.
+  Exit when two app factories demonstrably own separate repositories.
+- **Independent build (20 minutes):** map duplicate and missing-task outcomes to
+  stable HTTP contracts without importing FastAPI into the core. Exit with the
+  route-level mappings and a zero-match forbidden-import scan. The submitted
+  attempt required repair, so it proves an attempt rather than mastery.
+- **Evidence (25 minutes):** assert 201, 404, 409, and one 422 body; inspect
+  generated OpenAPI; run format, lint, strict type checking, and the full test
+  suite. Stop on passing gates; defer real readiness/lifespan depth to July 30.
 
-#### 4:30–6:00 — SwiftUI state
+This substitutes for the missed July 22 FastAPI block. Remaining exit-critical
+contract work is distributed by the recovery override, not added as catch-up.
 
-- Build a small adaptive task list backed by an actor/service.
-- Cover loading, empty, content, error, and cancellation states.
+#### 4:30–6:00 — SwiftUI state learning lab (Learn → Guided practice)
+
+- **Assumed prerequisite:** general Swift/iOS experience; no independent SwiftUI
+  observation or state-architecture mastery is assumed.
+- **Focused sources:** the working-tree-only external artifact at
+  `../iOS-Apps/iOSToAIJourney/Sprint-01-AI-Software-Foundations/TaskListFeature.swift`
+  plus the Swift Concurrency, Apple Observation, SwiftUI, and Swift Testing links
+  in Official resources.
+
+- **Learn (20 minutes):** distinguish domain item, feature state, service
+  protocol, fake scenario, observable feature model, and SwiftUI view.
+- **Guided practice (55 minutes):** define `TaskItem`, idle/loading/empty/content/
+  error/cancelled state, a service protocol, and a fake producing data, empty,
+  failure, and slow/cancellable behavior.
+- **Evidence (15 minutes):** type-check the artifact and explain its transitions
+  and why `Task.sleep` propagates cancellation.
+- Do not require the observable model, rendered view, actor integration, or Swift
+  tests in this first state-architecture block; continue them Jul 26, 28, and 30.
 
 #### 6:00–8:00 — IIT KGP
 
@@ -369,13 +412,20 @@ Reliable webhook ingestion. Use the full design template.
 
 ### Sunday, July 26
 
-#### Two-hour Apple block
+#### Two-hour Apple block (Guided practice → Evidence)
 
-- First 90 minutes: rebuild the actor/service example in a Swift package, mark
-  the `MainActor` UI boundary, and add one cancellation-focused Swift Testing
-  test.
-- Final 30 minutes: complete the moved two-pointer pattern recall/review and
-  record the pattern card; do not begin another solve.
+- **Assumed prerequisite:** the verified July 23 state/protocol/fake foundation.
+- **Focused sources:** the working-tree-only July 23 artifact plus the Swift
+  Concurrency and Swift Testing links in Official resources.
+- **Guided practice (65 minutes):** rebuild the actor/service seam in a Swift
+  package and mark the `MainActor` UI boundary. Exit by pointing to the actor,
+  service protocol, and UI-isolation boundary and explaining each owner's role.
+- **Evidence (25 minutes):** add and run one cancellation-focused Swift Testing
+  test. Exit with the command/result and a brief cancellation-state explanation;
+  stop after recording that proof. Defer Observation, the observable model, and
+  the rendered view to July 28, and adaptive retry/cancellation UI to July 30.
+- **DSA evidence (30 minutes):** complete the moved two-pointer pattern
+  recall/review and record the pattern card; do not begin another solve.
 
 ## Recovery override — recorded Wednesday, July 22
 
@@ -408,8 +458,8 @@ gate and uses replacement capacity rather than adding hours.
 
 | Date and time | Work | Backlog handled | Required evidence and stop rule |
 |---|---|---|---|
-| Thu Jul 23, 2:15–4:15 | FastAPI flow plus minimum API-contract evidence | Replaces Wed FastAPI; absorbs only the exit-critical part of Thu API contracts | Health, readiness placeholder, create/read, explicit dependency provider, domain-to-HTTP mapping, inspected OpenAPI, and tests asserting 201, 409, and one 422 body. Move lifespan failure depth to Jul 30; remove middleware-only polish if time expires. |
-| Thu Jul 23, 4:30–6:00 | SwiftUI state | Original Thu Apple block, unchanged | Loading, empty, content, error, and cancellation states. Stop at 6:00 for IIT. |
+| Thu Jul 23, 2:15–4:15 | FastAPI flow plus minimum API-contract evidence | Replaces Wed FastAPI; absorbs only the exit-critical part of Thu API contracts | Health, readiness placeholder, create/read, explicit dependency provider, domain-to-HTTP mapping, inspected OpenAPI, and tests asserting 201, 404, 409, and one 422 body. Move lifespan failure depth to Jul 30; remove middleware-only polish if time expires. |
+| Thu Jul 23, 4:30–6:00 | SwiftUI state learning lab | Original Thu Apple block, recalibrated to demonstrated SwiftUI level | Learn state modeling; implement `TaskItem`, state enum, service protocol, and controllable fake; type-check and explain cancellation propagation. View/observation/tests continue Jul 26/28/30. Stop at 6:00 for IIT. |
 | Thu Jul 23, 6:00–8:00 | IIT KGP | Separate fixed commitment | Track outside roadmap hours. Do not use it for catch-up. |
 | Fri Jul 24, 2:15–7:30 | SQL/Postgres, B1, then review | Original Friday, unchanged | At review, record actual hours, verify the Thu substitution, confirm weekend replacements, and cut non-gate breadth rather than creating another block. |
 | Sat Jul 25, 2:15–4:15 | Safe async | First and only replacement for Tue safe async | Bounded versus unbounded calls, direct blocking-boundary demonstration, timeout test, and cancellation-cleanup test. Stop after these proofs. |
@@ -422,7 +472,7 @@ gate and uses replacement capacity rather than adding hours.
 | Wed Jul 29, 2:15–4:15 | Signed webhooks/background work | Original Week-2 platform work, unchanged | Preserve the original webhook evidence. |
 | Wed Jul 29, 4:30–6:00 | 30-minute two-pointer repetition, then 60-minute mixed timed set | Finishes Wed DSA recovery and absorbs Tue Jul 21's unseen arrays/hash problem | Record both pattern outcomes without adding another DSA block; stop at 6:00 for IIT. |
 | Wed Jul 29, 6:00–8:00 | IIT KGP | Separate fixed commitment | Track outside roadmap hours. |
-| Thu Jul 30, 2:15–4:15 | Contract, lifecycle, failure, and concurrency test completion | Finishes the exit-critical portion of the displaced Thu Jul 23 API-contract block | Close only still-missing 201/409/422, outage, concurrent duplicate, timeout/cancellation, liveness/readiness, and resource-release evidence. These tests should be added beside the Jul 23–28 implementation, not all started here. |
+| Thu Jul 30, 2:15–4:15 | Contract, lifecycle, failure, and concurrency test completion | Finishes the exit-critical portion of the displaced Thu Jul 23 API-contract block | Close only still-missing 201/404/409/422, outage, concurrent duplicate, timeout/cancellation, liveness/readiness, and resource-release evidence. These tests should be added beside the Jul 23–28 implementation, not all started here. |
 | Thu Jul 30, 4:30–8:00 | SwiftUI adaptive states and IIT | Original schedule, unchanged | Preserve the 6:00 IIT boundary. |
 | Fri Jul 31, 2:15–7:30 | Docker/CI completion, I1, and gate rehearsal | Original schedule, unchanged | Extend the minimal CI to Postgres; attempt failures before polish; assign only gate repairs. |
 | Sun Aug 2, two-hour sprint close | Exact exit gate and ledger close | Original sprint close, unchanged | Run the clean setup and all ten exit-test items; score only from evidence and update `PROGRESS.md`. |
@@ -430,7 +480,7 @@ gate and uses replacement capacity rather than adding hours.
 ### How the displaced API-test block is covered
 
 - Jul 23 owns request/response contracts, explicit providers, domain/transport
-  mapping, and 201/409/422 body assertions.
+  mapping, and 201/404/409/422 body assertions.
 - Jul 25 owns timeout and cancellation-cleanup behavior at the async boundary.
 - Jul 27 owns create/read integration against a clean database.
 - Jul 28 owns unique-conflict translation, idempotency, and rollback.
@@ -493,10 +543,22 @@ is reviewed. The original two-pointer repetition is covered by July 26, 28, and
   intended state change.
 - Test rollback.
 
-#### 4:30–6:30 — Apple architecture
+#### 4:30–6:30 — Apple architecture (Learn → Guided practice → Evidence)
 
-- Separate SwiftUI view, feature state, service protocol, and adapter.
-- Test the service without rendering a view.
+- **Assumed prerequisite:** the July 23 state/protocol/fake foundation; Observation
+  and an observable feature model remain new material.
+- **Focused sources:** the July 23 artifact plus Apple Observation, SwiftUI, Swift
+  Concurrency, and Swift Testing links in Official resources.
+- **Learn (20 minutes):** inspect Observation and the `@MainActor` UI boundary.
+  Exit by explaining who owns mutable feature state, the loading task, and the
+  service dependency.
+- **Guided practice (85 minutes):** add an observable feature model that owns the
+  loading task, maps success/empty/failure/cancellation, and drives the smallest
+  SwiftUI view through the service protocol. Exit when each transition is visible
+  in the model and the view has no service-specific branching.
+- **Evidence (15 minutes):** run the focused service/model tests and record the
+  command/result. Stop after that proof; defer the independent retry/cancellation
+  variation and optional performance observation to July 30.
 
 #### 9:30–10:30 — DSA recovery: timed two pointers
 
@@ -551,7 +613,7 @@ Do not log the secret or full sensitive payload.
 
 #### 2:15–4:15 — contract, lifecycle, failure, and concurrency tests
 
-- Close any still-missing 201, 409, and 422 response-contract evidence.
+- Close any still-missing 201, 404, 409, and 422 response-contract evidence.
 - FastAPI lifespan owns pools/resources.
 - Test dependency outage at startup and during request.
 - Test ten concurrent creates with duplicate collisions.
@@ -560,11 +622,20 @@ Do not log the secret or full sensitive payload.
 - Treat this as completion of tests added beside the July 23–28 implementation,
   not as the first time all cases are written.
 
-#### 4:30–6:00 — SwiftUI adaptive states
+#### 4:30–6:00 — SwiftUI adaptive states (Independent build → Evidence)
 
-- Add retry and cancellation behavior.
-- Inspect concurrency warnings and fix them.
-- Record one small Instruments or performance observation if available.
+- **Assumed prerequisite:** a working observable feature model and minimal view
+  from July 28.
+- **Focused sources:** the July 28 feature plus Apple Observation, SwiftUI, Swift
+  Concurrency, and Swift Testing links in Official resources.
+- **Independent build (60 minutes):** add retry and user-triggered cancellation
+  behavior without copying a completed feature. Exit when both transitions are
+  visible in state and the UI owns cancellation correctly.
+- **Evidence (30 minutes):** run the focused tests and inspect concurrency
+  warnings. Exit with a passing result, no unresolved warnings, and one small
+  Instruments/performance observation when tooling is available. If it is not,
+  record that limitation rather than inventing evidence. Stop after the record;
+  defer unrelated UI polish.
 
 #### 6:00–8:00 — IIT KGP
 
@@ -649,6 +720,7 @@ and every item above proven.
 - [Python asyncio](https://docs.python.org/3/library/asyncio.html)
 - [FastAPI dependencies](https://fastapi.tiangolo.com/tutorial/dependencies/)
 - [FastAPI async tests](https://fastapi.tiangolo.com/advanced/async-tests/)
+- [FastAPI additional responses in OpenAPI](https://fastapi.tiangolo.com/advanced/additional-responses/)
 - [Pydantic models](https://docs.pydantic.dev/latest/concepts/models/)
 - [SQLAlchemy asyncio](https://docs.sqlalchemy.org/en/20/orm/extensions/asyncio.html)
 - [Alembic](https://alembic.sqlalchemy.org/)
@@ -657,6 +729,8 @@ and every item above proven.
 - [GitHub Actions Python guide](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python)
 - [Swift Concurrency](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/)
 - [Swift Testing](https://developer.apple.com/documentation/testing/)
+- [Apple Observation](https://developer.apple.com/documentation/observation)
+- [SwiftUI](https://developer.apple.com/documentation/swiftui)
 
 ## Drop/defer rule
 

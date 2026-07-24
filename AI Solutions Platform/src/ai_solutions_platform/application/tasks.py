@@ -2,7 +2,7 @@
 
 from datetime import UTC, datetime
 from typing import Protocol
-from uuid import uuid4
+from uuid import UUID, uuid4
 
 from ai_solutions_platform.domain.tasks import TaskRecord
 
@@ -12,6 +12,10 @@ class TaskRepository(Protocol):
 
     async def add(self, record: TaskRecord) -> None:
         """Store a task record or raise a domain-specific exception."""
+        ...
+
+    async def get_by_id(self, task_id: UUID) -> TaskRecord | None:
+        """Return the task with the given ID, or None when it is absent."""
         ...
 
 
@@ -30,3 +34,7 @@ class TaskService:
         )
         await self._repository.add(record)
         return record
+
+    async def read(self, task_id: UUID) -> TaskRecord | None:
+        """Return a task by ID, or None when it is absent."""
+        return await self._repository.get_by_id(task_id)

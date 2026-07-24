@@ -17,7 +17,7 @@ All links are relative so the directory can move safely.
 
 Routine questions such as "What should I study today?", "Where do I record
 this?", "What is my score?", or "Create the next detailed sprint" are handled
-by `ai-roadmap-coach` **v2.1.0**.
+by `ai-roadmap-coach` **v2.2.0**.
 
 The canonical copy is [`skill.md`](./skill.md). These global installations are
 distribution copies:
@@ -65,9 +65,11 @@ roadmap, or expand future sprints unless I explicitly request it.
 Keep required roadmap work within 20–25 hours per week. IIT KGP classes are
 separate. Failed gates require repair or consolidation, not silent completion.
 
-Explain new concepts first in plain language, then technically. Use focused
-runnable examples, comments, diagrams, official sources, and connections to the
-current portfolio project.
+Explain new concepts first in plain language, then technically. Calibrate each
+block from demonstrated evidence and label it Learn, Guided practice,
+Independent build, or Evidence. Related experience is not evidence of
+adjacent-framework mastery. Use focused runnable examples, comments, diagrams,
+official sources, and connections to the current portfolio project.
 
 The primary goal is production AI Engineer / Forward-Deployed AI Engineer
 readiness by March 31, 2027. Modern iOS and Apple AI are the secondary

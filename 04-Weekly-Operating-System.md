@@ -22,6 +22,24 @@ The IIT KGP program is an additional four hours.
 Sleep, meals, commute, exercise, family, and recovery remain real constraints.
 The roadmap does not claim unassigned time as study capacity.
 
+## Learning-stage calibration
+
+Every generated daily plan and every newly authored or materially revised
+learning block must be labeled **Learn**, **Guided practice**, **Independent
+build**, or **Evidence**. Before assigning work, inspect the latest artifact and
+`PROGRESS.md`; do not infer mastery from job seniority, a related technology, or
+one diagnostic.
+
+- For a new or weak competency, spend roughly the first third on explanation and
+  a worked micro-example, the second third on guided implementation, and the final
+  third on a small independent variation plus evidence.
+- For a practiced competency, use the normal build-heavy loop below.
+- Do not combine an unfamiliar framework, a new architecture pattern, all UI
+  states, cancellation, and tests into one block. Preserve the sprint outcome by
+  spreading those stages across the already scheduled lane.
+- A partial guided artifact is valid evidence of progress; record its exact stage
+  and continue from it instead of calling the whole outcome failed.
+
 ## Required weekly rotation
 
 ### Monday — platform depth
@@ -135,6 +153,11 @@ Use this order:
 3. integration into Apple AI Lab or Local AI Workbench;
 4. Swift tests/evaluations;
 5. Instruments/benchmark evidence.
+
+A learner who has not demonstrated SwiftUI state architecture may stop the first
+Apple block after the state model, protocol, and fake adapter. Observation, the
+view, actor integration, cancellation UI, and tests continue in later Apple
+blocks; the sprint outcome remains unchanged.
 
 ### DSA block
 

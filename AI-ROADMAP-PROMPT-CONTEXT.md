@@ -1,6 +1,6 @@
 # AI Roadmap Prompt Context
 
-> Fallback behavior version: **2.1.0 — July 20, 2026**
+> Fallback behavior version: **2.2.0 — July 23, 2026**
 > Canonical coach: [`skill.md`](./skill.md)
 
 Installed assistant copies of `ai-roadmap-coach` load roadmap context
@@ -46,6 +46,12 @@ follow the resolution procedure in this document.
   dates, prerequisites, hours, portfolio boundaries, evidence, exact exit gate,
   and drop/defer rules. Do not activate it before the current prerequisite
   decision.
+- A sprint outcome is not assumed mastery. Calibrate each daily block from the
+  latest artifact and label it Learn, Guided practice, Independent build, or
+  Evidence. Related experience does not prove adjacent-framework mastery.
+- On first exposure, teach the mental model and one guided seam before assigning
+  an independent variation. Spread multi-layer outcomes across existing sprint
+  blocks instead of creating same-day implementation debt.
 - Adding an unscheduled sprint or changing dates/outcomes requires impact
   analysis and explicit approval.
 
@@ -140,6 +146,8 @@ Use this compact structure:
 ### What to do in each block
 
 For each block specify:
+
+- calibrated learning stage and assumed prerequisite;
 
 - topic;
 - exact reading or official resource;

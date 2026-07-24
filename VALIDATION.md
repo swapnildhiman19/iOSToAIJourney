@@ -1,6 +1,6 @@
 # Roadmap Validation
 
-> Audit date: July 18, 2026
+> Audit date: July 23, 2026
 > Result: **PASS**
 
 This audit checks the rebuilt roadmap against the attached implementation plan.
@@ -9,12 +9,17 @@ preview APIs will remain unchanged.
 
 ## Roadmap coach skill
 
-- [x] [`skill.md`](./skill.md) is the canonical `ai-roadmap-coach` v2.1.0 copy.
+- [x] [`skill.md`](./skill.md) is the canonical `ai-roadmap-coach` v2.2.0 copy.
 - [x] Kiro, Cursor, Claude, and Gemini installation paths are documented in
       `00-FRESH-SYSTEM-CONTEXT.md` and carry identical skill content.
 - [x] Multi-intent requests have a deterministic verify → score → record order.
 - [x] Task-specific rubrics take precedence over whole-sprint scoring.
 - [x] Artifact verification and evidence-safe ledger transactions are explicit.
+- [x] The daily-plan workflow requires calibration from demonstrated evidence and
+      Learn, Guided practice, Independent build, or Evidence labels. This audit
+      applies that check to the materially revised July 23 FastAPI and July 26,
+      July 28, and July 30 Apple sessions; it does not claim untouched Sprint 1
+      sessions have migrated to the newer metadata format.
 - [x] The active gate must match the active sprint before sprint assessment.
 - [x] Scheduled-sprint authoring preserves dates, prerequisites, weekly budget,
       portfolio boundaries, evidence, exit gates, and drop/defer rules.
@@ -53,6 +58,11 @@ instead of raising the baseline.
 
 - [x] Every sprint has a stated prerequisite in the master prerequisite chain.
 - [x] Every sprint contains theory/competency work.
+- [x] The materially revised July 23 FastAPI, July 26 Apple, July 28 Apple,
+      and July 30 SwiftUI sessions separate end-of-sprint outcomes from current
+      evidence with focused sources, per-stage timing, exit evidence, and explicit
+      stop/defer boundaries. Untouched Sprint 1 sessions are outside this migration
+      claim.
 - [x] Every sprint changes a portfolio or interview artifact.
 - [x] Every sprint has a measurable exit gate.
 - [x] Every sprint schedules DSA and system design.
@@ -166,6 +176,46 @@ uncounted diagnostic; Consolidations 1 and 3 contain B2 and I6; Consolidations
 - [ ] Live Gemini/Claude and Apple model samples intentionally remain
       orientation/Sprint 2 checks because they require the user’s credentials,
       budget, SDK, hardware, and availability state.
+
+## Evidence boundary
+
+- The external Swift artifact at
+  `../iOS-Apps/iOSToAIJourney/Sprint-01-AI-Software-Foundations/TaskListFeature.swift`
+  had a prior `xcrun swiftc -typecheck TaskListFeature.swift` result of exit 0.
+  The final reviewer found its implementation only in the sibling repository's
+  unstaged working tree, with an empty staged blob. This is working-tree-only,
+  non-durable evidence and proves only the guided state/protocol/fake foundation,
+  not a complete SwiftUI feature or Apple milestone.
+- This recovery did not rerun that Swift check or mutate the sibling repository.
+
+## July 23 bounded recovery consistency review
+
+- [x] One bounded pass reviewed the target diff against Tasks 1–2 and the
+      recovered findings; no broad redesign or untouched-session migration was
+      started.
+- [x] The revised July 23 FastAPI session now uses the canonical Learn, Guided
+      practice, Independent build, and Evidence labels, with per-stage timing
+      and exit evidence totaling the original two-hour block.
+- [x] Focused roadmap assertions found one official Apple Observation link, one
+      official SwiftUI link, one FastAPI additional-response link, five focused-
+      source blocks, zero misplaced resource bullets, and all four required
+      revised-session headings exactly once.
+- [x] Ruff format check reported 26 files formatted; Ruff lint passed; strict
+      mypy passed 26 source files; pytest passed 9 tests in 0.17 seconds.
+- [x] Canonical `skill.md` and the four documented distribution copies shared
+      SHA-256
+      `f346a404dc782f45ad8a45a4f7931265e5b965baeeab2afb1d995db80c5347f3`.
+- [x] `git diff --check`, `git diff --cached --check`, and
+      `git diff HEAD --check` reported no whitespace errors before this record.
+- [x] `PROGRESS.md`, this validation file, and the Sprint 1 notes all retain
+      working-tree-only and non-durable labels for the sibling Swift evidence.
+
+Remaining unverified boundaries are unchanged: the Swift implementation is not
+reproducible from a durable sibling revision; its prior type-check was not rerun;
+Postgres persistence, real readiness/lifespan behavior, outage/concurrency depth,
+and untouched Sprint 1 sessions remain outside this pass; actual roadmap hours
+and IIT attendance remain unreported. The sibling repository was not edited,
+staged, committed, or otherwise mutated.
 
 ## Measurability
 
