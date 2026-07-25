@@ -454,6 +454,45 @@ gate and uses replacement capacity rather than adding hours.
   planning. Wednesday IIT attendance is unreported and remains separate from
   roadmap hours.
 
+### Status update — Friday, July 24 (recorded Saturday, July 25)
+
+The Friday block ran later than the 2:15–7:30 window because roadmap planning
+itself was unfinished at 4:56 PM; the day was executed on a shifted
+4:56–10:11 PM timeline. Outcome, verified July 25:
+
+- **SQL/Postgres — complete.** Five artifacts under
+  `AI Solutions Platform/diagnostics/Sprint-01-AI-Software-Foundations/`, plus
+  the teaching record in
+  `notes/sprint-01-AI-Software-Foundations-notes-01-sql-postgresql-deep-learning.md`.
+  Executed against PostgreSQL 16.14 (`orientation-pg`, db `learner_exercise`):
+  the schema applies clean, rollback removes the uncommitted row, and the Python
+  parameterized query neutralises an injection payload. This closes the
+  orientation carry-forwards for live `ROLLBACK` and a live parameterized query.
+  Three claim corrections are recorded in the notes appendix (forward not
+  backward index scan; invented plan costs; the un-indexed plan was faster at
+  fixture scale). `psycopg` is still not a project dependency — Monday July 27
+  owns that, and it was deliberately not added early.
+- **Fixture hygiene — was incomplete, now closed.** The 6:36–6:41 PM step
+  reported success while the artifact it names,
+  `Sprint-00-Orientation-diagnostics/test_insert.sql`, still held a real personal
+  email. Replaced July 25 with `learner@example.invalid`.
+- **B1 reliable webhook ingestion — complete, reviewer score 17/24** against the
+  eight-dimension rubric in `05-System-Design-Track.md` (self-assessed 24/24 in
+  the artifact; the reviewer score is the recorded outcome). Estimates and
+  budgets moved 1/3 → 3/3 and failure handling 1/3 → 2/3 against the orientation
+  baseline. Design only — nothing implemented. A hand-drawn architecture diagram
+  supports it.
+- **Weekly review — missed.** The B1 write-up ran past its 9:11 PM stop, so the
+  9:11–10:11 PM review never started. Its two required outputs — clean-checkout
+  reproduction of the in-memory vertical slice with format/lint/strict-type/test
+  results, and the Week-1 gap list — fold once into the **existing** Friday
+  July 31, 2:15–7:30 block, which already owns gate rehearsal. No third Week-1
+  replacement block is created, and no hours are inferred: actual roadmap hours
+  and July 22–23 IIT attendance remain unreported.
+
+The August 2 exit gate, the Week-2 platform sequence, and the two Saturday
+July 25 replacement blocks are unchanged by this update.
+
 ### Dated recovery distribution
 
 | Date and time | Work | Backlog handled | Required evidence and stop rule |
@@ -461,7 +500,7 @@ gate and uses replacement capacity rather than adding hours.
 | Thu Jul 23, 2:15–4:15 | FastAPI flow plus minimum API-contract evidence | Replaces Wed FastAPI; absorbs only the exit-critical part of Thu API contracts | Health, readiness placeholder, create/read, explicit dependency provider, domain-to-HTTP mapping, inspected OpenAPI, and tests asserting 201, 404, 409, and one 422 body. Move lifespan failure depth to Jul 30; remove middleware-only polish if time expires. |
 | Thu Jul 23, 4:30–6:00 | SwiftUI state learning lab | Original Thu Apple block, recalibrated to demonstrated SwiftUI level | Learn state modeling; implement `TaskItem`, state enum, service protocol, and controllable fake; type-check and explain cancellation propagation. View/observation/tests continue Jul 26/28/30. Stop at 6:00 for IIT. |
 | Thu Jul 23, 6:00–8:00 | IIT KGP | Separate fixed commitment | Track outside roadmap hours. Do not use it for catch-up. |
-| Fri Jul 24, 2:15–7:30 | SQL/Postgres, B1, then review | Original Friday, unchanged | At review, record actual hours, verify the Thu substitution, confirm weekend replacements, and cut non-gate breadth rather than creating another block. |
+| Fri Jul 24, 2:15–7:30 | SQL/Postgres, B1, then review | Original Friday, unchanged | At review, record actual hours, verify the Thu substitution, confirm weekend replacements, and cut non-gate breadth rather than creating another block. **Executed on a shifted 4:56–10:11 PM timeline: SQL and B1 complete (B1 17/24); the weekly review was missed and folds once into Fri Jul 31. See the July 24 status update above.** |
 | Sat Jul 25, 2:15–4:15 | Safe async | First and only replacement for Tue safe async | Bounded versus unbounded calls, direct blocking-boundary demonstration, timeout test, and cancellation-cleanup test. Stop after these proofs. |
 | Sat Jul 25, 4:30–6:00 | Architecture decision and minimal CI | Completes the unfinished part of Mon repository/CI | Decision: domain code cannot import model, web, or database SDKs; workflow runs the same locked format/lint/type/test checks used locally; align README commands. This is the second and final Week-1 optional replacement block. |
 | Sun Jul 26, two-hour Apple block | 90 minutes integrated Swift concurrency; 30 minutes two-pointer recall/review | Replaces Tue Swift concurrency and supplies Wed's already-moved DSA review | Swift package actor/service, cancellation, `MainActor` boundary, and one Swift Testing test; then a two-pointer pattern card. Do not start another solve. |

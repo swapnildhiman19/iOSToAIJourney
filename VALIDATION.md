@@ -1,6 +1,7 @@
 # Roadmap Validation
 
-> Audit date: July 23, 2026
+> Audit date: July 23, 2026 (structural)
+> Last evidence verification: July 25, 2026 — see *July 24 evidence verification*
 > Result: **PASS**
 
 This audit checks the rebuilt roadmap against the attached implementation plan.
@@ -216,6 +217,74 @@ Postgres persistence, real readiness/lifespan behavior, outage/concurrency depth
 and untouched Sprint 1 sessions remain outside this pass; actual roadmap hours
 and IIT attendance remain unreported. The sibling repository was not edited,
 staged, committed, or otherwise mutated.
+
+## July 24 evidence verification — recorded July 25, 2026
+
+This pass verified the Friday July 24 SQL and B1 artifacts and recorded the
+outcome. It did not re-run the July 23 structural audit above, and it did not
+re-verify the sibling Swift artifact.
+
+- [x] All five SQL artifacts were **executed**, not merely read. Server:
+      PostgreSQL 16.14 in container `orientation-pg`, database
+      `learner_exercise`, driven by
+      `docker exec -i orientation-pg psql -U postgres -d learner_exercise -v ON_ERROR_STOP=1 < <file>`.
+      Schema applied clean (3 tables, 8 indexes). Rollback proof returned
+      `before_count 0 → INSERT 0 1 → row visible in transaction → ROLLBACK →
+      0 rows → after_count 0`. The plan script ran both the indexed and
+      un-indexed variants.
+- [x] `parameterized_query_proof.py` executed successfully in an **ephemeral**
+      environment (`uv run --no-project --with "psycopg[binary]"`, `PGPORT=5433`,
+      password supplied), inserting, fetching, matching 0 rows against a
+      `'; DROP TABLE task; --` payload, leaving `to_regclass('task')` intact, and
+      rolling back. `psycopg` is **not** a dependency of
+      `AI Solutions Platform/pyproject.toml`, so this script cannot run in the
+      project environment as committed; adding it belongs to July 27.
+- [x] Four artifact claims were found inaccurate and are recorded as corrections
+      rather than silently edited: the index split is 6 automatic + 2 manual, not
+      5 + 3; the plan is a forward `Index Scan`, not `Index Scan Backward`, and
+      the stated reason is inverted; the printed costs and `rows=2` estimate do
+      not match the server; and at 5 rows the un-indexed plan was faster
+      (0.025 ms vs 0.051 ms), leaving index value unproven at fixture scale.
+- [x] The `sql_evidence_package.md` fixture-hygiene claim was **false** when
+      written: `Sprint-00-Orientation-diagnostics/test_insert.sql` still contained
+      a real personal email address. It now inserts `learner@example.invalid`,
+      and the two anti-pattern rows in the SQL notes no longer name a real
+      personal address or a real employer domain. A repository scan for those
+      strings returns no remaining hits outside the pre-existing orientation
+      notes.
+- [x] B1 was scored against the correct rubric — `05-System-Design-Track.md`
+      eight dimensions, 0–3, /24 — not the whole-sprint /15 rubric. Reviewer
+      **17/24**; the artifact's self-assessed 24/24 is preserved in place and is
+      not the recorded outcome, per the track rule that the score is diagnostic
+      and must never be inflated. The B1 numeric derivations were independently
+      rechecked and are arithmetically correct.
+- [x] The hand-drawn diagram at `notes/WhatsApp Image 2026-07-24 at 23.53.37.jpeg`
+      was inspected and independently supports the ingest flow and the
+      500 → 5,000 → 50,000 RPS scaling analysis. It carries placeholder alt text
+      and no caption, which is noted as an evidence-quality gap.
+- [x] The missed July 24 weekly review is recorded as missed and folded once into
+      the existing July 31 gate-rehearsal block. No third Week-1 replacement
+      block was created, no deep block was merged, and the August 2 gate,
+      Week-2 sequence, and Saturday July 25 replacements are unchanged.
+- [x] `uv run --extra dev pytest -q` returned `9 passed in 0.21s` on July 25,
+      matching the July 23 record. This ran in the **existing working tree**, so
+      it confirms the suite is unbroken but does **not** satisfy the review's
+      clean-checkout reproduction requirement, which remains outstanding.
+- [x] The edited orientation fixture was re-executed against a throwaway
+      database (orientation `schema.sql` then `test_insert.sql`), inserting
+      `learner@example.invalid` / `Learner One` successfully; the scratch
+      database was dropped afterwards and the original `diag` database was not
+      mutated.
+- [x] No hours were inferred. Actual roadmap hours and July 22–23 IIT attendance
+      remain unreported in `PROGRESS.md`.
+- [x] Evidence was recorded only in `PROGRESS.md` ledger sections, the existing
+      per-sprint notes files, the active sprint guide's override, and this file.
+      No new per-diagnostic tracking file was created.
+
+Remaining unverified after this pass: the Saturday July 25 safe-async and
+ADR/CI blocks (unreported), the clean-checkout reproduction of the in-memory
+vertical slice, Postgres persistence and lifespan depth, the sibling Swift
+implementation's durability, and the Repeating and Missing Number solve.
 
 ## Measurability
 
