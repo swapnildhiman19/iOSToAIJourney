@@ -19,7 +19,12 @@
 > prerequisite, weekly budget, or portfolio boundary was weakened; only dates
 > moved. The readiness target moves from March 31 to **May 12, 2027**. The
 > filename retains `Mar2027` because `skill.md` resolves the roadmap root by that
-> literal string across four distribution copies. See `PROGRESS.md` → *Recovery
+> literal string across four distribution copies.
+>
+> **DSA was also re-sequenced on August 26** from the Striver SDE Sheet baseline
+> (172/191; only Dynamic Programming and Trie incomplete). The per-sprint DSA lines
+> below now reference Phases A–D defined in `06-DSA-Track.md` → *Sprint syllabus*.
+> No pattern was dropped — that file carries a coverage map proving it. See `PROGRESS.md` → *Recovery
 > actions* (Aug 26) and `VALIDATION.md` → *August 26 schedule revision*.
 
 This calendar is competency-gated. Dates determine when to attempt a skill; an
@@ -195,7 +200,7 @@ Detailed sessions live in `sprints/Restart-Gate-2026-08-26.md`.
 
 **DSA**
 
-- Arrays/hash maps and two pointers.
+- **Phase A** — Striver: Dynamic Programming 3/7 → 7/7, DP Part-II 0/8 → 4/8.
 - Four hours each week: learn/revise, solve, and repeat from memory.
 
 **System design**
@@ -252,7 +257,7 @@ prerequisites.
 
 **DSA**
 
-- Sliding window, stack, and binary-search introduction.
+- **Phase A** — Striver: DP Part-II → 8/8 and Trie → 7/7. Sheet closes at 191/191.
 
 **System design**
 
@@ -315,7 +320,7 @@ abstractions. Preserve the internal contract and failure behavior.
 
 **DSA**
 
-- Binary search completion and linked lists.
+- **Phase B** — Striver revision: Arrays I–IV, String I–II (36 problems).
 
 **System design**
 
@@ -373,7 +378,8 @@ shows a specific multi-hop or iterative-search failure.
 
 **DSA**
 
-- Trees: traversal, DFS/BFS, recursion, and iterative forms.
+- **Phase B** — Striver revision: Linked List I–II, LL and Arrays, Stack and Queue
+  I–II (35). Phase 1 check: one mixed timed pair with no pattern label.
 
 **System design**
 
@@ -437,7 +443,7 @@ shows a specific multi-hop or iterative-search failure.
 
 **DSA**
 
-- Trees completion, tries, and heaps.
+- **Phase B** — Striver revision: Binary Search, Heaps, Greedy, Recursion (26).
 
 **System design**
 
@@ -492,7 +498,7 @@ shows a specific multi-hop or iterative-search failure.
 
 **DSA**
 
-- Graph BFS/DFS, topological order, union-find, and shortest-path recognition.
+- **Phase B** — Striver revision: Binary Tree I–III, Binary Trees [Misc] (33).
 
 **System design**
 
@@ -541,7 +547,7 @@ features.
 
 **DSA**
 
-- Backtracking and intervals.
+- **Phase B** — Striver revision: BST I–II, Recursion and Backtracking, Graph I–II (39).
 
 **System design**
 
@@ -591,7 +597,8 @@ features.
 
 **DSA**
 
-- One-dimensional dynamic programming.
+- **Phase B** — Striver revision: DP I–II and Trie (22). This is the ~3-month
+  repetition of the Phase A material. Phase 2 check: 75-minute mixed mock.
 
 **System design**
 
@@ -657,7 +664,7 @@ multi-agent audio flow.
 
 **DSA**
 
-- Two-dimensional dynamic programming.
+- **Phase C begins** — Taro Top 75, the ~30 problems not already covered by Striver.
 
 **System design**
 
@@ -715,7 +722,8 @@ threat model.
 
 **DSA**
 
-- Greedy and bit operations.
+- **Phase C** — bit operations and interview maths, sourced deliberately from the
+  Taro lists: the Striver sheet has no dedicated section for them.
 
 **System design**
 
@@ -770,7 +778,8 @@ identity correctness.
 
 **DSA**
 
-- Mixed completed-pattern review.
+- **Phase C** — mixed timed sets; repair the three highest-frequency mistake tags
+  recorded during Phase B.
 
 **System design**
 
@@ -822,7 +831,8 @@ instrumentation, SLOs, and one credible load environment.
 
 **DSA**
 
-- Company-tagged mediums begin; continue spaced repetition.
+- **Phase C** — the Taro Google list begins. Keep at least half the work untagged.
+  Phase 3 check: two 45-minute single-problem mocks in consecutive weeks.
 
 **System design**
 
@@ -883,7 +893,7 @@ decision are the required evidence.
 
 **DSA**
 
-- Tagged mediums, one mock, and weakest-pattern repair.
+- **Phase C** — Taro Google list continues, one paired mock, weakest-pattern repair.
 
 **System design**
 
@@ -930,7 +940,8 @@ measurement, and operational proof.
 
 **DSA**
 
-- Timed mixed mediums and one mock.
+- **Phase C** — timed mixed mediums across all three sources; one mock with
+  interruptions and follow-up constraints.
 
 **System design**
 
@@ -972,7 +983,7 @@ operator visibility.
 
 **DSA**
 
-- Two timed mock sessions and targeted remediation.
+- **Phase D** — two timed mock sessions; target only observed weaknesses.
 
 **System design**
 
@@ -1018,7 +1029,8 @@ allowed scope.
 
 **DSA**
 
-- Interview-mode mixed sets and confidence maintenance.
+- **Phase D** — interview-mode maintenance. No new pattern unless a scheduled
+  interview requires it.
 
 **System design**
 

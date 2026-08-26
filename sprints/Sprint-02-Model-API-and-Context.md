@@ -1,6 +1,7 @@
 # Sprint 02 — Model API and Context Engineering
 
 > Dates: Monday, September 14–Sunday, September 27, 2026  
+> DSA lane: **Phase A** — close the Striver SDE Sheet at 191/191 (DP Part-II + Trie).  
 > Schedule revised August 26, 2026: +6 weeks (was August 3–16). Scope unchanged.  
 > Required roadmap time: approximately 24–25 hours per week  
 > Build outcome: two-provider gateway with structured output, safe tools,
@@ -316,9 +317,10 @@ trust explicit before adding summaries, retrieval, memory, or tool output.
 - Create deterministic provider fakes.
 - Add contract tests before SDK adapters.
 
-#### 9:30–10:30 — DSA
+#### 9:30–10:30 — DSA — Phase A
 
-Sliding-window repetition.
+Striver → DP Part-II, next unsolved problem. Sprint 1's repair sprint left this at
+4/8; this sprint closes it. See `06-DSA-Track.md` → *Sprint syllabus*.
 
 ### Tuesday, September 15
 
@@ -370,9 +372,10 @@ that translation inside `providers/gemini.py`.
   feature disabled, SDK unavailable, and provider fallback.
 - Build useful UI for every state.
 
-#### 9:30–10:30 — DSA
+#### 9:30–10:30 — DSA — Phase A
 
-One unseen sliding-window problem.
+Striver → DP Part-II, next unsolved problem. Re-solve one Sprint 1 DP problem from
+memory first; that is its 14-day repetition.
 
 ### Wednesday, September 16
 
@@ -384,9 +387,10 @@ One unseen sliding-window problem.
 - Record first-attempt versus after-repair validity.
 - Add malformed-output fake and regression tests.
 
-#### 4:30–6:00 — DSA
+#### 4:30–6:00 — DSA — Phase A
 
-Stack/queue pattern and timed problem.
+Two more DP Part-II problems, timed. By the end of this week DP Part-II should read
+8/8, leaving only Trie.
 
 #### 6:00–8:00 — IIT KGP
 
@@ -433,7 +437,7 @@ Provider-neutral model gateway.
 
 - Run fake available/unavailable model flows.
 - Add VoiceOver labels and retry/fallback UI.
-- Complete moved DSA review.
+- Complete moved DSA review (Phase A: Striver DP Part-II / Trie).
 
 ## Week 2 — tools, streams, failure, and context
 
@@ -456,9 +460,10 @@ Provider-neutral model gateway.
 
 The model requests a tool. Application code decides whether and how it runs.
 
-#### 9:30–10:30 — DSA
+#### 9:30–10:30 — DSA — Phase A
 
-Binary-search foundation/repetition.
+Striver → **Trie** begins, 0/7. New pattern: build the node structure and `insert`
+from first principles before looking at any Striver solution.
 
 ### Tuesday, September 22
 
@@ -510,9 +515,9 @@ Add keepalive/reconnect semantics only after the basic lifecycle is tested.
 - Cancel on navigation/new request.
 - Prove stale output cannot update the new screen state.
 
-#### 9:30–10:30 — DSA
+#### 9:30–10:30 — DSA — Phase A
 
-Unseen stack or binary-search problem.
+Striver → Trie, next problems. Prefix search and word-break style applications.
 
 ### Wednesday, September 23
 
@@ -525,9 +530,11 @@ Unseen stack or binary-search problem.
 - Carry idempotency/tool-execution state so fallback cannot repeat an action.
 - Add circuit-breaker/degraded-state design notes; implementation can wait.
 
-#### 4:30–6:00 — DSA
+#### 4:30–6:00 — DSA — Phase A closes
 
-Mixed sliding-window/stack/binary-search timed set.
+Finish the remaining Trie problems. **Target: Striver reports 191/191.** Record the
+completion in `PROGRESS.md` → *DSA ledger summary* → *Striver baseline*, and confirm
+the Phase B revision order before Sprint 3 starts on September 28.
 
 #### 6:00–8:00 — IIT KGP
 
@@ -582,7 +589,7 @@ Streaming multimodal conversation service.
 #### Two-hour sprint close
 
 - Complete Apple availability/fallback tests.
-- Complete DSA pattern cards/repetition schedule.
+- Complete DSA pattern cards and repetition schedule for DP and Trie.
 - Run exact exit test.
 - Update `PROGRESS.md`.
 
@@ -598,7 +605,8 @@ Streaming multimodal conversation service.
 - Context-item contract and budget assembler.
 - Apple AI Lab availability/fallback shell.
 - A1 and A2 system-design notes.
-- DSA ledger for sliding window, stack/queue, and binary-search foundation.
+- DSA: **Striver SDE Sheet at 191/191** — Phase A complete. Pattern cards for
+  dynamic programming (1-D and 2-D) and Trie, with repetition dates set.
 
 ## FDE practice
 

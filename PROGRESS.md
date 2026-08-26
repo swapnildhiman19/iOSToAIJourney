@@ -167,7 +167,7 @@ Target roadmap hours: 20-25. IIT is tracked separately.
 | Jul 27 | ~2.5 hrs (Tue eve) | 0 | ~1 hr (Tue eve) | 0 | 0 | ~3.5 hrs (Tue Jul 28 evening) | unreported | **Jul 27–28 daytime missed**: Mon and Tue daytime blocks not attempted. **Tue Jul 28 evening executed**: 6:00–7:30 PM Postgres setup (compose, adapter, migration, readiness) + 9:30–10:30 PM DSA (Repeating/Missing Number XOR solution + LCS bonus). Recovery redistribution recorded Jul 28 under Recovery actions. Remaining Week-2 work continues Wed–Sun. Fill complete actuals at Aug 2 close. |
 | Aug 3 | 0 | 0 | 0 | 0 | 0 | **0 - missed** | unreported | No recorded roadmap work. Recorded Aug 26; hours are not inferred. |
 | Aug 10 | 0 | 0 | 0 | 0 | 0 | **0 - missed** | unreported | No recorded roadmap work. Recorded Aug 26; hours are not inferred. |
-| Aug 17 | 0 | 0 | ~1 hr (Sat Aug 22) | 0 | 0 | **~1 hr - missed** | unreported | Only recorded activity in the window: `DSA6.swift` (0/1 knapsack, recursive + memoization) modified Aug 22 in `../iOS-Apps/DSA`, uncommitted as of Aug 26. See DSA ledger. |
+| Aug 17 | 0 | 0 | ~1 hr (Sat Aug 22) | 0 | 0 | **~1 hr - missed** | unreported | Only recorded activity in the window: `DSA6.swift` (0/1 knapsack, recursive only) modified Aug 22 in `../iOS-Apps/DSA`; committed Aug 26 as `82b2282`. See DSA ledger. |
 | Aug 24 | plan | plan | plan | plan | plan | plan (partial week) | unreported | Restart gate opened Wed Aug 26. Wed 2:15-4:15 and 4:30-6:30 blocks had already elapsed when the gate was authored at 18:59 IST. |
 
 Two consecutive roadmap weeks above 25 hours require a scope cut.
@@ -249,6 +249,44 @@ Next scheduled case: **I1 — Offline-first adaptive feed** (Sprint 1, Week 2, F
 
 ## DSA ledger summary
 
+### Problem sources — registered Aug 26, 2026
+
+Before this date the roadmap named **no** DSA problem source; selection was ad hoc,
+which produced the recorded Jul 21 pattern-selection mismatch. Full selection rules
+and the four-phase sequence are in `06-DSA-Track.md` -> *Problem sources* and
+*Sprint syllabus*.
+
+| Source | Role |
+|---|---|
+| [Striver SDE Sheet](https://takeuforward.org/dsa/strivers-sde-sheet-top-coding-interview-problems) | Pattern spine; authoritative for what is done and due (Phases A-B) |
+| [Taro Top 75](https://www.jointaro.com/interviews/taro-75/) | Timed/unseen practice, minus Striver overlap (Phase C) |
+| [Taro - Google](https://www.jointaro.com/interviews/companies/google/) | Company-tagged, weighted late (Phase C) |
+
+Per-problem notes (Notion, Swift solutions + recognition signals):
+[DSA](https://app.notion.com/p/vibedin/DSA-2c39b3ea0f2983edb48b81b3b2062918) |
+[Taro Google](https://app.notion.com/p/vibedin/Taro-LeetCode-Google-Interview-Questions-2669b3ea0f2980a69bdac1ca6df2f4b3) |
+[Taro Top 75](https://app.notion.com/p/vibedin/Taro-Top-75-LeetCode-Question-2669b3ea0f29804ca16ff9725ad087ad)
+
+### Striver baseline - read Aug 26, 2026 from the live dashboard
+
+**172 / 191 complete.** Easy 25/25, Medium 85/93, Hard 62/73. Every topic is at 100%
+except three: **Dynamic Programming 3/7**, **Dynamic Programming Part-II 0/8**, and
+**Trie 0/7**. All 19 unsolved problems sit in two patterns.
+
+This is directly observed from the source's own progress dashboard, not user-reported.
+It is evidence of *prior completion*, **not** of current recall - the track's eight-point
+definition of "solved" requires reproduction, and Swapnil reports being out of touch with
+the sheet. Phase B exists to convert one into the other. Corroborating signal: every
+self-selected session since Jul 21 has been DP (Jul 21 LIS, Jul 28 LIS + LCS, Aug 22 0/1
+knapsack).
+
+**Syllabus re-sequenced Aug 26** on this evidence: the original order would have
+re-covered arrays/trees/graphs (all 100%) through November while leaving Trie until Nov 2
+and DP until Dec 14. Work now runs Phase A (complete the 19 gaps, Aug 31-Sep 27) ->
+Phase B (revise all 191, Sep 28-Dec 27) -> Phase C (Taro lists + mocks, Jan 4-Apr 4) ->
+Phase D (maintenance, Apr 5-May 2). No pattern was dropped; see the coverage map in
+`06-DSA-Track.md`.
+
 - Primary language: Swift (interview-primary through Phase 1; Python one problem/week; re-decide at Consolidation 1). See the 06-DSA-Track.md language rule.
 - Unique independent solves: 1 (Maximum Product Subarray, medium DP, Swift; derivation in iOS-Apps/DSA/Sprint-Orientation-00.swift).
 - Learned/hinted: 0.
@@ -263,17 +301,30 @@ Next scheduled case: **I1 — Offline-first adaptive feed** (Sprint 1, Week 2, F
   and Repeating and Missing Number (due ~Aug 11, 15 days overdue). Both are
   scheduled into the restart gate's Saturday Aug 29 replacement block. Repetition
   is repair, not new content.
-- **Sat Aug 22 session — recorded Aug 26, partially verified.** `../iOS-Apps/DSA/DSA6.swift`
-  was modified Aug 22 with +44/-19 lines implementing 0/1 knapsack (recursive, then
-  memoized). Verified by file mtime and `git diff`; **uncommitted** as of Aug 26, so
-  this is working-tree-only evidence until the restart gate commits it and records
-  the SHA. No timing, accepted run, or mistake tag was supplied, so none is claimed.
-  This is the only recorded activity in the Jul 29 - Aug 25 window.
+- **Sat Aug 22 session — recorded Aug 26, now durable.** `../iOS-Apps/DSA/DSA6.swift`,
+  +44/-19 lines, committed Aug 26 as **`82b2282`** in the `iOS-Apps/DSA` repository.
+  **Correction to the first Aug 26 entry:** it claimed "recursive, then memoized." The
+  file was inspected line by line before committing and **the memoization was never
+  written** — `//approach 2 : memoization` is followed by an empty comment on line 51.
+  What exists is the recursive include/exclude solution with base cases, exponential
+  time and O(n) recursion depth. The state parameters that vary (capacity, n) are named
+  in the comment but no memo table or lookup exists. Result: **incomplete**, not solved.
+  No timing, accepted run, or mistake tag was supplied, so none is claimed. This is the
+  only recorded activity in the Jul 29 - Aug 25 window, and finishing the memoisation is
+  the first Phase A task.
 - Jul 21 Sprint 1 submission review (verified Jul 22): `../iOS-Apps/DSA/sprint-01-AI-Software-Foundations.swift` is an untracked Longest Increasing Subsequence solution, not an arrays/hash-map revision. It type-checks with one trailing-closure warning; the active `firstIndex` search makes it O(n^2) time and O(n) space. No accepted run, timing, due-item provenance, mistake reflection, or next repetition date was supplied, so it is not counted above.
 - Recovery queue: **Repeating and Missing Number** — **SOLVED Tue Jul 28, 9:30–10:30 PM**. Implementation: XOR-based O(n) time / O(1) extra space solution without modifying input. Algorithm: (1) XOR all array elements with 1...n to get `repeating XOR missing`; (2) find rightmost set bit to partition numbers; (3) XOR each partition separately with both array and 1...n; (4) verify which result is in the array (repeating) vs missing. Artifact: `../iOS-Apps/DSA/sprint-01-AI-Software-Foundations.swift` function `findMissingAndRepeatingValue`. **Prior-mistake note:** The Jul 21 LIS submission was a pattern-selection mismatch — chose DP subsequence instead of arrays/hash-map; the mental process jumped to "interesting problem" rather than matching the recovery target. **Bonus:** Also solved **Longest Common Subsequence** (DP, O(m×n) time/space) in same session. Next repetition: ~Aug 11 (14-day interval). The timed two-pointer solve is rescheduled to Wed Jul 29, 5:00–6:00 mixed set.
 
-Problem-level records may live in the selected coding platform/export, but this
-summary and mock evidence stay current here.
+**Record boundary (Aug 26, 2026).** Three places, no duplication:
+
+- **Striver site** - authoritative for which problems are done and due for revision.
+- **Notion** - the per-problem notebook (statement, recognition signal, Swift solution,
+  and going forward: date, result, timings, mistake tag, next repetition).
+- **This section** - aggregate only: counts by source, weakest patterns, mistake-tag
+  frequency, next repetitions, and mock scores.
+
+Do not copy per-problem detail into `PROGRESS.md`. Two ledgers drift, and the one that
+drifts is the one nobody trusts.
 
 ## FDE evidence
 

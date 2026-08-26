@@ -834,6 +834,12 @@ Restored from the July 28 deferral: **I1** (Friday, September 4) and the
 Aug 31–Sep 6. First Monday: read the exit gate, pick no more than three required
 build slices, and confirm the restart gate's residue before starting new work.
 
+**DSA this sprint is Phase A** — completing the Striver SDE Sheet. See
+`06-DSA-Track.md` → *Sprint syllabus*. Target across these two weeks: Dynamic
+Programming 3/7 → 7/7, and Dynamic Programming Part-II 0/8 → 4/8. Eight genuinely
+new hard problems at roughly one hour each. This is **Learn**, not repetition, and
+it is the pattern you have self-selected in every unprompted session since July 21.
+
 #### Monday, August 31
 
 - **2:15–4:15 — AI core. Stage: Learn → Guided practice.**
@@ -848,8 +854,9 @@ build slices, and confirm the restart gate's residue before starting new work.
   `POST /webhooks/{source}` that verifies the signature, persists the raw event,
   acknowledges within its budget, and does the work after acknowledgement.
   Evidence: a 2xx returned before processing completes.
-- **9:30–10:30 — DSA.** Arrays/hash-map repetition from memory. Record the
-  mistake tag and next interval.
+- **9:30–10:30 — DSA. Phase A.** Striver → Dynamic Programming, first unsolved
+  problem. State the recurrence and the base case before writing any code. Record
+  result, timings, and mistake tag in Notion.
 
 #### Tuesday, September 1
 
@@ -865,7 +872,9 @@ build slices, and confirm the restart gate's residue before starting new work.
   deferral. `@Observable`, the state model, and the fake service boundary. Do not
   attempt the view, actor integration, cancellation UI, and tests in one block;
   `04-Weekly-Operating-System.md` explicitly forbids that shape.
-- **9:30–10:30 — DSA.** Two pointers — the timed solve missed on July 29.
+- **9:30–10:30 — DSA. Phase A.** Striver → Dynamic Programming, next unsolved
+  problem. Convert one memoised solution to tabulation and state exactly what
+  changed and why.
 
 #### Wednesday, September 2
 
@@ -873,8 +882,9 @@ build slices, and confirm the restart gate's residue before starting new work.
   Transaction boundaries: force a failure mid-transaction and prove rollback at
   the *application* level, not only in `psql`. The July 24 `rollback_proof.sql`
   proved the database behaves; this proves your code does.
-- **4:30–6:00 — DSA** (block ends at 6:00 on IIT weeks; the missing 30 minutes
-  move to Monday or Tuesday).
+- **4:30–6:00 — DSA. Phase A** (block ends at 6:00 on IIT weeks; the missing 30
+  minutes move to Monday or Tuesday). Two more Striver DP problems, timed. Compare
+  their state definitions and name the signal that selects one over the other.
 - **6:00–8:00 — IIT KGP.**
 
 #### Thursday, September 3
@@ -929,7 +939,8 @@ handling, and measurement only.
   Create `.github/workflows/ci.yml` — there is no `.github/` directory at all
   today. Postgres service container, `uv sync --locked`, `alembic upgrade head`,
   then format, lint, strict type check, unit, API, and integration tests.
-- **9:30–10:30 — DSA.**
+- **9:30–10:30 — DSA. Phase A.** Striver → Dynamic Programming Part-II begins.
+  These are the hard 2-D problems: grid, subsequence, and knapsack family.
 
 #### Tuesday, September 8
 
@@ -938,14 +949,17 @@ handling, and measurement only.
   checkout. A workflow that only passes on a warm cache is not a gate.
 - **4:30–6:30 — Apple. Stage: Evidence.** SwiftUI tests; complete the
   observation/state milestone.
-- **9:30–10:30 — DSA.**
+- **9:30–10:30 — DSA. Phase A.** Striver → DP Part-II, next problem. Re-solve one
+  of last week's DP problems from memory first — that is its 7-day repetition.
 
 #### Wednesday, September 9
 
 - **2:15–4:15 — Evidence.** Write the architecture decision record: *why domain
   code does not import provider SDKs*. Required by the sprint and never produced.
   State one rejected alternative and what evidence would reverse the decision.
-- **4:30–6:00 — DSA.**
+- **4:30–6:00 — DSA. Phase A.** Two more DP Part-II problems. By Sunday Sep 13,
+  Striver should read DP 7/7 and DP Part-II 4/8. Trie and the remaining four DP
+  problems carry into Sprint 2, which closes the sheet at 191/191.
 - **6:00–8:00 — IIT KGP.**
 
 #### Thursday, September 10

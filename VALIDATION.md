@@ -94,7 +94,9 @@ uncounted diagnostic; Consolidations 1 and 3 contain B2 and I6; Consolidations
 - [x] All required patterns are scheduled.
 - [x] Spaced repetition distinguishes failed, hinted, and clean solves.
 - [x] Timed mediums, company-tagged work, and mocks progress by phase.
-- [x] Quality and recall replace a large solved-count target.
+- [x] ~~Quality and recall replace a large solved-count target.~~ **Amended
+      August 26, 2026:** an accepted deviation now applies. See *August 26 DSA
+      source integration* below.
 
 ## AI/FDE coverage
 
@@ -383,8 +385,12 @@ dates:
       never attempted, and `08-Assessment-and-Recovery.md` reserves `fail` for an
       attempted gate.
 - [x] The one piece of real work inside the pause — `DSA6.swift`, 0/1 knapsack,
-      modified August 22 — is recorded, and explicitly labelled working-tree-only
-      until it is committed.
+      modified August 22 — is recorded and, since August 26, durable as commit
+      `82b2282`. **A first-pass overstatement was caught and corrected on the same
+      day:** the initial entry read "recursive, then memoized." Line-by-line
+      inspection before committing showed the memoisation is an empty comment and
+      was never written. The ledger now records the session as **incomplete**, with
+      only the recursive solution present.
 - [x] The July 28 platform-milestone claim was **corrected in place by appended
       note rather than deletion**: `PostgresTaskRepository` is referenced exactly
       once repo-wide (its own definition), `api/app.py` composes only
@@ -425,3 +431,94 @@ three distribution copies must stay byte-identical; renaming would require six
 markdown edits plus a synchronized skill release, and any stale copy would break
 root resolution silently. The document's own title and header record the true
 window. This is a lagging label, not a weakened gate.
+
+
+## August 26 DSA source integration
+
+Recorded the same day as the schedule revision, and approved under the same change
+control. The track's outcomes, weekly budget, spaced-repetition policy, mistake
+taxonomy, and eight-point definition of "solved" are unchanged.
+
+### The gap this closed
+
+- [x] Before this pass, `06-DSA-Track.md` named **no problem source at all**. A
+      repo-wide grep for striver / takeuforward / jointaro / taro / notion / leetcode
+      returned **zero hits** outside `archive/`. Problem selection was ad hoc every
+      week, which is the direct cause of the recorded July 21 defect —
+      *"pattern-selection mismatch: chose DP subsequence instead of arrays/hash-map."*
+- [x] Three sources are now named with a role each, and every weekly slot in the
+      four-hour structure states which source fills it.
+
+### Baseline — directly observed, not user-reported
+
+- [x] Read August 26, 2026 from the Striver dashboard's own progress display:
+      **172/191** — Easy 25/25, Medium 85/93, Hard 62/73. Every topic at 100%
+      except **Dynamic Programming 3/7**, **DP Part-II 0/8**, and **Trie 0/7**.
+- [x] Recorded explicitly as evidence of *prior completion*, **not** of current
+      recall. The learner reports being out of touch with the sheet, and the track's
+      own definition of "solved" requires reproduction. Phase B exists to convert
+      one into the other; the distinction is stated in both `06-DSA-Track.md` and
+      `PROGRESS.md` rather than blurred.
+- [x] Corroborated by three independent data points: every self-selected DSA session
+      since July 21 was dynamic programming (Jul 21 LIS, Jul 28 LIS + LCS, Aug 22
+      0/1 knapsack).
+
+### Re-sequencing
+
+- [x] The original syllabus would have re-covered arrays, trees, and graphs — all at
+      100% — from September to November, while leaving Trie until November 2 and DP
+      until December 14, the only two patterns actually missing.
+- [x] Work now runs Phase A (complete the 19 gaps, Aug 31–Sep 27) → Phase B (revise
+      all 191, Sep 28–Dec 27) → Phase C (Taro lists and mocks, Jan 4–Apr 4) →
+      Phase D (maintenance, Apr 5–May 2).
+- [x] **No pattern was dropped.** `06-DSA-Track.md` carries a coverage map placing
+      every pattern from the original syllabus — arrays, sliding window, stack/queue,
+      linked lists, binary search, heaps, greedy, recursion, trees, BST, backtracking,
+      graphs, trie, 1-D and 2-D DP, intervals, bit operations, company-tagged work,
+      and mocks — into a specific phase and sprint.
+- [x] One genuine gap was found and is stated rather than assumed away: **the Striver
+      sheet has no dedicated bit-operations or maths section**, so those must be
+      sourced deliberately from the Taro lists in Phase C. Previously they were
+      implicitly assumed covered by "Sprint 10 — greedy and bit operations."
+- [x] Phase B's per-sprint problem counts sum to exactly **191**
+      (36 + 35 + 26 + 33 + 39 + 22).
+- [x] Phase totals ≈ 111 hours against 144 available (36 weeks × 4 h, Aug 31 –
+      May 9), leaving roughly 23% slack. The weekly DSA budget stays at 4 hours and
+      no other lane was reduced.
+
+### Overlap correction
+
+- [x] The three lists were **not** treated as additive. Roughly **79%** of the Taro
+      Top 75 index is already in Striver (Two Sum, Merge Intervals, Trapping Rain
+      Water, 3Sum, Kadane's, Number of Islands, Rotting Oranges, Valid Parentheses,
+      LRU Cache, Median of Two Sorted Arrays, Search in Rotated Sorted Array,
+      Generate Parentheses, House Robber, and more), checked against the learner's
+      own Notion index. A problem is counted and revised once. Treating them as three
+      separate passes would have inflated the schedule by roughly 30 hours and
+      produced a false conclusion that the work does not fit.
+
+### Accepted deviation from the quantity guardrail
+
+- [ ] The track's guardrail reads *"roughly 90–120 well-reviewed unique problems."*
+      The three sources total roughly **260 unique problems**. This is a deliberate
+      choice by the learner, recorded in `06-DSA-Track.md` → *Quantity guardrail*
+      with its rationale: the Striver 172 are revision rather than first exposure;
+      the 60-second recall test enforces the guardrail's actual intent; and only
+      about 50 problems are genuinely new, which is **inside** the 90–120 range.
+      Left unchecked deliberately — it is a live deviation, not a satisfied criterion.
+- [ ] **Stated trip-wire:** if Phase B shows recall failing on more than roughly a
+      third of the 172, the sheet is first exposure rather than revision and the
+      deviation stops being defensible. Re-check at Consolidation 2
+      (December 28 – January 3) and cut scope toward the guardrail if it trips.
+
+### Record boundary
+
+- [x] Three places, no duplication: the Striver site owns completion and revision
+      state; Notion owns per-problem records; `PROGRESS.md` owns the aggregate only.
+      This matches `skill.md`'s existing rule against creating new per-track tracking
+      files, and `PROGRESS.md` gained no per-problem rows in this pass.
+- [x] Four ledger fields the Notion pages currently lack — date/attempt type, result,
+      timings, and mistake tag with next repetition — are specified in
+      `06-DSA-Track.md` → *Problem ledger* as required going forward. The existing
+      recognition signals and Swift solutions there already satisfy the pattern-card
+      requirement.

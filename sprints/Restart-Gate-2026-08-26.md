@@ -62,15 +62,25 @@ Blocks 2:15–4:15 and 4:30–6:30 have elapsed. IIT KGP runs 6:00–8:00 PM.
 - **Topic:** make the record match reality before touching any code.
 - **Build:**
   1. In `~/Desktop/AI/iOS-Apps/DSA`, commit the uncommitted `DSA6.swift`
-     (0/1 knapsack, recursive + memoization, last modified Aug 22). Capture the
-     commit SHA. Durable first, cited second.
-  2. In `PROGRESS.md` → **Weekly hours**, add rows for the weeks of Jul 27,
-     Aug 3, Aug 10, and Aug 17. Mark them **missed**. Do not infer hours you did
-     not record — `04-Weekly-Operating-System.md` and `skill.md` both forbid it.
-  3. In `PROGRESS.md` → **DSA ledger summary**, record the Aug 22 session against
-     the SHA from step 1, and note that the Maximum Product Subarray (~Aug 3) and
-     Repeating and Missing Number (~Aug 11) repetitions are overdue.
-- **Evidence:** a DSA commit SHA, and four `PROGRESS.md` rows that say "missed."
+     (0/1 knapsack, recursive only — the memoisation was started and left as an
+     empty comment). **Done Aug 26: commit `82b2282`**, and the ledger row now
+     records the session as incomplete rather than "recursive, then memoized."
+     Durable first, cited second.
+  2. Open the [Striver SDE Sheet](https://takeuforward.org/dsa/strivers-sde-sheet-top-coding-interview-problems)
+     and confirm the baseline recorded on your behalf: **172/191** — Easy 25/25,
+     Medium 85/93, Hard 62/73, with **DP 3/7**, **DP Part-II 0/8**, and **Trie 0/7**
+     as the only incomplete topics. If any number has moved, correct
+     `PROGRESS.md` → **DSA ledger summary** → *Striver baseline*. A baseline you have
+     not looked at yourself is not a baseline.
+  3. Skim `06-DSA-Track.md` → *Problem sources* and *Sprint syllabus*. The four-phase
+     sequence (complete the 19 gaps → revise all 191 → Taro lists → maintenance) is
+     what the next eight months of DSA follow. If the phase order does not match how
+     you actually want to work, say so now rather than in October.
+- **Already recorded for you, verify rather than redo:** the four missed weeks in
+  **Weekly hours**, the overdue repetitions, and the Aug 22 session are already in
+  `PROGRESS.md`. Your job tonight is the SHA and the two confirmations above.
+- **Evidence:** a DSA commit SHA in the ledger, and a personally-verified Striver
+  baseline.
 - **Stop at 10:30 PM.** Do not start scoring Sprint 1 tonight.
 
 ### Thursday, August 27
@@ -207,7 +217,11 @@ work to replace.
 - **Stage:** Evidence.
 - Both scheduled repetitions are overdue: Maximum Product Subarray (~Aug 3) and
   Repeating and Missing Number (~Aug 11). Solve from memory, time them, and
-  record the result and next interval. Repetition is repair, not new content.
+  record the result and next interval in Notion, per the record boundary in
+  `06-DSA-Track.md` → *Problem ledger*. Repetition is repair, not new content.
+- Both are useful calibration for Phase A, which starts Monday: Maximum Product
+  Subarray **is** dynamic programming, so how it goes is an early read on the
+  pattern you are about to spend four weeks on.
 
 ### Sunday, August 30
 
