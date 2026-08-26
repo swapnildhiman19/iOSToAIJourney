@@ -1,7 +1,24 @@
 # Wednesday, July 29, 2026 — Complete Study Schedule
 
+> # ⛔ SUPERSEDED — NOT EXECUTED
+>
+> **Recorded August 26, 2026.** This day was never worked. Execution stopped after
+> the Tuesday July 28 evening session; all 27 checkboxes below remain unticked and
+> no evidence was produced against this plan. It is retained as a record of what
+> was scheduled, not as guidance.
+>
+> Do not execute this file. The active schedule is
+> [`../sprints/Restart-Gate-2026-08-26.md`](../sprints/Restart-Gate-2026-08-26.md)
+> (Aug 26–30), followed by the Sprint 1 repair sprint (Aug 31–Sep 13) in
+> [`../sprints/Sprint-01-AI-Software-Foundations.md`](../sprints/Sprint-01-AI-Software-Foundations.md).
+>
+> Two assumptions stated below as verified were **not** true and are corrected in
+> `PROGRESS.md`: the Postgres adapter was written but never wired into the
+> application, and the project's own lint/format/type gates were failing when this
+> plan was authored.
+
 > **Sprint:** Sprint 1 — AI Software Foundations (Jul 20–Aug 2)
-> **Status:** Recovery Week 2, Day 3 — Building on Tue evening foundation
+> **Status:** Recovery Week 2, Day 3 — Building on Tue evening foundation — **never started**
 > **Sprint Outcome:** Tested FastAPI/Postgres foundation with safe async and webhook behavior
 
 ---

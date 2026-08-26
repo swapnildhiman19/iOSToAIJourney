@@ -1,6 +1,7 @@
 # Sprint 02 — Model API and Context Engineering
 
-> Dates: Monday, August 3–Sunday, August 16, 2026  
+> Dates: Monday, September 14–Sunday, September 27, 2026  
+> Schedule revised August 26, 2026: +6 weeks (was August 3–16). Scope unchanged.  
 > Required roadmap time: approximately 24–25 hours per week  
 > Build outcome: two-provider gateway with structured output, safe tools,
 > streaming/cancellation, fallback, usage telemetry, and explicit context
@@ -299,7 +300,7 @@ trust explicit before adding summaries, retrieval, memory, or tool output.
 
 ## Week 1 — model contracts and structured output
 
-### Monday, August 3
+### Monday, September 14
 
 #### 2:15–4:15 — inference mental model
 
@@ -319,7 +320,7 @@ trust explicit before adding summaries, retrieval, memory, or tool output.
 
 Sliding-window repetition.
 
-### Tuesday, August 4
+### Tuesday, September 15
 
 #### 2:15–4:15 — Gemini adapter
 
@@ -373,7 +374,7 @@ that translation inside `providers/gemini.py`.
 
 One unseen sliding-window problem.
 
-### Wednesday, August 5
+### Wednesday, September 16
 
 #### 2:15–4:15 — structured output
 
@@ -389,7 +390,7 @@ Stack/queue pattern and timed problem.
 
 #### 6:00–8:00 — IIT KGP
 
-### Thursday, August 6
+### Thursday, September 17
 
 #### 2:15–4:15 — Anthropic adapter and capability matrix
 
@@ -407,7 +408,7 @@ Stack/queue pattern and timed problem.
 
 #### 6:00–8:00 — IIT KGP
 
-### Friday, August 7
+### Friday, September 18
 
 #### 2:15–4:15 — routing and telemetry
 
@@ -426,7 +427,7 @@ Provider-neutral model gateway.
 - Run both provider adapters through the same contract suite.
 - Record capability gaps rather than hiding them.
 
-### Sunday, August 9
+### Sunday, September 20
 
 #### Two-hour Apple block
 
@@ -436,7 +437,7 @@ Provider-neutral model gateway.
 
 ## Week 2 — tools, streams, failure, and context
 
-### Monday, August 10
+### Monday, September 21
 
 #### 2:15–4:15 — tool contracts
 
@@ -459,7 +460,7 @@ The model requests a tool. Application code decides whether and how it runs.
 
 Binary-search foundation/repetition.
 
-### Tuesday, August 11
+### Tuesday, September 22
 
 #### 2:15–4:15 — streaming and cancellation
 
@@ -513,7 +514,7 @@ Add keepalive/reconnect semantics only after the basic lifecycle is tested.
 
 Unseen stack or binary-search problem.
 
-### Wednesday, August 12
+### Wednesday, September 23
 
 #### 2:15–4:15 — errors, retries, and fallback
 
@@ -530,7 +531,7 @@ Mixed sliding-window/stack/binary-search timed set.
 
 #### 6:00–8:00 — IIT KGP
 
-### Thursday, August 13
+### Thursday, September 24
 
 #### 2:15–4:15 — context engineering
 
@@ -549,7 +550,7 @@ Mixed sliding-window/stack/binary-search timed set.
 
 #### 6:00–8:00 — IIT KGP
 
-### Friday, August 14
+### Friday, September 25
 
 #### 2:15–4:15 — contract evaluation and integration
 
@@ -576,7 +577,7 @@ Streaming multimodal conversation service.
 - Attempt outage/cancellation before polish.
 - Record tentative sprint score.
 
-### Sunday, August 16
+### Sunday, September 27
 
 #### Two-hour sprint close
 

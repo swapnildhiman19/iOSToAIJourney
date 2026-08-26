@@ -1,6 +1,7 @@
 # DSA Track
 
-Budget: four roadmap hours per week from July 2026 through March 2027.
+Budget: four roadmap hours per week from July 2026 through May 2027
+(schedule revised August 26, 2026: +6 weeks).
 
 The goal is not a large solved count. The goal is to recognize patterns, write
 correct code under time pressure, explain complexity, test edge cases, and

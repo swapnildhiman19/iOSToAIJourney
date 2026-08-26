@@ -1,8 +1,16 @@
 # Progress Ledger
 
-> Last roadmap update: July 28, 2026 (evening session complete)
-> Current block: Sprint 1 (Orientation passed Jul 20) — active
-> Target: March 31, 2027
+> Last roadmap update: August 26, 2026 (schedule revision + restart gate opened)
+> Current block: Restart gate (Aug 26–30) — active
+> Target: May 12, 2027 (revised Aug 26, 2026 from March 31, 2027; +6 weeks)
+
+> **Integrity note — Aug 26, 2026.** This file was corrupted in commit `53f549a`
+> (Jul 28): a compressed tool *read* of the file was written back over it,
+> replacing 134 lines across 23 sections with `[lean-ctx: omitted N lines]`
+> markers and prefixing a `PROGRESS.md [332L]` tool header. It was reconstructed
+> Aug 26 from the last clean revision (`79f9f93`, 332 lines) with all eight
+> genuine Jul 28 additions re-applied and verified. No evidence was lost. Do not
+> paste compressed tool output into a ledger file.
 
 This is the status source of truth. Update it during the Friday review. A
 checkbox requires an evidence link, command, score, recording, or reproducible
@@ -10,7 +18,25 @@ result.
 
 ## Current focus
 
-- Block: Sprint 1 - AI Software Foundations (Jul 20-Aug 2).
+- Block: **Restart gate (Aug 26-30)**. Sprint 1 - AI Software Foundations moves to
+  its repair sprint Aug 31-Sep 13; first attempted Jul 20-Aug 2 and never closed.
+- **Pause and restart, recorded Aug 26:** execution stopped after the Tue Jul 28
+  evening session. Four weeks (Jul 27, Aug 3, Aug 10, Aug 17) passed with no
+  recorded roadmap work, triggering the `04-Weekly-Operating-System.md` rule that
+  two consecutive weeks below the minimum-viable plan require a roadmap pause and
+  a smaller restart gate. Every block from Sprint 1 onward moved **+6 weeks**; no
+  outcome, exit gate, prerequisite, weekly budget, or portfolio boundary changed.
+  The two deferrals recorded Jul 28 (system-design I1, and the SwiftUI
+  observation/state architecture) are **restored** into the repair sprint.
+- **Verified state of the code as of Aug 26 (not user-reported):**
+  `PostgresTaskRepository` is referenced exactly once repo-wide - its own class
+  definition. `api/app.py` still hardcodes `InMemoryTaskRepository()`, so the
+  running API persists nothing and exit-test items 1-2 are not achievable as
+  committed. `ruff check src tests` reports 8 errors, `ruff format --check` 4
+  files, and `mypy src tests` 1 error - every failure in a file introduced by
+  `53f549a`. There is no `.github/`, no CI, no service Dockerfile, and no ADR;
+  `tests/integration/` holds only `.gitkeep` and `tests/conftest.py` defines zero
+  fixtures. All 9 passing tests exercise the in-memory adapter only.
 - Required outcome: a tested FastAPI/Postgres foundation with safe async and signed-webhook behavior (see the Sprint 1 exit test).
 - This week's single most important result: a persisted vertical slice (validated request -> service -> Postgres) proven from a clean checkout.
 - Current blocker: none - all Sprint 1 prerequisites confirmed Jul 20 (Python 3.14.6, uv 0.9.28, Git 2.50.1, Docker 29.6.1 / Postgres 16, Swift 6.2.4, DSA language selected).
@@ -72,31 +98,51 @@ or `repair`.
 | Block | Dates | Status | Score /15 | Exit evidence | Repair |
 |---|---|---|---:|---|---|
 | Orientation | Jul 16–19 | passed | — | Passed Jul 20 (checklist gate): all diagnostics scored + evidenced (Python 2.5, Async 2.5, FastAPI 2.5, SQL 3, Model API 2, System design 14/24, Swift + Concurrency, DSA-Swift independent solve, FDE 15/24); DSA language = Swift; Sprint 1 adjusted within 20%, exit gate preserved | — |
-| Sprint 1 | Jul 20–Aug 2 | active | — | — | — |
-| Sprint 2 | Aug 3–16 | not-started | — | — | — |
-| Sprint 3 | Aug 17–30 | not-started | — | — | — |
-| Sprint 4 | Aug 31–Sep 13 | not-started | — | — | — |
-| Consolidation 1 | Sep 14–20 | not-started | — | — | — |
-| Sprint 5 | Sep 21–Oct 4 | not-started | — | — | — |
-| Sprint 6 | Oct 5–18 | not-started | — | — | — |
-| Sprint 7 | Oct 19–Nov 1 | not-started | — | — | — |
-| Sprint 8 | Nov 2–15 | not-started | — | — | — |
-| Consolidation 2 | Nov 16–22 | not-started | — | — | — |
-| Sprint 9 | Nov 23–Dec 6 | not-started | — | — | — |
-| Sprint 10 | Dec 7–20 | not-started | — | — | — |
-| Sprint 11 | Dec 21–Jan 3 | not-started | — | — | — |
-| Sprint 12 | Jan 4–17 | not-started | — | — | — |
-| Consolidation 3 | Jan 18–24 | not-started | — | — | — |
-| Sprint 13 | Jan 25–Feb 7 | not-started | — | — | — |
-| Sprint 14 | Feb 8–21 | not-started | — | — | — |
-| Sprint 15 | Feb 22–Mar 7 | not-started | — | — | — |
-| Sprint 16 | Mar 8–21 | not-started | — | — | — |
-| Consolidation 4 | Mar 22–28 | not-started | — | — | — |
-| Final verification | Mar 29–31 | not-started | — | — | — |
+| Sprint 1 (attempt 1) | Jul 20–Aug 2 | repair | — | Gate never attempted. 1 of 10 exit-test items proven: item 10 (B1 presented, 17/24, Jul 24). Items 1, 2, 5 blocked by the orphaned Postgres adapter; items 3, 4, 6, 7, 9 never started. | Repair sprint Aug 31–Sep 13 with the same 10-item exit test |
+| Restart gate | Aug 26–30 | active | — | — | — |
+| Sprint 1 (repair) | Aug 31–Sep 13 | not-started | — | — | — |
+| Sprint 2 | Sep 14–27 | not-started | — | — | — |
+| Sprint 3 | Sep 28–Oct 11 | not-started | — | — | — |
+| Sprint 4 | Oct 12–25 | not-started | — | — | — |
+| Consolidation 1 | Oct 26–Nov 1 | not-started | — | — | — |
+| Sprint 5 | Nov 2–15 | not-started | — | — | — |
+| Sprint 6 | Nov 16–29 | not-started | — | — | — |
+| Sprint 7 | Nov 30–Dec 13 | not-started | — | — | — |
+| Sprint 8 | Dec 14–27 | not-started | — | — | — |
+| Consolidation 2 | Dec 28–Jan 3 | not-started | — | — | — |
+| Sprint 9 | Jan 4–17 | not-started | — | — | — |
+| Sprint 10 | Jan 18–31 | not-started | — | — | — |
+| Sprint 11 | Feb 1–14 | not-started | — | — | — |
+| Sprint 12 | Feb 15–28 | not-started | — | — | — |
+| Consolidation 3 | Mar 1–7 | not-started | — | — | — |
+| Sprint 13 | Mar 8–21 | not-started | — | — | — |
+| Sprint 14 | Mar 22–Apr 4 | not-started | — | — | — |
+| Sprint 15 | Apr 5–18 | not-started | — | — | — |
+| Sprint 16 | Apr 19–May 2 | not-started | — | — | — |
+| Consolidation 4 | May 3–9 | not-started | — | — | — |
+| Final verification | May 10–12 | not-started | — | — | — |
 
 ## Active sprint gate
 
-Sprint 1 (Jul 20-Aug 2) is the active block. It uses the five-part sprint rubric (/15); pass requires at least 11/15, no zero, and every item in the Sprint 1 Exit test proven. See sprints/Sprint-01-AI-Software-Foundations.md -> Exit test. The score is recorded at the Aug 2 sprint close.
+The **restart gate (Aug 26-30)** is the active block. See
+`sprints/Restart-Gate-2026-08-26.md` -> Exit test. It is scored **pass/partial/fail
+only** and does not use the five-part `/15` sprint rubric.
+
+Restart-gate exit test (all seven must hold to pass):
+
+- [ ] 1. From a fresh checkout, Postgres and the API start through the documented commands only.
+- [ ] 2. `alembic upgrade head` applies cleanly.
+- [ ] 3. `POST /tasks` then `GET /tasks/{task_id}` returns the record, **and** the row is visible in `psql`.
+- [ ] 4. The record survives a container restart.
+- [ ] 5. `ruff format --check`, `ruff check`, `mypy src tests`, and `pytest -q` are all green.
+- [ ] 6. With Postgres stopped, the readiness endpoint returns 503 rather than a false green.
+- [ ] 7. This file contains no claim stronger than its evidence, and the four missed weeks are marked missed with no inferred hours.
+
+Sprint 1's own gate is unchanged and is attempted at the **Sep 13** repair-sprint
+close: the five-part sprint rubric (/15), pass requires at least 11/15, no zero,
+and every item in the Sprint 1 Exit test proven. See
+`sprints/Sprint-01-AI-Software-Foundations.md` -> Exit test. Items 1, 2 and part
+of 5 are closed by the restart gate; item 10 passed Jul 24.
 
 ### Orientation exit gate - CLOSED, passed Jul 20
 
@@ -119,6 +165,10 @@ Target roadmap hours: 20-25. IIT is tracked separately.
 | Jul 13 | - | - | - | - | - | - | - | Orientation |
 | Jul 20 | plan | plan | plan | plan | plan | plan 24-25 | unreported | FastAPI replacement verified Jul 23; Fri Jul 24 SQL and B1 complete and reviewer-verified Jul 25 (B1 17/24). The external Swift foundation has only a prior type-check from a working-tree-only/non-durable sibling artifact; Swift concurrency continues Sun. Safe async and ADR/minimal CI remain the two Sat replacements, unreported as of Jul 25. **The Jul 24 review did not run, so actual roadmap hours and Jul 22–23 IIT attendance are still unreported and are not inferred here**; the Fri Jul 31 review is now the recording point. |
 | Jul 27 | ~2.5 hrs (Tue eve) | 0 | ~1 hr (Tue eve) | 0 | 0 | ~3.5 hrs (Tue Jul 28 evening) | unreported | **Jul 27–28 daytime missed**: Mon and Tue daytime blocks not attempted. **Tue Jul 28 evening executed**: 6:00–7:30 PM Postgres setup (compose, adapter, migration, readiness) + 9:30–10:30 PM DSA (Repeating/Missing Number XOR solution + LCS bonus). Recovery redistribution recorded Jul 28 under Recovery actions. Remaining Week-2 work continues Wed–Sun. Fill complete actuals at Aug 2 close. |
+| Aug 3 | 0 | 0 | 0 | 0 | 0 | **0 - missed** | unreported | No recorded roadmap work. Recorded Aug 26; hours are not inferred. |
+| Aug 10 | 0 | 0 | 0 | 0 | 0 | **0 - missed** | unreported | No recorded roadmap work. Recorded Aug 26; hours are not inferred. |
+| Aug 17 | 0 | 0 | ~1 hr (Sat Aug 22) | 0 | 0 | **~1 hr - missed** | unreported | Only recorded activity in the window: `DSA6.swift` (0/1 knapsack, recursive + memoization) modified Aug 22 in `../iOS-Apps/DSA`, uncommitted as of Aug 26. See DSA ledger. |
+| Aug 24 | plan | plan | plan | plan | plan | plan (partial week) | unreported | Restart gate opened Wed Aug 26. Wed 2:15-4:15 and 4:30-6:30 blocks had already elapsed when the gate was authored at 18:59 IST. |
 
 Two consecutive roadmap weeks above 25 hours require a scope cut.
 
@@ -126,7 +176,7 @@ Two consecutive roadmap weeks above 25 hours require a scope cut.
 
 - [/] Repository and CI foundation. Skeleton exists at `AI Solutions Platform/`; `src/`, `uv.lock`, `.python-version`, pyproject configuration, formatting, lint, strict type-check, and test commands were verified Jul 22. The required architecture decision and `.github/workflows/ci.yml` are absent; the Sat Jul 25 replacement block was not executed. Separately, `async_boundary_lab.py` (staged, not committed) demonstrates bounded/unbounded fan-out and blocking boundary as Sprint 1 async evidence; its companion notes file is empty. ADR and CI remain scheduled for Thu Jul 30 and Fri Jul 31 respectively. Milestone remains partial.
 - [x] Sprint 1 domain-boundary exercise checkpoint. Frozen domain record, domain duplicate exception, repository `Protocol`, injected application service, in-memory adapter, and create/duplicate tests were verified Jul 22. Targeted and full pytest each passed 2 tests; Ruff format/lint and strict mypy passed; the domain/application forbidden-SDK scan returned zero matches. Swapnil's independent adapter-swap defense was reviewed Jul 22 at 3/4 and accepted with corrections: add `PostgresTaskRepository` rather than rewrite the memory adapter, switch the composition/provider, and translate the exact unique-constraint failure inside the Postgres adapter to `DuplicateTaskTitle`. This closes the local exercise checkpoint, not the Aug 2 sprint gate.
-- [/] FastAPI/Postgres vertical slice. The in-memory HTTP boundary is verified Jul 23: app-owned repository composition, create/read, health/readiness placeholder, stable 404/409 bodies, default 422 validation, generated OpenAPI, and app-isolation evidence. Locked Ruff format/lint and strict mypy passed; full pytest passed 9 tests. **Tue Jul 28 evening (6:00–7:30 PM):** Postgres 16 container via `docker compose up -d` (compose.yaml with health check and named volume); `PostgresTaskRepository` implements `TaskRepository` protocol with `IntegrityError` → `DuplicateTaskTitle` translation; async session provider via `database.py`; first Alembic migration (`0001_create_tasks_table.py`) applied against live Postgres; `/healthz/ready` endpoint returns 200 when DB connected, 503 when unavailable. Dependencies added: `alembic>=1.18.5`, `asyncpg>=0.31.0`, `sqlalchemy[asyncio]>=2.0`. Learning notes: `notes/sprint-01-AI-Software-Foundations-notes-04-postgreSQL-connection-understanding.md` (comprehensive AsyncEngine/Session/Pool/Alembic lifecycle understanding). Clean-database integration tests remain scheduled for Wed Jul 29.
+- [/] FastAPI/Postgres vertical slice. The in-memory HTTP boundary is verified Jul 23: app-owned repository composition, create/read, health/readiness placeholder, stable 404/409 bodies, default 422 validation, generated OpenAPI, and app-isolation evidence. Locked Ruff format/lint and strict mypy passed; full pytest passed 9 tests. **Tue Jul 28 evening (6:00–7:30 PM):** Postgres 16 container via `docker compose up -d` (compose.yaml with health check and named volume); `PostgresTaskRepository` implements `TaskRepository` protocol with `IntegrityError` → `DuplicateTaskTitle` translation; async session provider via `database.py`; first Alembic migration (`0001_create_tasks_table.py`) applied against live Postgres; `/healthz/ready` endpoint returns 200 when DB connected, 503 when unavailable. Dependencies added: `alembic>=1.18.5`, `asyncpg>=0.31.0`, `sqlalchemy[asyncio]>=2.0`. Learning notes: `notes/sprint-01-AI-Software-Foundations-notes-04-postgreSQL-connection-understanding.md` (comprehensive AsyncEngine/Session/Pool/Alembic lifecycle understanding). Clean-database integration tests remain scheduled for Wed Jul 29. **Correction recorded Aug 26, 2026 (verified, not user-reported):** the sentence above overstates what shipped. `PostgresTaskRepository` is referenced exactly once in the repository - its own class definition at `persistence/postgres_tasks.py:10`. Nothing imports it; `api/app.py` composes `InMemoryTaskRepository()` as the only reachable adapter, so the running API persists nothing and exit-test items 1-2 were never achievable from this commit. `/healthz/ready` exists but has zero test coverage, while `/ready` in `api/routes/tasks.py` returns ready unconditionally and `tests/api/test_tasks.py` asserts that placeholder behavior. The commit also landed without running the project's own gates: `ruff check src tests` reports 8 errors, `ruff format --check` 4 files, and `mypy src tests` 1 error, all in files introduced by `53f549a`. The migration file itself is real, applied, and correct. Repair is scheduled in the restart gate (Aug 28-30). This milestone stays **partial**.
 - [x] Sprint 1 relational-modelling and SQL learning evidence (Fri Jul 24, reviewer-verified Sat Jul 25). Artifacts: `AI Solutions Platform/diagnostics/Sprint-01-AI-Software-Foundations/{sql_schema.sql, rollback_proof.sql, parameterized_query_proof.py, query_plan_observation.sql, sql_evidence_package.md}`; teaching record in `notes/sprint-01-AI-Software-Foundations-notes-01-sql-postgresql-deep-learning.md` with a dated reviewer appendix holding the executed transcripts. Verified on PostgreSQL **16.14** (container `orientation-pg`, db `learner_exercise`) via `docker exec -i orientation-pg psql -U postgres -d learner_exercise -v ON_ERROR_STOP=1 < <file>`: schema applies clean (3 tables, 8 indexes — **6 automatic + 2 manual**, correcting the evidence package's "5 + 3"); rollback proof returns `before_count 0 → INSERT 0 1 → visible in transaction → ROLLBACK → 0 rows → after_count 0`; the parameterized-query script inserts, fetches, matches 0 rows for a `'; DROP TABLE task; --` payload, leaves `to_regclass('task')` intact, and rolls back clean. Three claim corrections are recorded rather than silently fixed: the real plan is a forward `Index Scan using idx_task_status_recent`, not `Index Scan Backward` (a DESC index satisfies `ORDER BY … DESC` on a forward read); the printed costs and `rows=2` estimate do not match the server (`0.14..8.16`, Seq Scan `0.00..11.62`, estimate `rows=1` because the table was never `ANALYZE`d); and at 5 rows the un-indexed plan was **faster** (0.025 ms vs 0.051 ms), so index value is unproven at fixture scale. Known gap carried to Jul 27: `psycopg` is not a dependency of `AI Solutions Platform/pyproject.toml`, so the proof script runs only in an ephemeral environment, and its `except psycopg.OperationalError` branch prints "Script logic is verified" for a run that never connected. This is learning evidence for the Jul 27 adapter, not the persisted vertical slice.
 - [ ] Two-provider model contract.
 - [ ] Streaming, structured output, tools, approval, and cancellation.
@@ -209,6 +259,16 @@ Next scheduled case: **I1 — Offline-first adaptive feed** (Sprint 1, Week 2, F
 - Most frequent mistake tag: pattern-selection mismatch - the Jul 21 LIS submission did not match the required arrays/hash-map revision; no timed-solve mistake tag is recorded yet.
 - Most recent mock score: not measured.
 - Next due repetition: Maximum Product Subarray ~Aug 3 (clean-solve 14-day interval), or replace with a harder DP variant.
+- **Overdue as of Aug 26:** Maximum Product Subarray (due ~Aug 3, 23 days overdue)
+  and Repeating and Missing Number (due ~Aug 11, 15 days overdue). Both are
+  scheduled into the restart gate's Saturday Aug 29 replacement block. Repetition
+  is repair, not new content.
+- **Sat Aug 22 session — recorded Aug 26, partially verified.** `../iOS-Apps/DSA/DSA6.swift`
+  was modified Aug 22 with +44/-19 lines implementing 0/1 knapsack (recursive, then
+  memoized). Verified by file mtime and `git diff`; **uncommitted** as of Aug 26, so
+  this is working-tree-only evidence until the restart gate commits it and records
+  the SHA. No timing, accepted run, or mistake tag was supplied, so none is claimed.
+  This is the only recorded activity in the Jul 29 - Aug 25 window.
 - Jul 21 Sprint 1 submission review (verified Jul 22): `../iOS-Apps/DSA/sprint-01-AI-Software-Foundations.swift` is an untracked Longest Increasing Subsequence solution, not an arrays/hash-map revision. It type-checks with one trailing-closure warning; the active `firstIndex` search makes it O(n^2) time and O(n) space. No accepted run, timing, due-item provenance, mistake reflection, or next repetition date was supplied, so it is not counted above.
 - Recovery queue: **Repeating and Missing Number** — **SOLVED Tue Jul 28, 9:30–10:30 PM**. Implementation: XOR-based O(n) time / O(1) extra space solution without modifying input. Algorithm: (1) XOR all array elements with 1...n to get `repeating XOR missing`; (2) find rightmost set bit to partition numbers; (3) XOR each partition separately with both array and 1...n; (4) verify which result is in the array (repeating) vs missing. Artifact: `../iOS-Apps/DSA/sprint-01-AI-Software-Foundations.swift` function `findMissingAndRepeatingValue`. **Prior-mistake note:** The Jul 21 LIS submission was a pattern-selection mismatch — chose DP subsequence instead of arrays/hash-map; the mental process jumped to "interesting problem" rather than matching the recovery target. **Bonus:** Also solved **Longest Common Subsequence** (DP, O(m×n) time/space) in same session. Next repetition: ~Aug 11 (14-day interval). The timed two-pointer solve is rescheduled to Wed Jul 29, 5:00–6:00 mixed set.
 
@@ -290,11 +350,19 @@ Detailed dated execution is authoritative in `sprints/Sprint-01-AI-Software-Foun
 | Jul 22 | None - in-sprint day slip, not a gate | Wednesday FastAPI and DSA blocks were not completed before their windows elapsed | Thu Jul 23 FastAPI replaces the missed flow and minimum contract evidence. Remaining async, Postgres, transaction, and lifecycle depth stays beside its scheduled implementation. Recover DSA through Sun Jul 26 review, Tue Jul 28 timed solve, and Jul 29 repetition/mixed set. | Jul 23–30 | **FastAPI replacement complete and verified Jul 23:** app-owned injection plus 201/200/404/409/422, health/readiness, OpenAPI, and isolation contracts; Ruff format/lint, strict mypy, and 9 tests pass. DSA recovery remains planned. IIT attendance and actual hours remain unreported; Week-2 sequence and the Aug 2 gate are unchanged. |
 | Jul 25 | None - in-sprint block slip, not a gate | The Fri Jul 24 B1 block overran its 9:11 PM stop (B1 notes last modified Jul 25, 02:16 IST), consuming the 9:11–10:11 PM weekly-review window | Fold the weekly review's two required outputs - clean-checkout reproduction of the in-memory vertical slice with format/lint/strict-type/test results, and the Week-1 gap list - into the **existing** Fri Jul 31, 2:15–7:30 gate-rehearsal block, which already owns rehearsal. Do not create a third Week-1 replacement block; Week 1's two optional replacements are both already allocated to Sat Jul 25. Actual roadmap hours and Jul 22-23 IIT attendance stay unreported until supplied. | Fri Jul 31 | **Open.** SQL and B1 evidence for Jul 24 is complete and reviewer-verified (B1 17/24); the review itself is marked missed rather than restaged. A Jul 25 working-tree run of `uv run --extra dev pytest -q` returned `9 passed in 0.21s`, matching the Jul 23 record - but that is the existing working tree, **not** the clean-checkout reproduction the review requires, so that item stays outstanding. No hours were inferred. |
 | Jul 28 | None — multi-day block slip, not a gate | Sat Jul 25 safe async partial (lab created, notes empty, timeout/cancellation tests missing; ADR/CI not started); Sun Jul 26 entirely missed (Swift concurrency + DSA two-pointer); Mon Jul 27 entirely missed (Postgres adapter, persisted vertical slice, Repeating and Missing Number); Tue Jul 28 daytime blocks missed (transactions/idempotency, Apple architecture) | **Recovery redistribution (Jul 28 evening through Aug 2):** Tue evening: Postgres compose + adapter skeleton (6:00–7:30) + DSA Repeating and Missing Number (9:30–10:30). Wed: Postgres adapter completion + readiness (2:15–4:15), two-pointer repetition (4:30–5:00), transaction/idempotency start (5:00–6:00), IIT (6:00–8:00). Thu: signed webhooks (2:15–4:15), contract/lifecycle/failure tests + ADR (4:30–6:00), IIT (6:00–8:00). Fri: Docker + CI with Postgres (2:15–4:15), gate rehearsal (4:30–6:30), weekly review + evidence close (6:30–7:30). Sun Aug 2: Swift concurrency test (1 hr) + clean-checkout exit gate run + score + PROGRESS.md close (1 hr). **Deferred to Consolidation 1:** Apple SwiftUI observation/state architecture (only the Swift concurrency/cancellation test is retained for exit gate item 9). **Deferred within sprint:** I1 system design — use B1 (17/24, already scored) for exit test item 10. Drop/defer per sprint guide: UI polish, Docker optimization, advanced SQLAlchemy, extra endpoints. Do not drop: Postgres transaction/constraint, signed webhook duplicate behavior, cancellation/timeout test, CI, Apple concurrency test, DSA/design continuity. | Aug 2 | **Partial — Tue Jul 28 evening complete.** Postgres compose + adapter skeleton + migration + readiness endpoint verified. DSA Repeating and Missing Number solved (XOR/O(n)/O(1)) + LCS bonus. Prior-mistake note recorded (pattern-selection mismatch from Jul 21 LIS). Wed Jul 29 onwards continues per plan. |
+| Aug 26 | None — multi-week pause, not a failed gate | Execution stopped after the Tue Jul 28 evening session. Four consecutive weeks (Jul 27, Aug 3, Aug 10, Aug 17) recorded no roadmap work, triggering `04-Weekly-Operating-System.md`: "two consecutive weeks below the minimum-viable plan trigger a roadmap pause and a smaller restart gate." Sprint 1 was never closed or scored; 1 of 10 exit-test items proven. Separately, commit `53f549a` shipped an unreachable Postgres adapter and broke the project's own lint/format/type gates, and corrupted `PROGRESS.md` with compressed tool output. | **Schedule revision approved Aug 26 (roadmap change control, user-approved).** Capacity confirmed at the unchanged 20–25 h/week. Every block from Sprint 1 onward shifts **+6 weeks**; readiness target moves Mar 31 → **May 12, 2027**. No outcome, exit gate, prerequisite, weekly budget, or portfolio boundary weakened — dates only. A new **restart gate (Aug 26–30)** is inserted: truthful ledger close, toolchain recheck, stack-snapshot refresh, Apple evidence made durable in a real repository, and repair of `53f549a`. Sprint 1 receives a full repair sprint **Aug 31–Sep 13** running its original unchanged 10-item exit test. The two Jul 28 deferrals — system-design **I1** and the **SwiftUI observation/state architecture** — are **restored**, since the time pressure that justified them was removed by the revision rather than by a scope change. `PROGRESS.md` reconstructed from `79f9f93` with all Jul 28 additions re-applied. | Restart gate scored Aug 30; Sprint 1 gate attempted Sep 13 | **Open.** Restart gate active. Nothing in this row is user-reported except the capacity confirmation; the code and ledger findings were directly verified Aug 26. |
 
 ## Application readiness
 
-- Networking starts: December 2026.
-- Selective applications start: January 2027.
+- Networking starts: December 2026. **Unchanged by the Aug 26 revision.**
+- Selective applications start: January 2027. **Unchanged by the Aug 26 revision.**
+- **Recorded trade, Aug 26, 2026:** these two dates are market-timed, not
+  competency-timed, so they did **not** move with the +6 week shift. The
+  consequence is explicit: Sprint 12 (production beta) now closes Feb 28 instead
+  of Jan 17, so January applications would carry Phase-2 evidence (agents, voice)
+  with Phase 3 (security, GCP deployment, reliability) still in flight. This is
+  recorded rather than resolved. Decide at **Consolidation 2 (Dec 28–Jan 3)** from
+  actual portfolio evidence, not from a prediction made in August.
 - Resume v1: not-started.
 - Resume v2: not-started.
 - Portfolio landing page: not-started.
@@ -307,12 +375,18 @@ Detailed dated execution is authoritative in `sprints/Sprint-01-AI-Software-Foun
 
 ## Weekly review entry template
 
-> Outstanding: the **Week of 2026-07-20** entry has not been written. The Fri
-> Jul 24 9:11–10:11 PM review window was consumed by the B1 block overrun, and
-> actual roadmap hours, IIT hours, and the clean-checkout reproduction result
-> were never captured. No entry is drafted here because the underlying facts
-> were not observed. It is produced at the Fri Jul 31 gate-rehearsal block
-> (see **Recovery actions**, row opened Jul 25).
+> Outstanding as of Aug 26, 2026: **no weekly review entry has ever been
+> written.** The Week of 2026-07-20 entry was displaced when the Fri Jul 24
+> 9:11–10:11 PM window was consumed by the B1 block overrun, and the Fri Jul 31
+> replacement block never ran because execution stopped Jul 28. The weeks of
+> 2026-07-27, 2026-08-03, 2026-08-10, and 2026-08-17 have no entry either; they
+> are recorded as missed under **Weekly hours** with no inferred hours.
+>
+> No entry is drafted here because the underlying facts were not observed, and
+> `skill.md` forbids fabricating hours or evidence. The Week of 2026-07-20 entry
+> is produced in the restart gate's Thu Aug 27 block, and the current week's
+> entry in the Fri Aug 28 6:30–7:30 PM review. Later weeks may be recorded as a
+> single "missed, not observed" entry rather than reconstructed.
 
 ### Week of YYYY-MM-DD
 

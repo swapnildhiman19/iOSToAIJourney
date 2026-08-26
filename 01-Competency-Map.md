@@ -15,7 +15,7 @@ failures:
   operational consequences.
 - **Literacy** — explain when it applies, read an existing implementation, and
   avoid obvious design mistakes.
-- **Deferred** — valuable, but outside the March 2027 target.
+- **Deferred** — valuable, but outside the May 2027 target.
 
 ## 1. AI software engineering
 

@@ -1,6 +1,7 @@
 # AI FDE + iOS AI Journey — Master Index
 
-> Active window: July 16, 2026–March 31, 2027  
+> Active window: July 16, 2026–May 12, 2027  
+> Schedule revised August 26, 2026: +6 weeks after a four-week pause. Scope unchanged.  
 > Primary outcome: production AI Engineer and Forward-Deployed AI Engineer  
 > Secondary differentiator: modern iOS + Apple on-device AI
 
@@ -10,7 +11,7 @@ system design proves the skill.
 
 ## The destination
 
-By March 31, 2027, the portfolio must show that you can:
+By May 12, 2027, the portfolio must show that you can:
 
 1. Build provider-neutral AI systems in Python and FastAPI.
 2. Engineer context, memory, retrieval, evals, safety, latency, and cost rather
@@ -28,7 +29,7 @@ By March 31, 2027, the portfolio must show that you can:
 
 ```mermaid
 flowchart LR
-    Goal[Interview-ready by March 31] --> AITrack[Production AI Engineering]
+    Goal[Interview-ready by May 12] --> AITrack[Production AI Engineering]
     Goal --> AppleTrack[iOS and Apple AI]
     Goal --> InterviewTrack[Interview Practice]
     AITrack --> Platform[AI Solutions Platform]
@@ -89,6 +90,7 @@ Only the immediate horizon is detailed. This prevents fast-moving model,
 framework, and cloud instructions from becoming stale.
 
 - [Sprint 00 — Orientation and diagnostics](./sprints/Sprint-00-Orientation.md)
+- [Restart gate — August 26–30, 2026](./sprints/Restart-Gate-2026-08-26.md)
 - [Sprint 01 — AI software and backend foundations](./sprints/Sprint-01-AI-Software-Foundations.md)
 - [Sprint 02 — Model API and context engineering](./sprints/Sprint-02-Model-API-and-Context.md)
 
@@ -131,7 +133,12 @@ local-versus-cloud benchmarks.
 
 ## Current status
 
-Start with [Sprint 00](./sprints/Sprint-00-Orientation.md), then record every
+The active block is the **restart gate, August 26–30, 2026** — see
+[`sprints/Restart-Gate-2026-08-26.md`](./sprints/Restart-Gate-2026-08-26.md).
+Orientation passed July 20. Sprint 1 was attempted July 20–August 2, never
+closed, and resumes as a repair sprint on August 31.
+
+Historically, start with [Sprint 00](./sprints/Sprint-00-Orientation.md), then record every
 diagnostic result and evidence link in [PROGRESS.md](./PROGRESS.md). Do not use
 the legacy May schedule; it is retained only in
 [the pre-WWDC26 archive](./archive/pre-WWDC26/README.md).

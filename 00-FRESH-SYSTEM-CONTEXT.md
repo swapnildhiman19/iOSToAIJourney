@@ -1,8 +1,8 @@
 # Fresh-System Context and Handoff
 
 > Portable bootstrap document for the AI FDE + iOS AI journey  
-> Context snapshot: July 16, 2026  
-> Target readiness date: March 31, 2027
+> Context snapshot: July 16, 2026; schedule revised August 26, 2026  
+> Target readiness date: May 12, 2027 (was March 31, 2027 — +6 weeks)
 
 ## Purpose
 
@@ -72,7 +72,7 @@ adjacent-framework mastery. Use focused runnable examples, comments, diagrams,
 official sources, and connections to the current portfolio project.
 
 The primary goal is production AI Engineer / Forward-Deployed AI Engineer
-readiness by March 31, 2027. Modern iOS and Apple AI are the secondary
+readiness by May 12, 2027. Modern iOS and Apple AI are the secondary
 differentiator. Preserve the separation among the AI Solutions Platform, Apple
 AI Lab, and Local AI Workbench.
 ```
@@ -82,7 +82,7 @@ AI Lab, and Local AI Workbench.
 - Background: experienced iOS engineer.
 - Primary target: production AI Engineer and Forward-Deployed AI Engineer.
 - Preparation level: Walmart/MAANG-level and advanced US/global AI-FDE roles.
-- Deadline: March 31, 2027.
+- Deadline: May 12, 2027 (revised August 26, 2026 from March 31, 2027).
 - Primary emphasis: universal production AI systems and full FDE ownership.
 - Secondary emphasis: current iOS, Apple Intelligence, and on-device AI.
 - ML theory: IIT KGP program, not duplicated here.
@@ -194,43 +194,59 @@ Roadmap total: approximately 24.5–25 hours. IIT adds four separate hours.
 
 ## Complete phase sequence
 
+> Dates below were shifted **+6 weeks on August 26, 2026** after a four-week
+> pause. Outcomes, exit gates, prerequisites, and the weekly budget are unchanged.
+
 ### Orientation — July 16–19, 2026
 
 Environment, Python/backend, Apple, DSA, system-design, and FDE diagnostics.
+Passed July 20, 2026.
+
+### Restart gate — August 26–30, 2026
+
+Truthful ledger close for the missed period, toolchain recheck, and repair of
+commit `53f549a`. No new content.
 
 ### Phase 1
 
-- Sprint 1, July 20–August 2: Python/FastAPI/backend.
-- Sprint 2, August 3–16: provider-neutral model API and context.
-- Sprint 3, August 17–30: knowledge/retrieval decision.
-- Sprint 4, August 31–September 13: state, memory, harness, and evals.
-- Consolidation 1, September 14–20.
+- Sprint 1 (repair), August 31–September 13: Python/FastAPI/backend.
+  First attempted July 20–August 2; not closed.
+- Sprint 2, September 14–27: provider-neutral model API and context.
+- Sprint 3, September 28–October 11: knowledge/retrieval decision.
+- Sprint 4, October 12–25: state, memory, harness, and evals.
+- Consolidation 1, October 26–November 1.
 
 ### Phase 2
 
-- Sprint 5, September 21–October 4: ADK 2.0 workflows.
-- Sprint 6, October 5–18: multi-agent, MCP/A2A, and durable execution.
-- Sprint 7, October 19–November 1: voice foundations.
-- Sprint 8, November 2–15: production multi-text/multi-voice agents.
-- Consolidation 2, November 16–22.
+- Sprint 5, November 2–15: ADK 2.0 workflows.
+- Sprint 6, November 16–29: multi-agent, MCP/A2A, and durable execution.
+- Sprint 7, November 30–December 13: voice foundations.
+- Sprint 8, December 14–27: production multi-text/multi-voice agents.
+- Consolidation 2, December 28–January 3.
 
 ### Phase 3
 
-- Sprint 9, November 23–December 6: security and tenant controls.
-- Sprint 10, December 7–20: GCP deployment and events.
-- Sprint 11, December 21–January 3: reliability, telemetry, scale, latency, and
+- Sprint 9, January 4–17: security and tenant controls.
+- Sprint 10, January 18–31: GCP deployment and events.
+- Sprint 11, February 1–14: reliability, telemetry, scale, latency, and
   cost.
-- Sprint 12, January 4–17: LoRA experiment and production beta.
-- Consolidation 3, January 18–24.
+- Sprint 12, February 15–28: LoRA experiment and production beta.
+- Consolidation 3, March 1–7.
 
 ### Phase 4
 
-- Sprint 13, January 25–February 7: FDE discovery/pilot/integration.
-- Sprint 14, February 8–21: public release and portfolio.
-- Sprint 15, February 22–March 7: interview loops.
-- Sprint 16, March 8–21: final FDE simulation.
-- Consolidation 4, March 22–28.
-- Final verification, March 29–31.
+- Sprint 13, March 8–21: FDE discovery/pilot/integration.
+- Sprint 14, March 22–April 4: public release and portfolio.
+- Sprint 15, April 5–18: interview loops.
+- Sprint 16, April 19–May 2: final FDE simulation.
+- Consolidation 4, May 3–9.
+- Final verification, May 10–12.
+
+Networking (December 2026) and selective applications (January 2027) are
+**unchanged**. They are market-timed, not competency-timed. Under the revision
+Sprint 12's production beta lands February 28 rather than January 17, so January
+applications carry Phase-2 evidence with Phase 3 in flight. Revisit at
+Consolidation 2 (December 28–January 3) with real evidence.
 
 ## Portfolio 1 — AI Solutions Platform
 
@@ -392,7 +408,7 @@ Install only what the active sprint requires.
 
 ## Final destination
 
-By March 31, 2027, evidence should include:
+By May 12, 2027, evidence should include:
 
 - production-grade AI Solutions Platform;
 - evaluated multi-text and multi-voice agents;

@@ -1,13 +1,26 @@
-# Master Roadmap — July 2026 to March 2027
+# Master Roadmap — July 2026 to May 2027
 
 ## Outcome and pacing
 
 - Start: Thursday, July 16, 2026.
-- Interview-ready target: Wednesday, March 31, 2027.
+- Interview-ready target: Wednesday, May 12, 2027.
 - Required roadmap budget: 20–25 hours per week.
 - IIT KGP ML sessions: four additional hours per week, outside this budget.
-- Structure: orientation, sixteen two-week sprints, four consolidation weeks,
-  and a final three-day readiness check.
+- Structure: orientation, a restart gate, sixteen two-week sprints, four
+  consolidation weeks, and a final three-day readiness check.
+
+> **Schedule revision — recorded Wednesday, August 26, 2026.** Execution stopped
+> after the Tuesday July 28 evening session. Four weeks elapsed with no recorded
+> work, and Sprint 1 was never closed or scored. Under
+> `04-Weekly-Operating-System.md` ("two consecutive weeks below the
+> minimum-viable plan trigger a roadmap pause and a smaller restart gate"), this
+> revision adds a restart gate (Aug 26–30), gives Sprint 1 a full repair sprint,
+> and shifts every subsequent block **+6 weeks**. No exit gate, outcome,
+> prerequisite, weekly budget, or portfolio boundary was weakened; only dates
+> moved. The readiness target moves from March 31 to **May 12, 2027**. The
+> filename retains `Mar2027` because `skill.md` resolves the roadmap root by that
+> literal string across four distribution copies. See `PROGRESS.md` → *Recovery
+> actions* (Aug 26) and `VALIDATION.md` → *August 26 schedule revision*.
 
 This calendar is competency-gated. Dates determine when to attempt a skill; an
 exit gate determines whether it is complete.
@@ -36,27 +49,29 @@ rather than turning the block into an implementation deadline.
 | Block | Dates | Primary outcome |
 |---|---|---|
 | Orientation | Jul 16–19 | Baseline diagnostics, environment, evidence ledger |
-| Sprint 1 | Jul 20–Aug 2 | Python/FastAPI/backend foundation |
-| Sprint 2 | Aug 3–16 | Provider-neutral model API and context foundation |
-| Sprint 3 | Aug 17–30 | Knowledge and retrieval decision system |
-| Sprint 4 | Aug 31–Sep 13 | State, memory, harness, and eval foundation |
-| Consolidation 1 | Sep 14–20 | Repair Phase 1 gaps |
-| Sprint 5 | Sep 21–Oct 4 | ADK 2.0 graph workflows |
-| Sprint 6 | Oct 5–18 | Multi-agent, MCP/A2A, and durable work |
-| Sprint 7 | Oct 19–Nov 1 | Real-time voice foundations |
-| Sprint 8 | Nov 2–15 | Production multi-text and multi-voice agents |
-| Consolidation 2 | Nov 16–22 | Repair Phase 2 gaps |
-| Sprint 9 | Nov 23–Dec 6 | Enterprise security and tenant controls |
-| Sprint 10 | Dec 7–20 | GCP deployment and event-driven execution |
-| Sprint 11 | Dec 21–Jan 3 | Reliability, observability, scale, latency, cost |
-| Sprint 12 | Jan 4–17 | LoRA experiment and production beta |
-| Consolidation 3 | Jan 18–24 | Repair Phase 3 gaps and device checkpoint |
-| Sprint 13 | Jan 25–Feb 7 | FDE discovery, pilot, and integration |
-| Sprint 14 | Feb 8–21 | Public platform release and portfolio evidence |
-| Sprint 15 | Feb 22–Mar 7 | Interview loops and architecture defense |
-| Sprint 16 | Mar 8–21 | Final FDE simulation and market readiness |
-| Consolidation 4 | Mar 22–28 | Last gap repair; no new scope |
-| Final verification | Mar 29–31 | Readiness decision and next actions |
+| *(Sprint 1, first attempt)* | *Jul 20–Aug 2* | *Not closed; 1 of 10 exit items proven* |
+| Restart gate | Aug 26–30 | Truthful ledger, toolchain recheck, repair of commit `53f549a` |
+| Sprint 1 (repair) | Aug 31–Sep 13 | Python/FastAPI/backend foundation |
+| Sprint 2 | Sep 14–27 | Provider-neutral model API and context foundation |
+| Sprint 3 | Sep 28–Oct 11 | Knowledge and retrieval decision system |
+| Sprint 4 | Oct 12–25 | State, memory, harness, and eval foundation |
+| Consolidation 1 | Oct 26–Nov 1 | Repair Phase 1 gaps |
+| Sprint 5 | Nov 2–15 | ADK 2.0 graph workflows |
+| Sprint 6 | Nov 16–29 | Multi-agent, MCP/A2A, and durable work |
+| Sprint 7 | Nov 30–Dec 13 | Real-time voice foundations |
+| Sprint 8 | Dec 14–27 | Production multi-text and multi-voice agents |
+| Consolidation 2 | Dec 28–Jan 3 | Repair Phase 2 gaps |
+| Sprint 9 | Jan 4–17 | Enterprise security and tenant controls |
+| Sprint 10 | Jan 18–31 | GCP deployment and event-driven execution |
+| Sprint 11 | Feb 1–14 | Reliability, observability, scale, latency, cost |
+| Sprint 12 | Feb 15–28 | LoRA experiment and production beta |
+| Consolidation 3 | Mar 1–7 | Repair Phase 3 gaps and device checkpoint |
+| Sprint 13 | Mar 8–21 | FDE discovery, pilot, and integration |
+| Sprint 14 | Mar 22–Apr 4 | Public platform release and portfolio evidence |
+| Sprint 15 | Apr 5–18 | Interview loops and architecture defense |
+| Sprint 16 | Apr 19–May 2 | Final FDE simulation and market readiness |
+| Consolidation 4 | May 3–9 | Last gap repair; no new scope |
+| Final verification | May 10–12 | Readiness decision and next actions |
 
 ## Prerequisite chain
 
@@ -112,9 +127,47 @@ prerequisite for the next sprint.
 
 **Cut first:** account creation and optional cloud provisioning.
 
-### Sprint 1 — July 20–August 2
+### Restart gate — August 26–30
+
+**Purpose:** re-enter after a four-week pause without carrying a false record or
+a broken foundation forward. This is a gate, not a catch-up week: it has a pass
+condition, and it is scored.
+
+Detailed sessions live in `sprints/Restart-Gate-2026-08-26.md`.
+
+**Ledger and re-entry**
+
+- Record the four missed weeks as missed, with no inferred hours.
+- Score the first Sprint 1 attempt against its real gate and set its status.
+- Write the weekly review entries that were never produced.
+- Re-verify the toolchain and refresh `09-Current-Stack-Snapshot.md`.
+
+**Repair**
+
+- Restore the project's own quality gates to green.
+- Make the persistence adapter actually reachable from the running application.
+- Resolve the contradiction between the two readiness endpoints.
+- Reproduce the vertical slice from a clean checkout.
+
+**Exit gate**
+
+- A fresh checkout starts Postgres and the API through documented commands, and
+  a created record survives a container restart.
+- Format, lint, strict type check, and tests are all green.
+- `PROGRESS.md` contains no claim stronger than its evidence.
+
+**Cut first:** new content of any kind. This gate adds no sprint scope.
+
+### Sprint 1 (repair) — August 31–September 13
 
 **Theme:** AI software and backend foundations.
+
+> First attempted July 20–August 2, 2026 and never closed; 1 of 10 exit-test
+> items was proven. The outcome, the ten-item exit test, and the required build
+> outputs below are **unchanged**. The two deferrals recorded on July 28 —
+> system-design case I1, and the SwiftUI observation/state architecture — are
+> **restored**, because the time pressure that justified them was removed by the
+> schedule revision rather than by a change in scope.
 
 **AI/backend**
 
@@ -166,7 +219,7 @@ prerequisite for the next sprint.
 **Cut first:** Flutter and cloud deployment. They are not Sprint 1
 prerequisites.
 
-### Sprint 2 — August 3–16
+### Sprint 2 — September 14–27
 
 **Theme:** model API engineering and intentional context.
 
@@ -226,7 +279,7 @@ prerequisites.
 **Cut first:** advanced multimodal features and provider-native convenience
 abstractions. Preserve the internal contract and failure behavior.
 
-### Sprint 3 — August 17–30
+### Sprint 3 — September 28–October 11
 
 **Theme:** knowledge systems and the modern RAG decision.
 
@@ -286,7 +339,7 @@ abstractions. Preserve the internal contract and failure behavior.
 **Cut first:** GraphRAG and agentic retrieval. Add them only after the baseline
 shows a specific multi-hop or iterative-search failure.
 
-### Sprint 4 — August 31–September 13
+### Sprint 4 — October 12–25
 
 **Theme:** state, memory, harness, and evaluation.
 
@@ -345,7 +398,7 @@ shows a specific multi-hop or iterative-search failure.
 
 **Cut first:** autonomous memory writing. Retain explicit, testable write rules.
 
-### Consolidation 1 — September 14–20
+### Consolidation 1 — October 26–November 1
 
 - No new AI topic.
 - Re-run all four exit gates and repair the oldest failure first.
@@ -356,7 +409,7 @@ shows a specific multi-hop or iterative-search failure.
 
 ## Phase 2 — Agents and real-time systems
 
-### Sprint 5 — September 21–October 4
+### Sprint 5 — November 2–15
 
 **Theme:** ADK 2.0 graph workflows.
 
@@ -406,7 +459,7 @@ shows a specific multi-hop or iterative-search failure.
 
 **Cut first:** decorative sub-agents. Preserve one reliable graph.
 
-### Sprint 6 — October 5–18
+### Sprint 6 — November 16–29
 
 **Theme:** multi-agent boundaries, interoperability, and long-running work.
 
@@ -461,7 +514,7 @@ shows a specific multi-hop or iterative-search failure.
 **Cut first:** a third specialist, dynamic discovery, and nonessential MCP
 features.
 
-### Sprint 7 — October 19–November 1
+### Sprint 7 — November 30–December 13
 
 **Theme:** real-time voice foundations.
 
@@ -509,7 +562,7 @@ features.
 
 **Cut first:** video and custom signaling. Preserve reliable audio and metrics.
 
-### Sprint 8 — November 2–15
+### Sprint 8 — December 14–27
 
 **Theme:** production multi-text and multi-voice agents.
 
@@ -563,7 +616,7 @@ features.
 **Cut first:** visual/video input and extra voices. Preserve one excellent
 multi-agent audio flow.
 
-### Consolidation 2 — November 16–22
+### Consolidation 2 — December 28–January 3
 
 - No new system-design case.
 - Repair failed Phase 2 gates.
@@ -574,7 +627,7 @@ multi-agent audio flow.
 
 ## Phase 3 — Enterprise production engineering
 
-### Sprint 9 — November 23–December 6
+### Sprint 9 — January 4–17
 
 **Theme:** enterprise security and multi-tenant controls.
 
@@ -627,7 +680,7 @@ multi-agent audio flow.
 **Cut first:** SCIM and private networking implementation. Retain the design and
 threat model.
 
-### Sprint 10 — December 7–20
+### Sprint 10 — January 18–31
 
 **Theme:** GCP deployment and event-driven execution.
 
@@ -684,7 +737,7 @@ threat model.
 **Cut first:** Terraform automation and GKE. Preserve repeatable commands and
 identity correctness.
 
-### Sprint 11 — December 21–January 3
+### Sprint 11 — February 1–14
 
 **Theme:** reliability, observability, scale, latency, and cost.
 
@@ -741,7 +794,7 @@ identity correctness.
 **Cut first:** distributed load generation and custom dashboards. Preserve
 instrumentation, SLOs, and one credible load environment.
 
-### Sprint 12 — January 4–17
+### Sprint 12 — February 15–28
 
 **Theme:** fine-tuning decision and production beta.
 
@@ -792,7 +845,7 @@ instrumentation, SLOs, and one credible load environment.
 **Cut first:** serving the fine-tuned model in production. The experiment and
 decision are the required evidence.
 
-### Consolidation 3 — January 18–24
+### Consolidation 3 — March 1–7
 
 - Repair failed Phase 3 gates.
 - Refresh models, ADK, cloud, protocol, and Apple stack snapshot.
@@ -802,7 +855,7 @@ decision are the required evidence.
 
 ## Phase 4 — FDE delivery and interviews
 
-### Sprint 13 — January 25–February 7
+### Sprint 13 — March 8–21
 
 **Theme:** FDE discovery, pilot, and integration.
 
@@ -853,7 +906,7 @@ decision are the required evidence.
 **Cut first:** a polished customer UI. Preserve discovery, integration,
 measurement, and operational proof.
 
-### Sprint 14 — February 8–21
+### Sprint 14 — March 22–April 4
 
 **Theme:** public release and portfolio proof.
 
@@ -899,7 +952,7 @@ measurement, and operational proof.
 **Cut first:** visual polish in Flutter. Preserve reliable demonstration and
 operator visibility.
 
-### Sprint 15 — February 22–March 7
+### Sprint 15 — April 5–18
 
 **Theme:** interview loops and architecture defense.
 
@@ -943,7 +996,7 @@ operator visibility.
 **Cut first:** new project features. Interview weakness repair is the only
 allowed scope.
 
-### Sprint 16 — March 8–21
+### Sprint 16 — April 19–May 2
 
 **Theme:** final integrated simulation.
 
@@ -987,7 +1040,7 @@ allowed scope.
 **Cut first:** anything not required for a current interview, failed gate, or
 public evidence.
 
-### Consolidation 4 — March 22–28
+### Consolidation 4 — May 3–9
 
 - No new content, model migration, framework, or feature.
 - Repair only failed exit gates and active interview weaknesses.
@@ -995,7 +1048,7 @@ public evidence.
 - Verify public links, redaction, costs, and cloud teardown controls.
 - Decide which optional topics move to the post-March backlog.
 
-### Final verification — March 29–31
+### Final verification — May 10–12
 
 Use the assessment rubric, not emotion.
 

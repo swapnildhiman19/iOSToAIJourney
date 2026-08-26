@@ -99,7 +99,8 @@ Never use `archive/pre-WWDC26/` as active guidance.
   Engineer.
 - Target preparation level: Walmart/MAANG-level and advanced US/global AI-FDE
   opportunities.
-- Readiness target: March 31, 2027.
+- Readiness target: May 12, 2027 (revised August 26, 2026 from March 31, 2027;
+  +6 weeks, no scope change).
 - Primary focus: universal production AI systems and complete FDE delivery.
 - Secondary differentiator: current iOS, Apple Intelligence, and on-device AI.
 - Broader ML theory: IIT KGP program, tracked separately.
@@ -374,9 +375,10 @@ IIT KGP adds four separate hours.
 
 ## Current roadmap snapshot at file creation
 
-Snapshot date: Thursday, July 16, 2026.
+Snapshot date: Thursday, July 16, 2026. **Superseded — see the August 26, 2026
+revision below.**
 
-Recorded current block:
+Recorded current block at file creation:
 
 - Orientation, July 16–19.
 - Status in `PROGRESS.md`: `not-started` when originally authored.
@@ -384,6 +386,26 @@ Recorded current block:
 
 When this file is used later, re-read `PROGRESS.md`. Do not keep reporting
 Orientation after the status has changed.
+
+### Schedule revision — Wednesday, August 26, 2026
+
+Execution stopped after the Tuesday July 28 evening session. Four weeks elapsed
+with no recorded work and Sprint 1 was never closed or scored. Every block from
+Sprint 1 onward moved **+6 weeks**; outcomes, exit gates, prerequisites, the
+20–25 hour weekly budget, and portfolio boundaries are unchanged.
+
+Current block when this revision was recorded:
+
+- **Restart gate, August 26–30, 2026** — see `sprints/Restart-Gate-2026-08-26.md`.
+  Truthful ledger close for the missed period, toolchain recheck, and repair of
+  commit `53f549a`. No new content.
+- **Sprint 1 (repair), August 31–September 13** — the original ten-item exit test,
+  unchanged. First attempted July 20–August 2; 1 of 10 items proven.
+- Sprint 2 moves to September 14–27. Final verification moves to May 10–12, 2027.
+
+The full shifted calendar is in `02-Master-Roadmap-Jul2026-Mar2027.md` (the
+filename intentionally still says `Mar2027`; `skill.md` resolves the roadmap root
+by that literal string). `PROGRESS.md` remains the status source of truth.
 
 ### Orientation schedule
 

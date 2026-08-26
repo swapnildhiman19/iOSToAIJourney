@@ -1,8 +1,12 @@
 # Current Stack Snapshot
 
 > Verified: July 16, 2026  
+> **Stale — refresh due during the restart gate (August 26–30, 2026).** Six weeks
+> elapsed without a recheck. Model IDs, SDK versions, Xcode/OS 27 status, and the
+> MCP specification below must be re-verified before Sprint 1's repair sprint
+> begins on August 31.  
 > Purpose: pin the learning environment for the current phase without pretending
-> that model IDs and preview APIs will remain unchanged through March 2027.
+> that model IDs and preview APIs will remain unchanged through May 2027.
 
 This file is refreshed during orientation and every consolidation week. The
 roadmap names capabilities first and products second.

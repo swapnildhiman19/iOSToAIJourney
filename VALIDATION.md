@@ -2,7 +2,8 @@
 
 > Audit date: July 23, 2026 (structural)
 > Last evidence verification: July 25, 2026 — see *July 24 evidence verification*
-> Result: **PASS**
+> Last schedule revision: August 26, 2026 — see *August 26 schedule revision*
+> Result: **PASS** (structure); see the August 26 section for two open defects
 
 This audit checks the rebuilt roadmap against the attached implementation plan.
 It validates structure and internal consistency; it does not claim that future
@@ -36,8 +37,10 @@ preview APIs will remain unchanged.
 - [x] Consolidation weeks follow Sprints 4, 8, 12, and 16.
 - [x] Every consolidation week is seven days.
 - [x] Blocks are contiguous with no gap or overlap.
-- [x] Final verification is March 29–31, 2027.
-- [x] The active target remains March 31, 2027.
+- [x] ~~Final verification is March 29–31, 2027.~~ **Superseded August 26, 2026:**
+      final verification is **May 10–12, 2027**. Re-verified below.
+- [x] ~~The active target remains March 31, 2027.~~ **Superseded August 26, 2026:**
+      the active target is **May 12, 2027** (+6 weeks). Re-verified below.
 
 ## Weekly budget
 
@@ -309,3 +312,116 @@ Recheck rather than silently trust:
 
 These assumptions have dated checkpoints and do not invalidate the durable
 competency sequence.
+
+
+## August 26 schedule revision
+
+A four-week pause (July 29–August 25, 2026) triggered the
+`04-Weekly-Operating-System.md` restart rule. Under roadmap change control this
+revision was analyzed, approved by the user, and applied. **Scope, outcomes, exit
+gates, prerequisites, the 20–25 hour weekly budget, and portfolio boundaries are
+unchanged. Only dates moved, plus one inserted restart gate.**
+
+### Calendar — re-verified by computation, not by reading
+
+Every block was parsed from the master calendar table and checked against real
+dates:
+
+- [x] 16 sprints present.
+- [x] Every sprint is exactly 14 inclusive days, Monday through Sunday.
+- [x] 4 consolidation weeks, each exactly 7 days, Monday through Sunday.
+- [x] Consolidation weeks still follow Sprints 4, 8, 12, and 16.
+- [x] Blocks are contiguous with no gap or overlap from August 26, 2026 onward.
+- [x] Final verification is **May 10–12, 2027** (Monday–Wednesday).
+- [x] Orientation is unchanged at July 16–19, 2026.
+- [x] The gap between Orientation and the restart gate is **intentional and
+      recorded**: Sprint 1's first attempt (Jul 20–Aug 2) plus the unworked pause
+      (Aug 3–25). It is a truthful record of elapsed time, not a scheduling error.
+
+### Scope preservation
+
+- [x] The Sprint 1 ten-item exit test is byte-identical to its original.
+- [x] Sprint 1's July 20–August 2 sessions are preserved verbatim as history; the
+      repair sprint was **appended**, not substituted.
+- [x] The two deferrals recorded July 28 — system-design **I1** and the **SwiftUI
+      observation/state architecture** — are **restored** into the repair sprint.
+      The revision therefore reduced deferred scope; it did not add any.
+- [x] Weekly budget unchanged at approximately 24.5–25 hours; IIT separate.
+- [x] Networking (December 2026) and selective applications (January 2027) were
+      deliberately **not** shifted. The consequence — Sprint 12's beta landing
+      February 28 rather than January 17 — is recorded in `PROGRESS.md` →
+      *Application readiness* with a decision point at Consolidation 2.
+- [x] `04-Weekly-Operating-System.md`, `03-Portfolio-Architecture.md`, and the
+      system-design/FDE tracks required no edits; they reference sprints by number
+      and phase, not by absolute date.
+
+### Ledger integrity — a defect was found and repaired
+
+- [x] **`PROGRESS.md` was corrupted in commit `53f549a` (July 28).** A compressed
+      tool *read* of the file had been written back over the file itself: line 1
+      became the literal tool header `PROGRESS.md [332L]`, and **134 lines across
+      23 sections** were replaced by 61 `[lean-ctx: omitted N lines]` markers. The
+      heaviest losses were the Roadmap status table (16 lines), the July 16
+      environment baseline (13), platform milestones (12), and the DSA and FDE
+      ledgers (9 each). The corruption was committed and pushed.
+- [x] Repaired August 26 by reconstruction, not by hand-editing: the last clean
+      revision (`79f9f93`, 332 lines, 0 markers) was taken as the base, and all
+      **eight** genuine July 28 additions were re-applied by unique-line anchor —
+      the two header lines, the Recovery-override schedule paragraph, the `Jul 27`
+      weekly-hours row, the repository/CI and FastAPI/Postgres milestone bullets,
+      the DSA recovery-queue solve, and the `Jul 28` recovery row.
+- [x] Verified by set difference: exactly the seven intended lines from the clean
+      base were replaced and nothing else was dropped. Zero omission markers
+      remain. All four July 28 fact probes survived.
+- [x] No historical score, evidence row, or attempt was rewritten. All August 26
+      changes are additions or explicitly-marked supersessions.
+
+### Truthfulness of the new record
+
+- [x] The four missed weeks are recorded as **missed** with **no inferred hours**.
+- [x] Sprint 1's first attempt is recorded as `repair`, not `fail` — its gate was
+      never attempted, and `08-Assessment-and-Recovery.md` reserves `fail` for an
+      attempted gate.
+- [x] The one piece of real work inside the pause — `DSA6.swift`, 0/1 knapsack,
+      modified August 22 — is recorded, and explicitly labelled working-tree-only
+      until it is committed.
+- [x] The July 28 platform-milestone claim was **corrected in place by appended
+      note rather than deletion**: `PostgresTaskRepository` is referenced exactly
+      once repo-wide (its own definition), `api/app.py` composes only
+      `InMemoryTaskRepository`, and the running API persists nothing. Exit-test
+      items 1–2 were never achievable from that commit.
+- [x] `ruff check src tests` (8 errors), `ruff format --check` (4 files), and
+      `mypy src tests` (1 error) were **executed**, not assumed. Every failure is
+      in a file introduced by `53f549a`.
+- [x] `study-resources/July-29-schedule.md` carries a SUPERSEDED banner. Its only
+      working-tree change had been a cosmetic markdown reflow (164 insertions, 3
+      real deletions, zero checkboxes ticked); that reflow was reverted so the
+      record shows the file as authored.
+
+### Open defects — not repaired by this pass
+
+- [ ] **The Cursor distribution copy of the coach skill does not exist.**
+      `00-FRESH-SYSTEM-CONTEXT.md` documents
+      `~/.cursor/skills-cursor/ai-roadmap-coach/SKILL.md`, and the *Roadmap coach
+      skill* section above asserts that Kiro, Cursor, Claude, and Gemini paths all
+      carry identical content. Verified August 26: the canonical `skill.md` and
+      the Gemini, Claude, and Kiro copies all share SHA-256
+      `f346a404dc782f45ad8a45a4f7931265e5b965baeeab2afb1d995db80c5347f3`, but the
+      Cursor path is absent — `~/.cursor/` has no `skills-cursor` directory.
+      Either restore the copy or remove the claim; do not leave the assertion
+      standing while it is false.
+- [ ] `AI Solutions Platform/alembic.ini` is tracked in git with a plaintext
+      database password. Acceptable for local development, but it belongs in the
+      Sprint 1 security discussion rather than passing unremarked.
+- [ ] `notes/sprint-01-...-notes-02-b1-...md` still refers to "the Phase-4 March
+      2027 mock." Left unchanged deliberately: it is dated learning evidence, and
+      evidence is not retro-edited.
+
+### Filename
+
+`02-Master-Roadmap-Jul2026-Mar2027.md` retains its name although the window now
+ends in May 2027. `skill.md` resolves the roadmap root by that literal string, and
+three distribution copies must stay byte-identical; renaming would require six
+markdown edits plus a synchronized skill release, and any stale copy would break
+root resolution silently. The document's own title and header record the true
+window. This is a lagging label, not a weakened gate.

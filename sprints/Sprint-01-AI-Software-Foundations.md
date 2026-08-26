@@ -1,9 +1,28 @@
 # Sprint 01 — AI Software Foundations
 
-> Dates: Monday, July 20–Sunday, August 2, 2026  
+> First attempt: Monday, July 20–Sunday, August 2, 2026 — **not closed, not scored**  
+> Repair sprint: Monday, August 31–Sunday, September 13, 2026 — **active**  
 > Required roadmap time: approximately 24–25 hours per week  
 > Build outcome: tested FastAPI/Postgres foundation with safe async and webhook
 > behavior
+
+> **Schedule revision — recorded Wednesday, August 26, 2026.** Execution stopped
+> after the Tuesday July 28 evening session and four weeks elapsed with no
+> recorded work. This sprint's **outcome, ten-item exit test, required build
+> outputs, and drop/defer order are unchanged.** Only its dates moved.
+>
+> Everything under *Week 1*, *Week 2*, and *Recovery override — recorded
+> Wednesday, July 22* below is **historical record of the first attempt** and is
+> preserved verbatim. Do not execute those dates.
+>
+> The current schedule is **[Repair sprint — August 31–September 13](#repair-sprint--august-31september-13-2026)**
+> at the end of this file. The restart gate that precedes it is
+> [`Restart-Gate-2026-08-26.md`](./Restart-Gate-2026-08-26.md).
+>
+> The two deferrals recorded July 28 — system-design case **I1**, and the
+> **SwiftUI observation/state architecture** — are **restored**. The time
+> pressure that justified them was removed by the schedule revision, not by a
+> change in scope.
 
 ## In plain language
 
@@ -285,6 +304,10 @@ Before moving on:
 - identify which database constraint must enforce the invariant in production.
 
 ## Week 1 — language, async, API, and SQL
+
+> **Historical — first attempt, July 20–August 2, 2026.** Preserved as the record
+> of what was attempted. The active schedule is the repair sprint at the end of
+> this file.
 
 ### Monday, July 20
 
@@ -788,3 +811,191 @@ Do not drop:
 - CI;
 - Apple concurrency test;
 - DSA/design continuity.
+
+---
+
+## Repair sprint — August 31–September 13, 2026
+
+> Active schedule. Authored August 26, 2026 after the +6 week revision.
+> Prerequisite: the restart gate ([`Restart-Gate-2026-08-26.md`](./Restart-Gate-2026-08-26.md))
+> closes exit items 1, 2, and part of 5. If it ended `partial`, its residue is
+> the first block below and displaces the Monday platform block.
+
+The exit test is unchanged. Item 10 passed on July 24 (B1, 17/24). Items 1 and 2
+close in the restart gate. This sprint owns items **3, 4, 5, 6, 7, 8, and 9**,
+plus three required outputs that were never produced: the architecture decision
+record, the five-minute recorded walkthrough, and the FDE one-pager.
+
+Restored from the July 28 deferral: **I1** (Friday, September 4) and the
+**SwiftUI observation/state architecture** (Tuesday and Thursday Apple blocks).
+
+### Week 1 — webhooks, transactions, cancellation
+
+Aug 31–Sep 6. First Monday: read the exit gate, pick no more than three required
+build slices, and confirm the restart gate's residue before starting new work.
+
+#### Monday, August 31
+
+- **2:15–4:15 — AI core. Stage: Learn → Guided practice.**
+  Assumed prerequisite: HTTP contracts and the 409 boundary (proven July 23).
+  Webhook signing is new. Topic: HMAC-SHA256, why signatures go in a header,
+  constant-time comparison, replay windows, and why fast acknowledgement matters
+  more than fast processing. Source: the HMAC section of the official
+  `hmac`/`hashlib` docs plus one provider's real signing spec. Build the smallest
+  possible verifier over a fixed payload and prove it rejects a mutated body.
+  Evidence: a passing test for valid signature, mutated body, and wrong secret.
+- **4:30–6:30 — Platform. Stage: Independent build.**
+  `POST /webhooks/{source}` that verifies the signature, persists the raw event,
+  acknowledges within its budget, and does the work after acknowledgement.
+  Evidence: a 2xx returned before processing completes.
+- **9:30–10:30 — DSA.** Arrays/hash-map repetition from memory. Record the
+  mistake tag and next interval.
+
+#### Tuesday, September 1
+
+- **2:15–4:15 — AI core. Stage: Learn → Independent build.**
+  Idempotency at the database boundary: a unique key derived from the provider's
+  event ID, the difference between idempotent *delivery* and idempotent *effect*,
+  and why the constraint belongs in Postgres rather than in application memory.
+  Write migration `0002_create_idempotency_keys.py` by hand — `alembic/env.py`
+  has `target_metadata = None`, so autogenerate is inert and you should know that
+  rather than discover it.
+- **4:30–6:30 — Apple. Stage: Learn → Guided practice.**
+  SwiftUI observation and state architecture, part 1 — restored from the July 28
+  deferral. `@Observable`, the state model, and the fake service boundary. Do not
+  attempt the view, actor integration, cancellation UI, and tests in one block;
+  `04-Weekly-Operating-System.md` explicitly forbids that shape.
+- **9:30–10:30 — DSA.** Two pointers — the timed solve missed on July 29.
+
+#### Wednesday, September 2
+
+- **2:15–4:15 — AI core. Stage: Independent build. Closes exit item 5.**
+  Transaction boundaries: force a failure mid-transaction and prove rollback at
+  the *application* level, not only in `psql`. The July 24 `rollback_proof.sql`
+  proved the database behaves; this proves your code does.
+- **4:30–6:00 — DSA** (block ends at 6:00 on IIT weeks; the missing 30 minutes
+  move to Monday or Tuesday).
+- **6:00–8:00 — IIT KGP.**
+
+#### Thursday, September 3
+
+- **2:15–4:15 — AI core. Stage: Learn → Independent build. Closes exit item 6.**
+  Timeout and cancellation. You have `async_boundary_lab.py` from July 25 showing
+  bounded fan-out and the blocking boundary, but the timeout and
+  cancellation-cleanup tests were never written. Topic: `asyncio.timeout`, what
+  `CancelledError` guarantees, why cleanup belongs in `finally`, and how a
+  cancelled request must release the connection it borrowed. Also finish the
+  empty companion notes file
+  `notes/sprint-01-AI-Software-Foundations-notes-03-python-asyncio-complete-understanding.md`.
+- **4:30–6:00 — Apple. Stage: Guided practice → Independent build.**
+  SwiftUI part 2: the view, actor integration, and the cancellation transition.
+- **6:00–8:00 — IIT KGP.**
+
+#### Friday, September 4
+
+- **2:15–4:15 — Integration. Stage: Evidence. Closes exit items 3 and 4.**
+  Deliver the same signed webhook twice and prove **one** downstream effect.
+  Deliver an invalid signature and prove no payload was accepted. These are
+  integration tests against real Postgres, not unit tests with fakes.
+- **4:30–6:30 — System design: I1, offline-first adaptive iOS feed.** Restored
+  from the July 28 deferral. Use the seven-step block structure and the
+  eight-dimension `/24` rubric in `05-System-Design-Track.md`. Score it honestly;
+  B1's self-assessed 24/24 versus the reviewed 17/24 is the calibration lesson.
+- **6:30–7:30 — Weekly review.** Record actual hours and IIT attendance.
+
+#### Saturday, September 5
+
+Replacement capacity. No required study.
+
+#### Sunday, September 6
+
+- **2 hours — Apple. Stage: Evidence. Closes exit item 9.**
+  Swift concurrency and cancellation test in the `AppleAILab` repository created
+  during the restart gate. `08-Assessment-and-Recovery.md` requires no known
+  isolation or data-race warning. Commit it — evidence that is not committed does
+  not exist.
+
+### Week 2 — CI, evidence, defense, and the gate
+
+Sep 7–Sep 13. Second Monday: stop broad reading. Integration, tests, failure
+handling, and measurement only.
+
+#### Monday, September 7
+
+- **2:15–4:15 — AI core. Stage: Learn → Guided practice.**
+  CI concepts: what a service container is, why the database must be healthy
+  before tests run, and why a green local run is not evidence.
+- **4:30–6:30 — Platform. Stage: Independent build. Opens exit item 7.**
+  Create `.github/workflows/ci.yml` — there is no `.github/` directory at all
+  today. Postgres service container, `uv sync --locked`, `alembic upgrade head`,
+  then format, lint, strict type check, unit, API, and integration tests.
+- **9:30–10:30 — DSA.**
+
+#### Tuesday, September 8
+
+- **2:15–4:15 — AI core. Stage: Independent build. Closes exit item 7.**
+  Add the concurrency test to CI and make the pipeline green from a clean
+  checkout. A workflow that only passes on a warm cache is not a gate.
+- **4:30–6:30 — Apple. Stage: Evidence.** SwiftUI tests; complete the
+  observation/state milestone.
+- **9:30–10:30 — DSA.**
+
+#### Wednesday, September 9
+
+- **2:15–4:15 — Evidence.** Write the architecture decision record: *why domain
+  code does not import provider SDKs*. Required by the sprint and never produced.
+  State one rejected alternative and what evidence would reverse the decision.
+- **4:30–6:00 — DSA.**
+- **6:00–8:00 — IIT KGP.**
+
+#### Thursday, September 10
+
+- **2:15–4:15 — Stage: Evidence. Closes exit item 8.**
+  Concept defense without notes: the event loop, transactions, idempotency, and
+  the domain/HTTP boundary. Then the five architecture-defense challenge prompts
+  in `08-Assessment-and-Recovery.md`. Record it.
+- **4:30–6:00 — Apple.** Instruments or benchmark evidence; close the Apple
+  milestone in `PROGRESS.md`.
+- **6:00–8:00 — IIT KGP.**
+
+#### Friday, September 11
+
+- **2:15–4:15 — Evidence.** Record the five-minute API walkthrough and write the
+  FDE one-pager (why business logic is independent of FastAPI/Postgres, what
+  happens when the same webhook arrives twice, what the service does when
+  Postgres is unavailable, and what is intentionally not built yet).
+- **4:30–6:30 — System design.** Repair the five recorded B1 defects rather than
+  starting a new case: the worker-lease sweeper filters on `locked_until` which
+  `raw_webhook_event` never declares; the critical-flow trace misreads
+  `[00.019 ms]` as 19 ms; seven metrics have no thresholds, burn-rate alert, or
+  paging path; the cost table prices AWS while the platform targets GCP; and the
+  document carries an off-topic pasted block and a duplicated section.
+  Operational alerting is your lowest recorded dimension — this is the repair.
+- **6:30–7:30 — Weekly review and evidence close.**
+
+#### Saturday, September 12
+
+Replacement capacity.
+
+#### Sunday, September 13
+
+- **2 hours — Sprint close.**
+  1. Clean setup from a fresh checkout.
+  2. Run the exact ten-item **Exit test** above. All ten, in order.
+  3. Score with the five-part `/15` rubric. Pass requires ≥11/15, no zero, and
+     every item proven.
+  4. Record the result in `PROGRESS.md` whichever way it lands, then check
+     Sprint 2's prerequisite: *typed/tested FastAPI, async, database, and error
+     boundaries.* Do not activate Sprint 2 merely because September 14 arrived.
+
+### Repair-sprint drop/defer order
+
+The sprint's existing drop/defer rule applies unchanged. If time runs short:
+
+1. The five-minute recorded walkthrough (produce it during Consolidation 1).
+2. The B1 defect repair (carry to Consolidation 1's design slot).
+3. Apple SwiftUI tests — but keep the concurrency/cancellation test for item 9.
+
+Do not drop: the Postgres transaction and constraint work, signed duplicate
+webhook behavior, the cancellation and timeout test, CI, the Apple concurrency
+test, or DSA and design continuity.
