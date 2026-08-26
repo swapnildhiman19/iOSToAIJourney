@@ -23,8 +23,12 @@
 >
 > **DSA was also re-sequenced on August 26** from the Striver SDE Sheet baseline
 > (172/191; only Dynamic Programming and Trie incomplete). The per-sprint DSA lines
-> below now reference Phases A–D defined in `06-DSA-Track.md` → *Sprint syllabus*.
-> No pattern was dropped — that file carries a coverage map proving it. See `PROGRESS.md` → *Recovery
+> below now reference Phases A–C defined in `06-DSA-Track.md` → *Sprint syllabus*.
+> Phase A (Aug 31–Sep 27) is deliberately **blocked** because those 19 problems are
+> first exposure; everything after it is **interleaved**, with all three sources
+> running in parallel each week. Working through a sheet in section order tells you
+> the pattern before you start, and pattern selection is the current most-frequent
+> recorded mistake. No pattern was dropped — that file carries a coverage map. See `PROGRESS.md` → *Recovery
 > actions* (Aug 26) and `VALIDATION.md` → *August 26 schedule revision*.
 
 This calendar is competency-gated. Dates determine when to attempt a skill; an
@@ -320,7 +324,8 @@ abstractions. Preserve the internal contract and failure behavior.
 
 **DSA**
 
-- **Phase B** — Striver revision: Arrays I–IV, String I–II (36 problems).
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled. Phase B begins; all three sources now run in parallel every week.
 
 **System design**
 
@@ -378,8 +383,9 @@ shows a specific multi-hop or iterative-search failure.
 
 **DSA**
 
-- **Phase B** — Striver revision: Linked List I–II, LL and Arrays, Stack and Queue
-  I–II (35). Phase 1 check: one mixed timed pair with no pattern label.
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
+  Phase 1 check: one mixed timed pair with no pattern label.
 
 **System design**
 
@@ -443,7 +449,8 @@ shows a specific multi-hop or iterative-search failure.
 
 **DSA**
 
-- **Phase B** — Striver revision: Binary Search, Heaps, Greedy, Recursion (26).
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
 
 **System design**
 
@@ -498,7 +505,8 @@ shows a specific multi-hop or iterative-search failure.
 
 **DSA**
 
-- **Phase B** — Striver revision: Binary Tree I–III, Binary Trees [Misc] (33).
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
 
 **System design**
 
@@ -547,7 +555,8 @@ features.
 
 **DSA**
 
-- **Phase B** — Striver revision: BST I–II, Recursion and Backtracking, Graph I–II (39).
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
 
 **System design**
 
@@ -597,8 +606,10 @@ features.
 
 **DSA**
 
-- **Phase B** — Striver revision: DP I–II and Trie (22). This is the ~3-month
-  repetition of the Phase A material. Phase 2 check: 75-minute mixed mock.
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
+  Milestone: roughly half the 191 revised by Consolidation 2. Phase 2 check:
+  75-minute mixed mock with two mediums.
 
 **System design**
 
@@ -664,7 +675,9 @@ multi-agent audio flow.
 
 **DSA**
 
-- **Phase C begins** — Taro Top 75, the ~30 problems not already covered by Striver.
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
+  The Taro Google list is now weighted in and mocks become regular.
 
 **System design**
 
@@ -722,8 +735,10 @@ threat model.
 
 **DSA**
 
-- **Phase C** — bit operations and interview maths, sourced deliberately from the
-  Taro lists: the Striver sheet has no dedicated section for them.
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
+  Bit operations and interview maths are sourced deliberately from the Taro lists
+  this sprint: the Striver sheet has no dedicated section for them.
 
 **System design**
 
@@ -778,8 +793,9 @@ identity correctness.
 
 **DSA**
 
-- **Phase C** — mixed timed sets; repair the three highest-frequency mistake tags
-  recorded during Phase B.
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
+  Repair the three highest-frequency mistake tags recorded so far.
 
 **System design**
 
@@ -831,8 +847,10 @@ instrumentation, SLOs, and one credible load environment.
 
 **DSA**
 
-- **Phase C** — the Taro Google list begins. Keep at least half the work untagged.
-  Phase 3 check: two 45-minute single-problem mocks in consecutive weeks.
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
+  Keep at least half the work untagged. Phase 3 check: two 45-minute
+  single-problem mocks in consecutive weeks.
 
 **System design**
 
@@ -893,7 +911,9 @@ decision are the required evidence.
 
 **DSA**
 
-- **Phase C** — Taro Google list continues, one paired mock, weakest-pattern repair.
+- **Phase B — interleaved.** Mon: Striver revision from the due queue, any topic.
+  Tue: one unseen Taro problem. Wed: mixed and unlabelled.
+  One paired mock; weakest-pattern repair.
 
 **System design**
 
@@ -940,8 +960,8 @@ measurement, and operational proof.
 
 **DSA**
 
-- **Phase C** — timed mixed mediums across all three sources; one mock with
-  interruptions and follow-up constraints.
+- **Phase B closes.** All 191 Striver problems revised and both Taro lists complete.
+  One mock with interruptions and follow-up constraints.
 
 **System design**
 
@@ -983,7 +1003,7 @@ operator visibility.
 
 **DSA**
 
-- **Phase D** — two timed mock sessions; target only observed weaknesses.
+- **Phase C** — two timed mock sessions; target only observed weaknesses.
 
 **System design**
 
@@ -1029,7 +1049,7 @@ allowed scope.
 
 **DSA**
 
-- **Phase D** — interview-mode maintenance. No new pattern unless a scheduled
+- **Phase C** — interview-mode maintenance. No new pattern unless a scheduled
   interview requires it.
 
 **System design**

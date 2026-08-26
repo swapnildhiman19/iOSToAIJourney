@@ -468,9 +468,24 @@ taxonomy, and eight-point definition of "solved" are unchanged.
 - [x] The original syllabus would have re-covered arrays, trees, and graphs — all at
       100% — from September to November, while leaving Trie until November 2 and DP
       until December 14, the only two patterns actually missing.
-- [x] Work now runs Phase A (complete the 19 gaps, Aug 31–Sep 27) → Phase B (revise
-      all 191, Sep 28–Dec 27) → Phase C (Taro lists and mocks, Jan 4–Apr 4) →
-      Phase D (maintenance, Apr 5–May 2).
+- [x] Work now runs Phase A (complete the 19 gaps, Aug 31–Sep 27) → Phase B
+      (interleaved revision and practice, Sep 28–Apr 4) → Phase C (maintenance,
+      Apr 5–May 9).
+- [x] **Interleaving correction, same day.** The first revision still worked through
+      Striver section by section. That was caught and changed: a section heading
+      announces the pattern before you start, and `PROGRESS.md` records
+      *pattern-selection mismatch* as the most frequent mistake tag — so three months
+      of section-ordered practice would have trained the wrong thing. From Phase B
+      all three sources run in parallel weekly (Monday: Striver from the due queue,
+      any topic; Tuesday: one unseen Taro problem; Wednesday: mixed and unlabelled).
+      Unseen practice now starts in September rather than January, surfacing interview
+      weaknesses roughly four months earlier.
+- [x] **Phase A stays blocked, deliberately.** Interleaving aids retention; focused
+      blocks aid initial acquisition, and those 19 DP/Trie problems are first exposure.
+      The distinction is stated in the track rather than left implicit.
+- [x] The track's existing checks are preserved verbatim in substance: one mixed timed
+      pair with no pattern label (Sprint 4), a 75-minute mixed mock (Sprint 8), and two
+      45-minute single-problem mocks in consecutive weeks (Sprints 12–13).
 - [x] **No pattern was dropped.** `06-DSA-Track.md` carries a coverage map placing
       every pattern from the original syllabus — arrays, sliding window, stack/queue,
       linked lists, binary search, heaps, greedy, recursion, trees, BST, backtracking,
@@ -478,13 +493,18 @@ taxonomy, and eight-point definition of "solved" are unchanged.
       and mocks — into a specific phase and sprint.
 - [x] One genuine gap was found and is stated rather than assumed away: **the Striver
       sheet has no dedicated bit-operations or maths section**, so those must be
-      sourced deliberately from the Taro lists in Phase C. Previously they were
+      sourced deliberately from the Taro lists during Phase B. Previously they were
       implicitly assumed covered by "Sprint 10 — greedy and bit operations."
-- [x] Phase B's per-sprint problem counts sum to exactly **191**
-      (36 + 35 + 26 + 33 + 39 + 22).
-- [x] Phase totals ≈ 111 hours against 144 available (36 weeks × 4 h, Aug 31 –
-      May 9), leaving roughly 23% slack. The weekly DSA budget stays at 4 hours and
-      no other lane was reduced.
+- [x] Coverage is now tracked by Striver's own Revision tab rather than by a
+      per-sprint problem quota, because interleaving means the order varies. The
+      checklist is still all 191; only the route is free. Milestones inside Phase B
+      are targets, not gates: roughly half revised by Consolidation 2, all 191 plus
+      both Taro lists complete by early March.
+- [x] Phase totals ≈ 126 hours against 144 available (36 weeks × 4 h, Aug 31 –
+      May 9), leaving roughly 12% slack. Higher than the 111 h of the blocked design
+      because mocks and unseen Taro practice now run from September rather than being
+      compressed into the final months. The weekly DSA budget stays at 4 hours and no
+      other lane was reduced.
 
 ### Overlap correction
 

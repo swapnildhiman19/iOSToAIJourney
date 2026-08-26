@@ -259,8 +259,8 @@ and the four-phase sequence are in `06-DSA-Track.md` -> *Problem sources* and
 | Source | Role |
 |---|---|
 | [Striver SDE Sheet](https://takeuforward.org/dsa/strivers-sde-sheet-top-coding-interview-problems) | Pattern spine; authoritative for what is done and due (Phases A-B) |
-| [Taro Top 75](https://www.jointaro.com/interviews/taro-75/) | Timed/unseen practice, minus Striver overlap (Phase C) |
-| [Taro - Google](https://www.jointaro.com/interviews/companies/google/) | Company-tagged, weighted late (Phase C) |
+| [Taro Top 75](https://www.jointaro.com/interviews/taro-75/) | Timed/unseen practice, minus Striver overlap (Phase B, Tuesdays) |
+| [Taro - Google](https://www.jointaro.com/interviews/companies/google/) | Company-tagged, weighted from January (Phase B) |
 
 Per-problem notes (Notion, Swift solutions + recognition signals):
 [DSA](https://app.notion.com/p/vibedin/DSA-2c39b3ea0f2983edb48b81b3b2062918) |
@@ -283,9 +283,16 @@ knapsack).
 **Syllabus re-sequenced Aug 26** on this evidence: the original order would have
 re-covered arrays/trees/graphs (all 100%) through November while leaving Trie until Nov 2
 and DP until Dec 14. Work now runs Phase A (complete the 19 gaps, Aug 31-Sep 27) ->
-Phase B (revise all 191, Sep 28-Dec 27) -> Phase C (Taro lists + mocks, Jan 4-Apr 4) ->
-Phase D (maintenance, Apr 5-May 2). No pattern was dropped; see the coverage map in
-`06-DSA-Track.md`.
+Phase B (Sep 28-Apr 4) -> Phase C (maintenance, Apr 5-May 9).
+
+**Phase B is interleaved, revised the same day.** The first version worked through
+Striver section by section, which means the section heading tells you the pattern before
+you start - and pattern selection is the current most-frequent recorded mistake tag.
+All three sources now run in parallel every week: Monday is Striver revision from the
+due queue (any topic), Tuesday is one unseen Taro problem, Wednesday is mixed and
+unlabelled. Phase A stays deliberately blocked because those 19 problems are first
+exposure, and focused blocks beat interleaving for initial acquisition. No pattern was
+dropped; see the coverage map in `06-DSA-Track.md`.
 
 - Primary language: Swift (interview-primary through Phase 1; Python one problem/week; re-decide at Consolidation 1). See the 06-DSA-Track.md language rule.
 - Unique independent solves: 1 (Maximum Product Subarray, medium DP, Swift; derivation in iOS-Apps/DSA/Sprint-Orientation-00.swift).

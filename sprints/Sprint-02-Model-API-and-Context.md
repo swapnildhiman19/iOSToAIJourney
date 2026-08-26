@@ -534,7 +534,10 @@ Striver → Trie, next problems. Prefix search and word-break style applications
 
 Finish the remaining Trie problems. **Target: Striver reports 191/191.** Record the
 completion in `PROGRESS.md` → *DSA ledger summary* → *Striver baseline*, and confirm
-the Phase B revision order before Sprint 3 starts on September 28.
+that Phase B begins on September 28. From that point all three sources run in
+parallel every week - Monday Striver revision from the due queue, Tuesday one unseen
+Taro problem, Wednesday mixed and unlabelled - rather than working through Striver in
+section order.
 
 #### 6:00–8:00 — IIT KGP
 

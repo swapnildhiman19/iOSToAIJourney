@@ -120,23 +120,26 @@ The diagnostic is a baseline, not a pass/fail event.
 - Reproduce one due problem without notes.
 - Write the invariant and complexity.
 - If it fails, stop after 45 minutes and study the gap.
-- **Source:** the spaced-repetition queue — whatever is due, from any list.
+- **Source:** the spaced-repetition queue — whatever is **due**, from any list and
+  any topic. Do not work through Striver in section order; that tells you the
+  pattern before you start, which is the one thing an interview never does.
 
 ### Tuesday home — 1 hour
 
 - One unseen problem in the current pattern.
 - Spend the first five minutes on examples, constraints, and brute force.
 - Code only after stating the optimized invariant.
-- **Source:** the current phase — Striver in Phases A and B, Taro in Phase C.
-  Do not substitute a more interesting problem; that is the exact mistake tagged
-  on July 21.
+- **Source:** Striver DP/Trie during Phase A; from Phase B onward, one unseen Taro
+  problem — Top 75 first, then the Google list. Do not substitute a more interesting
+  problem; that is the exact mistake tagged on July 21.
 
 ### Wednesday — 1.5 hours
 
 - One timed medium or two related shorter problems.
 - Compare alternatives and identify the signal that reveals the pattern.
-- **Source:** Striver in Phases A and B; Taro Top 75 and the Taro Google list in
-  Phase C.
+- **Source:** Striver DP/Trie during Phase A. From Phase B onward this block is
+  **mixed and unlabelled** — draw from any source and do not look at which topic the
+  problem belongs to until after you have chosen an approach.
 - On IIT weeks, the last 30 minutes moves to Sunday or begins at 4:00 PM if
   Walmart work allows.
 
@@ -206,15 +209,24 @@ failure.
 
 ## Sprint syllabus
 
-Revised August 26, 2026 from the Striver baseline above. The original syllabus
-sequenced patterns Sprint 1 to 16 as if starting from zero. That would have spent
-September through November re-covering arrays, trees, and graphs — all already at
-100% — while leaving Trie until November 2 and dynamic programming until December 14,
-the only two patterns actually missing.
+Revised August 26, 2026 from the Striver baseline above, then revised again the same
+day to use **interleaved** rather than blocked practice.
 
-The work now runs in four phases. **No pattern was dropped**; see the coverage map.
+Two problems were being solved. First, the original syllabus sequenced patterns
+Sprint 1 to 16 as if starting from zero — it would have spent September to November
+re-covering arrays, trees, and graphs, all at 100%, while leaving Trie until November 2
+and dynamic programming until December 14, the only two patterns actually missing.
 
-### Phase A — complete the sheet
+Second, the first revision still worked through Striver **section by section**. That
+looks tidy and is quietly wrong: for three months you would always know the pattern
+before starting, because the section heading tells you. Deciding which pattern applies
+is the actual interview skill, and the current most-frequent mistake tag in
+`PROGRESS.md` is **pattern-selection mismatch**. Blocked practice scores better on the
+day and transfers worse; interleaved practice feels harder and retains far better.
+
+The work now runs in three phases. **No pattern was dropped**; see the coverage map.
+
+### Phase A — learn the missing patterns (deliberately blocked)
 
 **Sprint 1 (repair) and Sprint 2, August 31 – September 27, approximately 16 hours**
 
@@ -224,68 +236,58 @@ Finish the 19 unsolved Striver problems and take the sheet to 191/191:
 - Dynamic Programming Part-II, all 8.
 - Trie, all 7.
 
-This is genuinely new material, not revision, so it is paced at roughly 50 minutes per
-problem. Memoisation to tabulation, state definition, grid/subsequence/knapsack
-recognition, and prefix-tree construction and search all belong here.
+**This phase stays blocked on purpose.** Interleaving is for material you are trying to
+*retain*; focused blocks are better for acquiring something for the first time, and
+these 19 problems are genuine first exposure. Learn the pattern in a block, then mix it
+in afterwards. Paced at roughly 50 minutes per problem.
 
 Exit evidence: Striver reports 191/191, and two of the DP problems are re-solved from
 memory a week later without notes.
 
-### Phase B — revise everything
+### Phase B — interleaved revision and practice
 
-**Sprints 3 to 8, September 28 – December 27, approximately 48 hours**
+**Sprints 3 to 14, September 28 – April 4, approximately 108 hours**
 
-All 191 problems, in Striver's own topic order. Depth varies by recall, which is what
-makes 191 problems fit inside 48 hours:
+All three sources run **in parallel every week** from here. There is no Striver-only
+period and no Taro-only period. The weekly four-hour structure does not change; the
+slots simply point at different things:
 
-1. Read the problem statement.
-2. Give yourself **60 seconds** to state the pattern and the invariant aloud.
-3. Instant and correct — tick it and move on.
-4. Blank, vague, or wrong — re-solve it fully and tag the mistake.
+| Slot | Source | Why |
+|---|---|---|
+| Monday, 1 h | Striver revision, drawn from whatever is **due** — any topic | Spaced repetition, not section order |
+| Tuesday, 1 h | One unseen Taro problem — Top 75 first, then the Google list | Unseen practice starts in September, not January |
+| Wednesday, 1.5 h | Mixed and **unlabelled** — you do not know the pattern going in | This is the skill interviews actually test |
+| Weekly, 30 min | Repetition scheduling, mistake ledger, one pattern card | Unchanged |
 
-Nothing is skipped; only the time per problem varies. A problem you genuinely know does
-not cost the same as one you have lost, and pretending otherwise is how a revision plan
-quietly becomes unfinishable.
+**Striver revision method.** For each problem: read the statement, then give yourself
+**60 seconds** to state the pattern and the invariant aloud. Instant and correct — tick
+it and move on. Blank, vague, or wrong — re-solve it fully and tag the mistake. Nothing
+is skipped; only the time per problem varies. A problem you genuinely know does not cost
+the same as one you have lost.
 
-| Sprint | Dates | Striver topics | Problems |
-|---|---|---|---:|
-| Sprint 3 | Sep 28 – Oct 11 | Arrays I–IV, String I–II | 36 |
-| Sprint 4 | Oct 12 – 25 | Linked List I–II, LL and Arrays, Stack and Queue I–II | 35 |
-| Sprint 5 | Nov 2 – 15 | Binary Search, Heaps, Greedy, Recursion | 26 |
-| Sprint 6 | Nov 16 – 29 | Binary Tree I–III, Binary Trees [Misc] | 33 |
-| Sprint 7 | Nov 30 – Dec 13 | BST I–II, Recursion and Backtracking, Graph I–II | 39 |
-| Sprint 8 | Dec 14 – 27 | Dynamic Programming I–II, Trie | 22 |
-| | | **Total** | **191** |
+**Progress is tracked by Striver's own Revision tab, not by marching in order.** Jumping
+around is the point. Coverage is a checklist, not a route.
 
-Sprint 8 revisits the Phase A material after roughly three months — the longest and
-most informative repetition interval in the schedule. Treat a failure there as signal,
-not as wasted work.
+Milestones inside Phase B — targets, not gates:
 
-Phase 1 check, during Sprint 4: one mixed timed pair without knowing the pattern
-category.
+- **By Consolidation 2 (Dec 28 – Jan 3):** roughly half of the 191 revised; Taro Top 75
+  substantially underway; first mock completed.
+- **January onward:** the Taro Google list is weighted in; mocks become regular.
+- **By early March:** all 191 revised and both Taro lists complete.
 
-Phase 2 check, during Sprint 8: 75-minute mixed mock with two mediums.
+Keep at least half of all practice untagged. A company list is a sample of what was
+asked once, not a syllabus.
 
-### Phase C — interview practice
+Checks, unchanged in substance:
 
-**Sprints 9 to 14, January 4 – April 4, approximately 35 hours**
+- Phase 1 check, during Sprint 4: one mixed timed pair with no pattern label.
+- Phase 2 check, during Sprint 8: 75-minute mixed mock with two mediums.
+- Phase 3 check, Sprints 12 to 13: two 45-minute single-problem mocks in consecutive
+  weeks.
 
-Only now do the Taro lists open, and only for their genuinely new problems:
+### Phase C — maintenance
 
-- Taro Top 75 — the roughly 30 not already covered by Striver.
-- Taro Google list — company-tagged mediums for the target roles.
-- Timed mixed mediums; mocks with follow-ups and interruptions.
-- Repair the three highest-frequency mistake tags from Phase B.
-
-Keep at least half the work untagged. A company list is a sample of what was asked
-once, not a syllabus.
-
-Phase 3 check, Sprints 12 to 13: two 45-minute single-problem mocks in consecutive
-weeks.
-
-### Phase D — maintenance
-
-**Sprints 15 to 16, April 5 – May 2, approximately 12 hours**
+**Sprints 15 to 16 and Consolidation 4, April 5 – May 9, approximately 20 hours**
 
 - Two full mock sessions per sprint, targeting only observed weaknesses.
 - No new pattern unless a scheduled interview requires it.
@@ -293,30 +295,42 @@ weeks.
 Final target, unchanged: solve a representative medium in 30–35 minutes while
 narrating, then handle a follow-up without discarding the whole solution.
 
+### Budget
+
+| Phase | Weeks | Available | Estimated work |
+|---|---:|---:|---|
+| A | 4 | 16 h | 19 new problems — 16 h |
+| B | 27 | 108 h | 191 revisions 38 h, Taro new ~70 problems 35 h, mocks 15 h, repetitions 10 h — 98 h |
+| C | 5 | 20 h | mocks and targeted repair — 12 h |
+| **Total** | **36** | **144 h** | **126 h**, leaving roughly 12% slack |
+
+DSA stays at four hours per week. No other lane was reduced.
+
 ### Coverage map
 
-Every pattern in the original syllabus still has a home:
+Every pattern in the original syllabus still has a home. In Phase B they are
+interleaved rather than scheduled to a specific sprint, which is the point:
 
 | Pattern | Now covered in |
 |---|---|
-| Arrays, strings, hash maps, prefix/suffix, two pointers | Phase B, Sprint 3 |
-| Sliding window | Phase B, Sprint 3 (Striver Arrays and String) |
-| Stack, queue, monotonic stack | Phase B, Sprint 4 |
-| Linked lists, fast/slow pointers, reversal, cycles | Phase B, Sprint 4 |
-| Binary search, including binary search on answer | Phase B, Sprint 5 |
-| Heaps, top-k, merge patterns | Phase B, Sprint 5 |
-| Greedy | Phase B, Sprint 5 |
-| Recursion | Phase B, Sprint 5 |
-| Trees, DFS/BFS, path and subtree patterns | Phase B, Sprint 6 |
-| Binary search trees | Phase B, Sprint 7 |
-| Backtracking | Phase B, Sprint 7 |
-| Graphs, topological sort, union-find, shortest path | Phase B, Sprint 7 |
-| **Trie** | **Phase A** (new), revised in Phase B Sprint 8 |
-| **1-D and 2-D dynamic programming** | **Phase A** (new), revised in Phase B Sprint 8 |
-| Intervals and sweep-line | Phase B Sprint 3 (Merge Intervals), extended in Phase C |
-| Bit operations and interview maths | **Phase C.** Striver has no dedicated section for these, so they must be picked deliberately from the Taro lists rather than assumed covered. |
-| Company-tagged mediums | Phase C |
-| Mocks | Phases B, C, and D |
+| Arrays, strings, hash maps, prefix/suffix, two pointers | Phase B — Striver Arrays I–IV, String I–II |
+| Sliding window | Phase B — Striver Arrays and String |
+| Stack, queue, monotonic stack | Phase B — Striver Stack and Queue I–II |
+| Linked lists, fast/slow pointers, reversal, cycles | Phase B — Striver Linked List I–II, LL and Arrays |
+| Binary search, including binary search on answer | Phase B — Striver Binary Search |
+| Heaps, top-k, merge patterns | Phase B — Striver Heaps |
+| Greedy | Phase B — Striver Greedy Algorithm |
+| Recursion | Phase B — Striver Recursion |
+| Trees, DFS/BFS, path and subtree patterns | Phase B — Striver Binary Tree I–III, Misc |
+| Binary search trees | Phase B — Striver BST I–II |
+| Backtracking | Phase B — Striver Recursion and Backtracking |
+| Graphs, topological sort, union-find, shortest path | Phase B — Striver Graph I–II |
+| **Trie** | **Phase A** (new), revised throughout Phase B |
+| **1-D and 2-D dynamic programming** | **Phase A** (new), revised throughout Phase B |
+| Intervals and sweep-line | Phase B — Striver Merge Intervals, extended by Taro |
+| Bit operations and interview maths | Phase B — sourced deliberately from the Taro lists. **Striver has no dedicated section for these**, so they must be picked on purpose rather than assumed covered. |
+| Company-tagged mediums | Phase B, weighted from January |
+| Mocks | Phases B and C |
 
 ## Pattern card template
 
