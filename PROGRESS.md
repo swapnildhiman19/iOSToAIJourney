@@ -301,9 +301,43 @@ dropped; see the coverage map in `06-DSA-Track.md`.
 - Repetitions completed: 0.
 - Current clean medium solve rate: not yet measured (Sprint 1 starts timed array/hash + two-pointer mediums).
 - Median independent medium time: not measured (the orientation solve was untimed).
-- Most frequent mistake tag: pattern-selection mismatch - the Jul 21 LIS submission did not match the required arrays/hash-map revision; no timed-solve mistake tag is recorded yet.
+- Most frequent mistake tag: pattern-selection mismatch (1). Added Aug 26 from the
+  knapsack session: `syntax/library fluency` (1), `recursion/base case` (1), `weak test
+  cases` (1). Too few data points to name a dominant category yet; revisit at the first
+  Friday review with a full week of tags. Original note follows: pattern-selection mismatch - the Jul 21 LIS submission did not match the required arrays/hash-map revision; no timed-solve mistake tag is recorded yet.
 - Most recent mock score: not measured.
 - Next due repetition: Maximum Product Subarray ~Aug 3 (clean-solve 14-day interval), or replace with a harder DP variant.
+- **Wed Aug 26 evening session — 0/1 knapsack, recorded as `learned` not `solved`.**
+  Continuation of the Aug 22 attempt. Swapnil wrote the memoisation and a tabulation
+  pass; **it did not compile** — `swiftc -typecheck DSA6.swift` exited 1 with six
+  errors: `memo` referenced four times but never declared, the memo helper declared
+  `-> Int` with no return, `let dp` mutated in the tabulation loop, and an `else`
+  placed outside the `for j` loop. One real logic defect beyond the mechanics: in the
+  memo version the `weights[n-1] > capacity` branch assigned to the table without
+  returning, so execution fell through and computed `include` with a negative
+  capacity — the early return present in his own recursive version was lost in
+  translation. Boundary defect: `for j in 1...capacity` traps at capacity 0.
+  **Correct on the conceptual points that matter:** the memo key is `[n][capacity]`
+  (correctly excluding the invariant `weights`/`values`), `-1` chosen as the sentinel
+  because 0 is a legitimate answer, and the recurrence itself right in all three
+  approaches.
+  **Repair authored by the assistant at Swapnil's request**, so per
+  `06-DSA-Track.md` -> *What "solved" means* ("if editorial code was viewed before a
+  correct implementation, record 'learned', not 'solved'") this counts as **learned**.
+  It does **not** increment unique independent solves.
+  Artifact: `../iOS-Apps/DSA/DSA6.swift`, commit **`5290285`**. Verified by executing
+  all three approaches (recursive, memoised, tabulated) against the same eight cases —
+  classic, capacity 0, n 0, item too heavy, exact fit, all fit, must-skip-heaviest,
+  empty arrays — by switching which helper `knapsack01` returns; all three agree on
+  all eight, and `swiftc -typecheck` exits 0.
+  **Mistake tags:** `syntax/library fluency`, `recursion/base case`, `weak test cases`.
+  **Still owed by Swapnil, not yet demonstrated:** an independent re-derivation, and a
+  spoken statement of why memoisation turns O(2^n) into O(n x capacity). The complexity
+  figures now in the file were written by the assistant, not derived by him.
+  **Repetitions (copied-work interval 1/3/7/21):** first re-derivation **Sat Aug 29**
+  in the existing restart-gate DSA block, then **Wed Sep 2**, then **Wed Sep 16**. The
+  1-day interval is skipped because Thursday Aug 27 has no DSA block; creating one
+  would be time debt, which `04-Weekly-Operating-System.md` forbids.
 - **Overdue as of Aug 26:** Maximum Product Subarray (due ~Aug 3, 23 days overdue)
   and Repeating and Missing Number (due ~Aug 11, 15 days overdue). Both are
   scheduled into the restart gate's Saturday Aug 29 replacement block. Repetition

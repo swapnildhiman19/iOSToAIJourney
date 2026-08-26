@@ -214,6 +214,13 @@ work to replace.
 
 #### Replacement block B (~1 hour) — Overdue DSA repetitions
 
+**Added Aug 26: start with the knapsack re-derivation.** Wednesday's memoisation was
+repaired by the assistant, so it is recorded as `learned`, not `solved`, and the
+independent solve is still owed. Open a blank file — do **not** open
+`DSA6.swift` — and rebuild the memoised version from the recurrence. Then answer
+aloud, without checking: *why does memoisation turn O(2^n) into O(n x capacity)?*
+If either part needs the file, tag it `learned` again and repeat Sep 2.
+
 - **Stage:** Evidence.
 - Both scheduled repetitions are overdue: Maximum Product Subarray (~Aug 3) and
   Repeating and Missing Number (~Aug 11). Solve from memory, time them, and
