@@ -12,7 +12,7 @@ from ai_solutions_platform.persistence.in_memory_tasks import InMemoryTaskReposi
 def _client(
     repository: InMemoryTaskRepository | None = None,
 ) -> AsyncClient:
-    app = create_app(repository=repository)
+    app = create_app(repository=repository or InMemoryTaskRepository())
     return AsyncClient(
         transport=ASGITransport(app=app),
         base_url="http://test",

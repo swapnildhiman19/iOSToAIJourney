@@ -3,13 +3,23 @@
 from typing import Annotated, cast
 
 from fastapi import Depends, Request
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from ai_solutions_platform.application.tasks import TaskRepository, TaskService
+from ai_solutions_platform.persistence.database import get_db_session
+from ai_solutions_platform.persistence.postgres_tasks import PostgresTaskRepository
+
+DbSession = Annotated[AsyncSession, Depends(get_db_session)]
 
 
-def get_task_repository(request: Request) -> TaskRepository:
-    """Resolve the repository owned by the current FastAPI application."""
-    return cast(TaskRepository, request.app.state.task_repository)
+def get_task_repository(request: Request, session: DbSession) -> TaskRepository:
+    """Build a Postgres-backed repository from the per-request session."""
+    stored = cast(TaskRepository | None, request.app.state.task_repository)
+
+    if stored is not None:
+        return stored  # ← test path: use injected InMemoryRepo
+
+    return PostgresTaskRepository(session)  # ← production path: build with session
 
 
 def get_task_service(

@@ -5,7 +5,6 @@ from fastapi import FastAPI
 from ai_solutions_platform.api.routes.health import router as health_router
 from ai_solutions_platform.api.routes.tasks import router as tasks_router
 from ai_solutions_platform.application.tasks import TaskRepository
-from ai_solutions_platform.persistence.in_memory_tasks import InMemoryTaskRepository
 
 
 def create_app(repository: TaskRepository | None = None) -> FastAPI:
@@ -16,9 +15,8 @@ def create_app(repository: TaskRepository | None = None) -> FastAPI:
         docs_url="/docs",
         openapi_url="/openapi.json",
     )
-    app.state.task_repository = (
-        repository if repository is not None else InMemoryTaskRepository()
-    )
+    app.state.task_repository = repository
+
     app.include_router(tasks_router)
     app.include_router(health_router)
     return app
