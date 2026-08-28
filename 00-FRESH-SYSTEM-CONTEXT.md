@@ -4,6 +4,8 @@
 > Context snapshot: July 16, 2026; schedule revised August 26, 2026  
 > Target readiness date: May 12, 2027 (was March 31, 2027 — +6 weeks)
 
+> **Schedule revision approved Friday, August 28, 2026 (roadmap change control).** The weekday roadmap start moves **2:15 PM → 3:30 PM**; the 2:15 PM start was not working in practice and 3:30 PM is the earliest sustainable start. Clock times only — **no outcome, exit gate, prerequisite, sprint date, or portfolio boundary changed.** Authoritative anchors live in `04-Weekly-Operating-System.md`.
+
 ## Purpose
 
 Keep this file with the complete `iOSToAIJourney/` directory when:
@@ -157,33 +159,33 @@ The master roadmap is not a daily checklist.
 
 ### Monday
 
-- 2:15–4:15 PM: current AI/backend competency.
-- 4:30–6:30 PM: AI Solutions Platform.
+- 3:30–5:30 PM: current AI/backend competency.
+- 5:45–7:45 PM: AI Solutions Platform.
 - 9:30–10:30 PM: DSA repetition.
 
 ### Tuesday
 
-- 2:15–4:15 PM: current AI/backend competency.
-- 4:30–6:30 PM: Apple AI Lab or Local AI Workbench.
+- 3:30–5:30 PM: current AI/backend competency.
+- 5:45–7:45 PM: Apple AI Lab or Local AI Workbench.
 - 9:30–10:30 PM: unseen DSA problem.
 
 ### Wednesday
 
-- 2:15–4:15 PM: current AI/backend competency.
-- 4:30–6:00 PM: DSA.
+- 3:30–5:30 PM: current AI/backend competency.
+- 9:30–10:30 PM: DSA. IIT KGP runs 6:00–8:00 PM.
 - 6:00–8:00 PM: IIT KGP.
 
 ### Thursday
 
-- 2:15–4:15 PM: current AI/backend competency.
-- 4:30–6:00 PM: Apple project.
+- 3:30–5:30 PM: current AI/backend competency.
+- 9:30–10:30 PM: DSA. IIT KGP runs 6:00–8:00 PM. Apple moved to Tue/Sun.
 - 6:00–8:00 PM: IIT KGP.
 
 ### Friday
 
-- 2:15–4:15 PM: integration, tests, evals, or repair.
-- 4:30–6:30 PM: system design.
-- 6:30–7:30 PM: review and `PROGRESS.md`.
+- 3:30–5:30 PM: integration, tests, evals, or repair.
+- 5:45–7:45 PM: system design.
+- 7:45–8:45 PM: review and `PROGRESS.md`.
 
 ### Weekend
 

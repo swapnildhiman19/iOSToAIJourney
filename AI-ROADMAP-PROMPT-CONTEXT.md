@@ -7,6 +7,8 @@ Installed assistant copies of `ai-roadmap-coach` load roadmap context
 dynamically. Attach this file only when the skill is unavailable. Live roadmap
 files always override this fallback snapshot.
 
+> **Schedule revision approved Friday, August 28, 2026 (roadmap change control).** The weekday roadmap start moves **2:15 PM → 3:30 PM**; the 2:15 PM start was not working in practice and 3:30 PM is the earliest sustainable start. Clock times only — **no outcome, exit gate, prerequisite, sprint date, or portfolio boundary changed.** Authoritative anchors live in `04-Weekly-Operating-System.md`.
+
 ## Instructions to the AI assistant
 
 You are helping execute an existing AI FDE + iOS AI roadmap. Do not redesign
@@ -336,34 +338,34 @@ A video or documentation page without an output is not a completed block.
 
 ### Monday
 
-- 2:15–4:15 PM: current AI competency.
-- 4:30–6:30 PM: AI Solutions Platform.
+- 3:30–5:30 PM: current AI competency.
+- 5:45–7:45 PM: AI Solutions Platform.
 - 9:30–10:30 PM: DSA repetition.
 
 ### Tuesday
 
-- 2:15–4:15 PM: current AI competency.
-- 4:30–6:30 PM: Apple AI Lab or Local AI Workbench.
+- 3:30–5:30 PM: current AI competency.
+- 5:45–7:45 PM: Apple AI Lab or Local AI Workbench.
 - 9:30–10:30 PM: unseen DSA problem.
 
 ### Wednesday
 
-- 2:15–4:15 PM: current AI competency.
-- 4:30–6:00 PM: DSA.
+- 3:30–5:30 PM: current AI competency.
+- 9:30–10:30 PM: DSA. IIT KGP runs 6:00–8:00 PM.
 - 6:00–8:00 PM: IIT KGP.
 - Move only the remaining 30 DSA minutes to an existing review/home block.
 
 ### Thursday
 
-- 2:15–4:15 PM: current AI competency.
-- 4:30–6:00 PM: Apple project.
+- 3:30–5:30 PM: current AI competency.
+- 9:30–10:30 PM: DSA. IIT KGP runs 6:00–8:00 PM. Apple moved to Tue/Sun.
 - 6:00–8:00 PM: IIT KGP.
 
 ### Friday
 
-- 2:15–4:15 PM: sprint integration, tests, evals, or repair.
-- 4:30–6:30 PM: system design.
-- 6:30–7:30 PM: review and `PROGRESS.md`.
+- 3:30–5:30 PM: sprint integration, tests, evals, or repair.
+- 5:45–7:45 PM: system design.
+- 7:45–8:45 PM: review and `PROGRESS.md`.
 
 ### Weekend
 

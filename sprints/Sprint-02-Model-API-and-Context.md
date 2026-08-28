@@ -1,5 +1,11 @@
 # Sprint 02 — Model API and Context Engineering
 
+> **Schedule revision approved Friday, August 28, 2026 (roadmap change control).** The weekday roadmap start moves **2:15 PM → 3:30 PM**; the 2:15 PM start was not working in practice and 3:30 PM is the earliest sustainable start. Clock times only — **no outcome, exit gate, prerequisite, sprint date, or portfolio boundary changed.** Authoritative anchors live in `04-Weekly-Operating-System.md`. Every clock time written in this guide predates that
+> revision and is **superseded**: read `2:15–4:15` as `3:30–5:30`, `4:30–6:30` as
+> `5:45–7:45`, and `6:30–7:30` as `7:45–8:45`. The block contents, order, evidence, and
+> exit gates are unchanged. The times are not rewritten in place because this file is
+> also a historical record of what was planned.
+
 > Dates: Monday, September 14–Sunday, September 27, 2026  
 > DSA lane: **Phase A** — close the Striver SDE Sheet at 191/191 (DP Part-II + Trie).  
 > Schedule revised August 26, 2026: +6 weeks (was August 3–16). Scope unchanged.  
