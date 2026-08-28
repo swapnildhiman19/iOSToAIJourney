@@ -18,7 +18,7 @@ The IIT KGP program is an additional four hours.
 | 5:30–5:45 PM | Break |
 | 5:45–7:45 PM | Rotating track block (Mon/Tue/Fri). IIT 6:00–8:00 replaces it Wed/Thu. |
 | 7:45–8:45 PM | Optional/review block — required only on Friday |
-| 9:30–10:30 PM | Home block — Mon, Tue, Wed, Thu |
+| 9:30–10:30 PM | Home block — **Monday through Friday** |
 
 > **Revised Friday, August 28, 2026 (approved roadmap change).** The weekday start moved
 > **2:15 PM → 3:30 PM**. The 2:15 start was not working in practice; 3:30 is the earliest
@@ -27,6 +27,14 @@ The IIT KGP program is an additional four hours.
 > **Wed/Thu**, where the 6:00 PM IIT start is a hard wall that cannot be pushed. Those two
 > days gain the 9:30–10:30 PM home block, which Mon/Tue already used. **2:00–3:15 PM is
 > now explicitly not study capacity** and must not be reclaimed by a future daily plan.
+>
+> **Amended the same evening, at Swapnil's request.** He declined the Apple reduction and
+> took the 9:30–10:30 PM home block on **all five weekdays**, IIT nights included. That
+> restores the week to **24 hours** and Apple to **5 hours** — parity with the old plan
+> inside its own stated rounding. Recorded plainly: this is five 10:30 PM finishes a week,
+> two of them after IIT, and the four silent weeks of July–August followed a schedule of
+> exactly this weight. It is his decision and it is taken as given, with one automatic
+> guard below rather than a quiet cut.
 
 Sleep, meals, commute, exercise, family, and recovery remain real constraints.
 The roadmap does not claim unassigned time as study capacity.
@@ -88,8 +96,9 @@ Roadmap total: 3 hours. IIT: 2 additional hours.
 - 3:30–5:30: current AI competency or sprint integration.
 - 5:45–7:45: one system-design case.
 - 7:45–8:45: weekly review, evidence links, and next-week selection.
+- 9:30–10:30: Apple AI Lab.
 
-Required total: 5 hours.
+Required total: 6 hours.
 
 ### Weekend
 
@@ -107,23 +116,32 @@ Required total: 2 hours.
 The Wednesday/Thursday IIT overlap makes the exact total vary slightly.
 
 - AI core and platform: **12 hours** — unchanged.
-- Apple AI: **4 hours** — reduced from 5.5–6.
-- DSA: **4 hours** — unchanged.
+- Apple AI: **5 hours** — Tuesday 2, Friday 1, Sunday 2.
+- DSA: **4 hours** — Monday through Thursday home blocks.
 - System design: 2 hours — unchanged.
 - Review/evidence: 1 hour — unchanged.
-- Required roadmap total: **approximately 23 hours** (was 24.5–25).
+- Required roadmap total: **24 hours** (was 24.5–25).
 - IIT KGP program: 4 additional hours.
 
-**Where the 1.5 hours went, recorded Aug 28, 2026.** The later start costs about
-1.5 hours a week and all of it lands on Wednesday and Thursday, because IIT at
-6:00 PM cannot move. That loss was assigned deliberately rather than spread:
-**AI core, platform, DSA, design, and review are all held at their previous
-hours, and Apple AI absorbs the entire cut.** AI FDE is the primary target and
-Apple is the declared backup, so the reduction belongs on the backup track; DSA
-is protected because it serves both targets and already carries a backlog.
-Thursday is therefore no longer an Apple day — Apple is now Tuesday's block plus
-Sunday. **23 hours stays inside the 20–25 band, so no outcome, gate, date, or
-prerequisite moves.** Revisit at Consolidation 1 if Apple evidence falls behind.
+**Nothing was cut, recorded Aug 28, 2026.** The later start cost about 1.5 hours
+a week, all of it on Wednesday and Thursday, because IIT at 6:00 PM cannot move.
+Swapnil declined the proposed Apple reduction and took the 9:30–10:30 PM home
+block on all five weekdays instead. Every track is therefore at or above its
+previous hours: **AI core and platform 12, Apple 5, DSA 4, design 2, review 1.**
+Thursday is no longer an Apple afternoon — Apple runs Tuesday, Friday night, and
+Sunday. 24 hours sits inside the 20–25 band, so no outcome, gate, date, or
+prerequisite moves.
+
+**Automatic revert — the guard that replaces the cut.** The risk this plan
+carries is not a wrong number, it is five 10:30 PM finishes a week. So it is
+measured rather than trusted: **if the 9:30–10:30 PM block is missed on three or
+more weekdays in the same week, twice in a row, the Friday Apple block is dropped
+and the week returns to 23 hours automatically** — no renegotiation, no guilt,
+and it may be restored later by the same evidence. This is the existing
+two-consecutive-weeks rule applied to the specific block most likely to fail,
+and it exists so a schedule that stops working gets corrected in two weeks rather
+than in four silent ones. Record the misses honestly under **Weekly hours**; an
+unrecorded miss disables the guard.
 
 If IIT homework appears, it replaces an AI theory reading block where topics
 overlap. It does not automatically expand the week.
