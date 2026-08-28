@@ -308,6 +308,13 @@ block is required.
 - **Evidence:** all four gates green; a `psql` transcript showing the row.
 - **Stop at 6:30 PM.**
 
+> **DONE — verified 7:07 PM, Fri Aug 28.** The wiring works. Composition moved into the per-request
+> dependency; create → read → row in `psql`; record survived a container restart; 409/404 exercised
+> against the real unique constraint; readiness returns 503 during an outage. **Exit-test items 3, 4
+> and 6 closed on top of item 5 — the gate is 4/7.** Three design findings and the coverage gap are
+> recorded in `PROGRESS.md` → AI Solutions Platform milestones. **The block overran its 6:30 stop**,
+> so the 6:30–7:30 review + B1 hour did not run and moves to Saturday.
+
 #### 6:30–7:30 PM — Verify the reviews, then repair the B1 gap (1 hour)
 
 > **Revised 4:40 PM, Fri Aug 28.** The two overdue weekly review entries — Week of
@@ -352,6 +359,10 @@ work to replace.
      — and `tests/api/test_tasks.py` asserts that behavior, locking the lie in.
      `GET /healthz/ready` in `api/routes/health.py` does the real `SELECT 1` and
      has zero coverage. Keep one. Delete the other and the test that protects it.
+   **No longer hypothetical — demonstrated Fri Aug 28, 7:07 PM:** with Postgres stopped,
+   `/healthz/ready` returned 503 while `/ready` returned 200 `{"status":"ready"}` in the same
+   outage. A live false green. Item 6's evidence stands on `/healthz/ready`, but this gate should
+   not close while the lying endpoint is still routable.
   2. Fix `.env.example`: `DATABASE_URL` currently reads
      `postgresql://localhost:5432/ai_solutions` — wrong database name, no
      credentials, and no `+asyncpg` driver. `compose.yaml`, `alembic.ini`, and
@@ -362,6 +373,13 @@ work to replace.
      Sprint 1 security discussion.
 - **Evidence:** one readiness endpoint, tested against a **stopped** database and
   proven to return 503.
+
+#### Replacement block D (~1 hour) — The displaced review hour and the B1 repair
+
+> **Added 7:10 PM, Fri Aug 28.** Friday's 6:30–7:30 block did not run — the wiring overran, which
+> was the right trade. It moves here intact: 20 min verifying the two written weekly reviews and
+> supplying real hours, 20 min on the webhook/WebSocket repair. Do this **first** on Saturday, before
+> the build blocks, because it is the part that gets dropped when a day runs long.
 
 #### Replacement block C (~2 hours) — Toolchain recheck and stack refresh
 
